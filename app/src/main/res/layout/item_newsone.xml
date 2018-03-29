@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#444455"
+        android:textSize="16sp"
+        android:layout_marginTop="15dp"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerPhoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3.5dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            android:id="@+id/tvToTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:background="@drawable/frame_circle_red"
+            android:paddingBottom="2dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:text="置顶"
+            android:textColor="#F8444D"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tvHot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/hot"
+            android:drawablePadding="3.5dp"
+            android:textColor="#f8444d"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvNewsType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7.5dp"
+            android:layout_toRightOf="@id/tvToTop"
+            android:textColor="#c3c3c6"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="7.5dp"
+            android:textColor="#c3c3c6"
+            android:textSize="11sp" />
+
+        <TextView
+            android:id="@+id/tvCommentNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/conversation"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="00000"
+            android:textColor="#c3c3c6" />
+    </RelativeLayout>
+</LinearLayout>

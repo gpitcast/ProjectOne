@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ProjectOne.iml" filepath="$PROJECT_DIR$/ProjectOne.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/banner/banner.iml" filepath="$PROJECT_DIR$/banner/banner.iml" />
+      <module fileurl="file://$PROJECT_DIR$/baseadapter-recyclerview/baseadapter-recyclerview.iml" filepath="$PROJECT_DIR$/baseadapter-recyclerview/baseadapter-recyclerview.iml" />
+      <module fileurl="file://$PROJECT_DIR$/refresh-layout/refresh-layout.iml" filepath="$PROJECT_DIR$/refresh-layout/refresh-layout.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" filepath="$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sofia/sofia.iml" filepath="$PROJECT_DIR$/sofia/sofia.iml" />
+    </modules>
+  </component>
+</project>

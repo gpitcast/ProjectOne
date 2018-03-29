@@ -1,0 +1,38 @@
+apply plugin: 'com.android.application'
+android {
+    compileSdkVersion 26
+    defaultConfig {
+        applicationId "com.feature.projectone"
+        minSdkVersion 15
+        targetSdkVersion 26
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation 'com.jakewharton:butterknife:8.4.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation project(':baseadapter-recyclerview')
+    implementation project(':rxretrofitlibrary')
+    implementation project(':banner')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    implementation project(':sofia')
+    implementation project(':refresh-layout')
+
+    /*         网络请求框架          */
+    compile 'com.lzy.net:okhttputils:1.8.1'
+}

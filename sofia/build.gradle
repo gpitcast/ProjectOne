@@ -1,0 +1,20 @@
+apply plugin: "com.android.library"
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.2"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 26
+
+//        compileOptions {
+//            sourceCompatibility JavaVersion.VERSION_1_7
+//            targetCompatibility JavaVersion.VERSION_1_7
+//        }
+    }
+
+//    resourcePrefix 'sofia'
+}
+
+//apply from: 'https://github.com/yanzhenjie/bintray/blob/master/maven.gradle?raw=true'

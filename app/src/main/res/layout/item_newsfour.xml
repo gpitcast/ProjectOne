@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#444455"
+        android:textSize="16sp"
+        tools:text="清华毕业"
+        android:layout_marginTop="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+
+        <ImageView
+            android:id="@+id/imgVideoThumb"
+            android:layout_width="match_parent"
+            android:layout_height="193dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/a" />
+
+        <ImageView
+            android:id="@+id/imgPlay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/play" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="8dp">
+
+        <TextView
+            android:id="@+id/tvType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textColor="#c3c3c6"
+            android:textSize="11sp"
+            tools:text="学习资讯" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="7.5dp"
+            android:layout_toRightOf="@id/tvType"
+            android:textColor="#c3c3c6"
+            android:textSize="11sp"
+            tools:text="昨天" />
+
+        <TextView
+            android:id="@+id/tvCommentNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:drawableLeft="@mipmap/conversation"
+            android:drawablePadding="5dp"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#c3c3c6"
+            android:textSize="11sp" />
+    </RelativeLayout>
+</LinearLayout>
