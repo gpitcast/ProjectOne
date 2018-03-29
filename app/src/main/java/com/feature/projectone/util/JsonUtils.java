@@ -1,5 +1,8 @@
 package com.feature.projectone.util;
 
+import android.content.Context;
+import android.widget.Toast;
+
 import com.feature.projectone.inter.JsonInterface;
 
 /**
@@ -13,7 +16,7 @@ public class JsonUtils {
         this.jsonInterface = jsonInterface;
     }
 
-    public void getJsonUtils() {
-
+    public void getJsonUtils(Context context) {
+        Toast.makeText(context, "测试GIT", Toast.LENGTH_SHORT).show();
     }
 }
