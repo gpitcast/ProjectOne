@@ -3,7 +3,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.feature.projectone"
-        minSdkVersion 15
+        minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -14,6 +14,12 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
     }
 }
 
@@ -32,7 +38,20 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:3.7.0'
     implementation project(':sofia')
     implementation project(':refresh-layout')
-
     /*         网络请求框架          */
     compile 'com.lzy.net:okhttputils:1.8.1'
+    /*         EvnetBus             */
+    compile 'org.greenrobot:eventbus:3.1.1'
+    /*         上拉刷新下拉加载的RecyclerView       */
+    compile 'com.jcodecraeer:xrecyclerview:1.5.9'
+    /*           替代viewPagerIndicator的空间       */
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    /*           加载图片框架        */
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    /*          快速解析json类        */
+    implementation files('libs/jackson-all-1.9.0.jar')
+
+    /*           强大打印日志工具类        */
+    compile 'com.orhanobut:logger:1.8'
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <com.feature.projectone.view.ShaixuanTextView
+        android:id="@+id/tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/bg_shaixuan_normal"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="语文"
+        android:textColor="@color/normal_black3"
+        android:textStyle="bold"
+        android:textSize="13sp" />
+</LinearLayout>

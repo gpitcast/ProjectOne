@@ -1,14 +1,11 @@
 package com.feature.projectone.util;
 
-import android.content.Context;
-
 import com.google.gson.Gson;
 import com.lzy.okhttputils.OkHttpUtils;
-import com.lzy.okhttputils.callback.AbsCallback;
 import com.lzy.okhttputils.callback.StringCallback;
+import com.orhanobut.logger.Logger;
 
-import okhttp3.Call;
-import okhttp3.Response;
+import java.util.HashMap;
 
 /**
  * Created by Administrator on 2018/3/28.
@@ -17,28 +14,37 @@ import okhttp3.Response;
  */
 
 public class HttpUtils {
-    public static final String RootServerIP = "";
-    public static final int DEFAULT_MILLISECONDS = 1000;
+    public static final int DEFAULT_MILLISECONDS = 1000;//超时时间
+    public static final String Host = "http://47.104.128.245/api/data";//主机IP
+    private static HashMap hashMap;
+    private static String controller;
+    private static String action;
+    private static String URL;
 
     /**
      * 请求服务器接口
      *
-     * @param context        上下文
-     * @param url            服务器接口地址
      * @param msg            携带的参数
      * @param stringCallback
      */
-    public static void postRequest(Context context, String url, Object msg, StringCallback stringCallback) {
+    public static void postRequest(Object msg, StringCallback stringCallback) {
+        hashMap = (HashMap) msg;
+        controller = ((String) hashMap.get("controller"));
+        action = ((String) hashMap.get("action"));
+        URL = HttpUtils.Host + "/" + controller + "/" + action;
+
         Gson gson = new Gson();
-        String json = gson.toJson(msg);
-        if (url != null) {
-            OkHttpUtils
-                    .post(RootServerIP)
-                    .tag(context)
+        String vars = gson.toJson(msg);
+        Logger.e("请求接送：" + URL + "   " + vars);
+        if (vars != null) {
+            OkHttpUtils.post(Host)
                     .connTimeOut(DEFAULT_MILLISECONDS)
                     .readTimeOut(DEFAULT_MILLISECONDS)
                     .writeTimeOut(DEFAULT_MILLISECONDS)
-                    .params("", json)
+                    .headers("Accept-Encoding", "identity")
+                    .headers("http.keepAlive", "false")
+                    .headers("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8")
+                    .params("vars", vars)
                     .execute(stringCallback);
         }
     }

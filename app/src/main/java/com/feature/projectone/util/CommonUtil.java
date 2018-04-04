@@ -35,6 +35,16 @@ public class CommonUtil {
     }
 
     /**
+     * convert px to its equivalent sp
+     *
+     * 将px转换为sp
+     */
+    public static int px2sp(Context context, float pxValue) {
+        final float fontScale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int) (pxValue / fontScale + 0.5f);
+    }
+
+    /**
      * 获取屏幕宽度
      *
      * @param context

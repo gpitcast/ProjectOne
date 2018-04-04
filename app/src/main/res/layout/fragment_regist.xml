@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <include layout="@layout/layout_teacher" />
+
+            <include layout="@layout/layout_student" />
+
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:alpha="0.5"
+            android:background="@drawable/bg_input_gray"
+            android:drawableLeft="@mipmap/img_human"
+            android:drawablePadding="10dp"
+            android:hint="@string/input_phone"
+            android:inputType="number"
+            android:lines="1"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/light_gray9"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/et_code"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:alpha="0.5"
+                android:background="@drawable/bg_input_gray"
+                android:drawableLeft="@mipmap/img_number"
+                android:drawablePadding="10dp"
+                android:hint="@string/input_code"
+                android:inputType="number"
+                android:lines="1"
+                android:maxLength="6"
+                android:maxLines="1"
+                android:paddingLeft="8dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@color/light_gray9"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_get_number"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_get_number"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/get_number"
+                    android:textColor="@color/normal_orange"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_psw"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="18dp"
+            android:alpha="0.5"
+            android:background="@drawable/bg_input_gray"
+            android:drawableLeft="@mipmap/img_lock"
+            android:drawablePadding="10dp"
+            android:hint="@string/input_psw"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLines="1"
+            android:paddingLeft="8dp"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/light_gray9"
+            android:textSize="14sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/iv_isAgree"
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:src="@mipmap/img_no_read" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:text="@string/i_read_and_agree"
+                android:textColor="@color/light_gray10"
+                android:textSize="9sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/regist_text"
+                android:textColor="@color/orangeone"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_regist"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="23dp"
+            android:background="@drawable/bg_login_dark_btn"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_regist"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:text="@string/regist_now"
+                android:textColor="@android:color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

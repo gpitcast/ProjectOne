@@ -1,11 +1,21 @@
 package com.feature.projectone.activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.view.Window;
 
+import com.feature.projectone.R;
 import com.feature.projectone.dialog.LoadingDialog;
+import com.feature.projectone.inter.JsonInterface;
+import com.feature.projectone.util.CommonUtil;
+import com.feature.projectone.util.JsonUtils;
+
+import org.greenrobot.eventbus.EventBus;
 
 import butterknife.ButterKnife;
 
@@ -13,10 +23,11 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2018/3/13.
  */
 
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity implements JsonInterface {
 
     public boolean isFullScreen = false;
     private LoadingDialog loadingDialog;
+    JsonUtils jsonUtils;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -24,12 +35,28 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setFullScreen(isFullScreen);
         setContentLayout();
-        getSupportActionBar().hide();
-        ButterKnife.bind(this);
+        setFlagStatus();//设置状态栏颜色
+        ButterKnife.bind(this);//初始化黃油刀插件
+
         beforeInitView();
         initView();
         afterInitView();
+
+        int dip = CommonUtil.px2dip(this, 335);
+        Log.i("px2sp", "   335   " + dip);
+        int dip1 = CommonUtil.px2dip(this, 74);
+        Log.i("px2sp", "    74  " + dip1);
     }
+
+    /**
+     * 统一设置Activity状态栏颜色
+     */
+    public void setFlagStatus() {
+        Window window = this.getWindow();
+        window.setStatusBarColor(ContextCompat.getColor(this, R.color.orangeone));
+    }
+
+    ;
 
     /**
      * 是否全屏
@@ -40,7 +67,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 //         requestWindowFeature(Window.FEATURE_NO_TITLE);
 //         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
 //         WindowManager.LayoutParams.FLAG_FULLSCREEN);
-            getSupportActionBar().hide();
+//            getSupportActionBar().hide();
         } else {
 //            requestWindowFeature(Window.FEATURE_NO_TITLE);
         }
@@ -61,6 +88,34 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     /**
+     * 提供单例网络请求工具
+     */
+    public JsonUtils getJsonUtil() {
+        jsonUtils = new JsonUtils();
+        if (jsonUtils == null) {
+            jsonUtils = new JsonUtils();
+            jsonUtils.setJsonInterfaceListener(this);
+            return jsonUtils;
+        } else {
+            return jsonUtils;
+        }
+    }
+
+    /**
+     * 实现JsonInterfaceListener接口方法，通过response给子activity传递网络请求响应数据
+     *
+     * @param code
+     * @param msg
+     * @param result
+     */
+    @Override
+    public void JsonResponse(String code, String msg, String url, Object result) {
+        Response(code, msg, url, result);
+    }
+
+    protected abstract void Response(String code, String msg, String url, Object result);
+
+    /**
      * 设置布局文件
      */
     public abstract void setContentLayout();
@@ -79,5 +134,13 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 实例化控件之后的操作
      */
     public abstract void afterInitView();
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        EventBus.getDefault().unregister(this);//activity销毁EventBus
+    }
+
 
 }

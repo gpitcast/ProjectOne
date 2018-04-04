@@ -10,11 +10,9 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.feature.projectone.R;
-import com.feature.projectone.activity.NewsActivity;
-import com.feature.projectone.other.NewsAdapter;
+import com.feature.projectone.activity.NewsHeadlinesMainActivity;
 import com.feature.projectone.util.CommonUtil;
 import com.feature.projectone.util.DividerUtil;
-import com.feature.projectone.util.GlideImageLoader;
 import com.feature.projectone.util.GlideOvalImageLoader;
 import com.feature.projectone.util.MiddleDividerUtil;
 import com.yanzhenjie.sofia.Sofia;
@@ -54,6 +52,11 @@ public class HomeFragment extends BaseFragment {
     private int imgIds[] = {R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher, R.mipmap.ic_launcher};
     private int typeImageIds[] = {R.mipmap.news, R.mipmap.down, R.mipmap.tv, R.mipmap.book, R.mipmap.calendar, R.mipmap.microphone, R.mipmap.gift, R.mipmap.umbrella};
     private String typeContents[] = {"新闻资讯", "资源下载", "精选微课", "精品课程", "我的课程", "热门直播", "积分商城", "线下辅导"};
+
+    @Override
+    protected void Response(String code, String msg, String url, Object result) {
+
+    }
 
     @Override
     protected void onFirstUserVisible() {
@@ -136,7 +139,7 @@ public class HomeFragment extends BaseFragment {
             @Override
             public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
                 if(position==0){
-                    Intent intent=new Intent(getActivity(), NewsActivity.class);
+                    Intent intent=new Intent(getActivity(), NewsHeadlinesMainActivity.class);
 
                     startActivity(intent);
                 }

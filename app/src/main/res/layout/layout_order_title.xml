@@ -7,20 +7,14 @@
     android:paddingLeft="7.5dp"
     android:paddingRight="7.5dp"
     android:paddingTop="10dp"
-
     android:background="@color/orangeone">
 
-    <TextView
-        android:id="@+id/tvBack"
+
+    <ImageView
+        android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:drawableLeft="@mipmap/back"
-        android:drawablePadding="7.5dp"
-        android:gravity="center"
-        android:text="返回"
-        android:textColor="#ffffff"
-        android:textSize="14sp" />
+        android:src="@mipmap/back"/>
 
     <TextView
         android:id="@+id/tvTitle"

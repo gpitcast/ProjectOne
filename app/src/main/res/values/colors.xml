@@ -5,6 +5,30 @@
     <color name="colorAccent">#FF4081</color>
 
 
-    <color name="orangeone">#f8444d</color>
-    <color name="grayone">#B6B6CD</color>
+    <color name="orangeone1">#f8444d</color>
+    <color name="orangeone">#278ad8</color>
+    <color name="grayone">#B6B6C0</color>
+    <color name="yellow">#fff000</color>
+    <color name="dark_red">#b2001d</color>
+    <color name="light_gray">#f5f5f5</color>
+    <color name="normal_gray">#dcdcdc</color>
+    <color name="normal_blue">#498de1</color>
+    <color name="normal_black">#444455</color>
+    <color name="dark_black">#4f4f50</color>
+    <color name="normal_gray2">#bebebe</color>
+    <color name="light_gray2">#f7f7f7</color>
+    <color name="light_gray3">#f4f4f7</color>
+    <color name="normal_gray3">#75757d</color>
+    <color name="normal_red">#fa626b</color>
+    <color name="normal_black2">#7e838a</color>
+    <color name="light_gray4">#a9b1bb</color>
+    <color name="light_gray5">#efeff5</color>
+    <color name="normal_black3">#656a72</color>
+    <color name="light_gray6">#f0f3f8</color>
+    <color name="light_gray7">#f8f8f8</color>
+    <color name="light_gray8">#d8d8e1</color>
+    <color name="normal_orange">#ff954f</color>
+    <color name="light_orange">#ffc59e</color>
+    <color name="light_gray9">#cacaca</color>
+    <color name="light_gray10">#6e6e6e</color>
 </resources>

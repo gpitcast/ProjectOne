@@ -1,7 +1,11 @@
-package com.feature.projectone.other;
+package com.feature.projectone.adapter;
 
 import android.content.Context;
 
+import com.feature.projectone.other.NewsFourDelagate;
+import com.feature.projectone.other.NewsOneDelagate;
+import com.feature.projectone.other.NewsThreeDelagate;
+import com.feature.projectone.other.NewsTwoDelagate;
 import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;

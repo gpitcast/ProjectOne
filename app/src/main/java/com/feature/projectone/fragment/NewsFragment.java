@@ -1,16 +1,16 @@
 package com.feature.projectone.fragment;
 
-import android.graphics.Canvas;
+import android.content.Intent;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.feature.projectone.R;
-import com.feature.projectone.other.NewsAdapter;
+import com.feature.projectone.activity.NewsHeadlinesDetailsActivity;
+import com.feature.projectone.adapter.NewsAdapter;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
-import com.zhy.adapter.recyclerview.CommonAdapter;
+import com.zhy.adapter.recyclerview.MultiItemTypeAdapter;
 
 import java.util.ArrayList;
 
@@ -29,6 +29,11 @@ public class NewsFragment extends BaseFragment {
 
     private ArrayList<String> newsList = new ArrayList<>();
     private NewsAdapter newsAdapter;
+
+    @Override
+    protected void Response(String code, String msg, String url, Object result) {
+
+    }
 
     @Override
     protected void onFirstUserVisible() {
@@ -53,8 +58,8 @@ public class NewsFragment extends BaseFragment {
     @Override
     protected void initViewsAndEvents(View view) {
 
-        for (int i = 0; i <4 ; i++) {
-            newsList.add(i+"");
+        for (int i = 0; i < 4; i++) {
+            newsList.add(i + "");
         }
         newsAdapter = new NewsAdapter(getActivity(), newsList);
         recyclerNews.setLayoutManager(new LinearLayoutManager(getActivity()));
@@ -62,5 +67,16 @@ public class NewsFragment extends BaseFragment {
         dividerItemDecoration.setDrawable(getResources().getDrawable(R.drawable.divider_gray));
         recyclerNews.addItemDecoration(dividerItemDecoration);
         recyclerNews.setAdapter(newsAdapter);
+        newsAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
+                startActivity(new Intent(getActivity(), NewsHeadlinesDetailsActivity.class));
+            }
+
+            @Override
+            public boolean onItemLongClick(View view, RecyclerView.ViewHolder holder, int position) {
+                return false;
+            }
+        });
     }
 }

@@ -4,21 +4,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_title"
-        />
+    <include layout="@layout/layout_news_title" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerTitle"
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:layout_gravity="center_vertical"
+        android:id="@+id/magicIndicator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="30dp" />
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#DBDBE1" />
+        android:layout_height="0.5dp"
+        android:background="@color/normal_gray" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 </LinearLayout>

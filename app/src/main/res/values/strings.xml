@@ -1,6 +1,32 @@
 <resources>
-    <string name="app_name">ProjectOne</string>
-
+    <string name="app_name">赢未来</string>
 
     <string name="more"><u>更多</u></string>
+    <string name="input_username">请输入用户名</string>
+    <string name="input_phone">请输入手机号</string>
+    <string name="input_code">请输入验证码</string>
+    <string name="input_psw">请输入密码</string>
+    <string name="back">返回</string>
+    <string name="login">登录</string>
+    <string name="regist">注册</string>
+    <string name="welcome">欢迎加入赢未来</string>
+    <string name="get_number">获取验证码</string>
+    <string name="i_read_and_agree">我已阅读并同意</string>
+    <string name="regist_text">《注册协议》</string>
+    <string name="regist_now">注册</string>
+    <string name="student">我是学生</string>
+    <string name="teacher">我是教师</string>
+    <string name="forget_psw">忘记密码</string>
+    <string name="account_login">账号登录</string>
+    <string name="other_login">其他登录</string>
+    <string name="news_headlines">资讯头条</string>
+    <string name="comments">评论跟帖</string>
+    <string name="write_comments">写评论...</string>
+    <string name="shaixuan">筛选</string>
+    <string name="book">图书</string>
+    <string name="xueke">学科</string>
+    <string name="version">版本</string>
+    <string name="grade">年级</string>
+    <string name="reset">重置</string>
+    <string name="done">完成</string>
 </resources>

@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.feature.projectone.dialog.LoadingDialog;
+import com.feature.projectone.inter.JsonInterface;
+import com.feature.projectone.util.JsonUtils;
 
 import butterknife.ButterKnife;
 
@@ -15,7 +17,7 @@ import butterknife.ButterKnife;
  * Created by Administrator on 2018/3/13.
  */
 
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements JsonInterface {
 
 
     private boolean isFirstInvisible;
@@ -23,6 +25,7 @@ public abstract class BaseFragment extends Fragment {
     private boolean isFirstVisible;
 
     private LoadingDialog loadingDialog;
+    private JsonUtils jsonUtils;
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -39,8 +42,6 @@ public abstract class BaseFragment extends Fragment {
         } else {
             return super.onCreateView(inflater, container, savedInstanceState);
         }
-
-
     }
 
     @Override
@@ -90,6 +91,33 @@ public abstract class BaseFragment extends Fragment {
         }
     }
 
+    /**
+     * 提供单例网络请求工具
+     */
+    protected JsonUtils getJsonUtil() {
+        if (jsonUtils == null) {
+            jsonUtils = new JsonUtils();
+            jsonUtils.setJsonInterfaceListener(this);
+            return jsonUtils;
+        } else {
+            return jsonUtils;
+        }
+    }
+
+    /**
+     * 实现JsonInterfaceListener接口方法，通过response给子activity传递网络请求响应数据
+     *
+     * @param code
+     * @param msg
+     * @param result
+     */
+    @Override
+    public void JsonResponse(String code, String msg, String url, Object result) {
+        Response(code, msg, url, result);
+    }
+
+    protected abstract void Response(String code, String msg, String url, Object result);
+
     protected abstract void onFirstUserVisible();
 
     protected abstract void onUserVisible();
@@ -102,4 +130,6 @@ public abstract class BaseFragment extends Fragment {
     protected abstract int getContentViewLayoutID();
 
     protected abstract void initViewsAndEvents(View view);
+
+
 }
