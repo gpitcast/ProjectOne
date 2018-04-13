@@ -1,5 +1,6 @@
 package com.feature.projectone.util;
 
+import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
 
@@ -19,13 +20,35 @@ public class ToastUtil {
      * @param text
      * @param type
      */
-    public static void show(Context context, String text, int type) {
+    public static void show(final Activity context, final String text, final int type) {
         if (toast == null) {
-            toast = Toast.makeText(context, text, type);
+            if ("main".equals(Thread.currentThread().getName())) {
+                toast = Toast.makeText(context, text, type);
+                toast.show();
+            } else {
+                context.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        toast = Toast.makeText(context, text, type);
+                        toast.show();
+                    }
+                });
+            }
         } else {
-            toast.setText(text);
-            toast.setDuration(type);
+            if ("main".equals(Thread.currentThread().getName())) {
+                toast.setText(text);
+                toast.setDuration(type);
+                toast.show();
+            } else {
+                context.runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        toast.setText(text);
+                        toast.setDuration(type);
+                        toast.show();
+                    }
+                });
+            }
         }
-        toast.show();
     }
 }

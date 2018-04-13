@@ -9,6 +9,7 @@
     <color name="orangeone">#278ad8</color>
     <color name="grayone">#B6B6C0</color>
     <color name="yellow">#fff000</color>
+    <color name="white">#ffffff</color>
     <color name="dark_red">#b2001d</color>
     <color name="light_gray">#f5f5f5</color>
     <color name="normal_gray">#dcdcdc</color>
@@ -31,4 +32,7 @@
     <color name="light_orange">#ffc59e</color>
     <color name="light_gray9">#cacaca</color>
     <color name="light_gray10">#6e6e6e</color>
+    <color name="light_gray11">#c3c3c6</color>
+    <color name="light_red">#fad6d7</color>
+
 </resources>

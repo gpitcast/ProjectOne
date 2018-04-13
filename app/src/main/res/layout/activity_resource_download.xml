@@ -2,19 +2,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_news_title" />
+    <include layout="@layout/layout_title" />
 
     <RelativeLayout
+        android:id="@+id/rl_magicIndicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <net.lucode.hackware.magicindicator.MagicIndicator
             android:id="@+id/magicIndicator"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
+            android:layout_height="40dp"
             android:layout_gravity="center_vertical" />
 
         <RelativeLayout
@@ -24,7 +24,7 @@
 
             <LinearLayout
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:alpha="0.6"
                 android:background="@drawable/bg_shaixuan_button"
                 android:gravity="center"
@@ -33,7 +33,7 @@
             <LinearLayout
                 android:id="@+id/ll_shaixuan"
                 android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:layout_height="40dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -47,7 +47,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginRight="2dp"
                     android:text="@string/shaixuan"
-                    android:textColor="@android:color/white"
+                    android:textColor="@android:color/darker_gray"
                     android:textSize="14sp" />
             </LinearLayout>
 
@@ -55,6 +55,7 @@
     </RelativeLayout>
 
     <View
+        android:id="@+id/view_line"
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/normal_gray" />

@@ -13,9 +13,10 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/bg_shaixuan_normal"
         android:gravity="center"
+        android:singleLine="true"
         android:padding="8dp"
         android:text="语文"
         android:textColor="@color/normal_black3"
-        android:textStyle="bold"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:textStyle="bold" />
 </LinearLayout>

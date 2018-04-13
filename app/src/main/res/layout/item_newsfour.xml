@@ -9,10 +9,10 @@
         android:id="@+id/tvTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
         android:textColor="#444455"
         android:textSize="16sp"
-        tools:text="清华毕业"
-        android:layout_marginTop="15dp"/>
+        tools:text="清华毕业" />
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -33,6 +33,7 @@
             android:layout_centerInParent="true"
             android:src="@mipmap/play" />
     </RelativeLayout>
+
 
     <RelativeLayout
         android:layout_width="match_parent"

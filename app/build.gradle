@@ -8,6 +8,9 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //Enabling multidex support.
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -36,22 +39,28 @@ dependencies {
     implementation project(':rxretrofitlibrary')
     implementation project(':banner')
     compile 'com.github.bumptech.glide:glide:3.7.0'
-    implementation project(':sofia')
     implementation project(':refresh-layout')
+    /*           上拉下拉加载的recyclerView            */
+    implementation project(':xrecyclerview')
+    implementation project(':sofia')
     /*         网络请求框架          */
     compile 'com.lzy.net:okhttputils:1.8.1'
     /*         EvnetBus             */
     compile 'org.greenrobot:eventbus:3.1.1'
-    /*         上拉刷新下拉加载的RecyclerView       */
-    compile 'com.jcodecraeer:xrecyclerview:1.5.9'
+    //    /*         上拉刷新下拉加载的RecyclerView       */
+    //    compile 'com.jcodecraeer:xrecyclerview:1.5.9'
     /*           替代viewPagerIndicator的空间       */
     compile 'com.github.hackware1993:MagicIndicator:1.5.0'
     /*           加载图片框架        */
     compile 'com.squareup.picasso:picasso:2.5.2'
-
     /*          快速解析json类        */
     implementation files('libs/jackson-all-1.9.0.jar')
-
     /*           强大打印日志工具类        */
     compile 'com.orhanobut:logger:1.8'
+    /*          阿里云的短信服务          */
+    implementation files('libs/aliyun-java-sdk-core-3.3.1.jar')
+    implementation files('libs/aliyun-java-sdk-dysmsapi-1.0.0.jar')
+    /*           强大的recyclerView的adapter，可以实现多种炫酷效果             */
+    compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.26'
+
 }

@@ -27,22 +27,12 @@
 
         <EditText
             android:id="@+id/et_phone"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            style="@style/MyEditTextStyle"
             android:layout_marginTop="18dp"
-            android:alpha="0.5"
-            android:background="@drawable/bg_input_gray"
             android:drawableLeft="@mipmap/img_human"
-            android:drawablePadding="10dp"
             android:hint="@string/input_phone"
             android:inputType="number"
-            android:lines="1"
-            android:maxLength="11"
-            android:maxLines="1"
-            android:paddingLeft="8dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/light_gray9"
-            android:textSize="14sp" />
+            android:maxLength="11" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -52,29 +42,21 @@
 
             <EditText
                 android:id="@+id/et_code"
+                style="@style/MyEditTextStyle"
                 android:layout_width="0dp"
-                android:layout_height="40dp"
                 android:layout_weight="1"
-                android:alpha="0.5"
-                android:background="@drawable/bg_input_gray"
                 android:drawableLeft="@mipmap/img_number"
-                android:drawablePadding="10dp"
                 android:hint="@string/input_code"
                 android:inputType="number"
-                android:lines="1"
-                android:maxLength="6"
-                android:maxLines="1"
-                android:paddingLeft="8dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@color/light_gray9"
-                android:textSize="14sp" />
+                android:maxLength="6" />
 
             <LinearLayout
+                android:id="@+id/ll_get_number"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
                 android:layout_weight="1"
-                android:background="@drawable/bg_get_number"
+                android:background="@drawable/bg_get_number_orange"
                 android:orientation="vertical">
 
                 <TextView
@@ -92,21 +74,11 @@
 
         <EditText
             android:id="@+id/et_psw"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            style="@style/MyEditTextStyle"
             android:layout_marginTop="18dp"
-            android:alpha="0.5"
-            android:background="@drawable/bg_input_gray"
             android:drawableLeft="@mipmap/img_lock"
-            android:drawablePadding="10dp"
             android:hint="@string/input_psw"
-            android:inputType="text"
-            android:lines="1"
-            android:maxLines="1"
-            android:paddingLeft="8dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/light_gray9"
-            android:textSize="14sp" />
+            android:inputType="text" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -130,10 +102,11 @@
                 android:textSize="9sp" />
 
             <TextView
+                android:id="@+id/tv_regist_agreement"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/regist_text"
-                android:textColor="@color/orangeone"
+                android:textColor="@drawable/regist_agreement_selector"
                 android:textSize="9sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -144,13 +117,14 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="23dp"
-            android:background="@drawable/bg_login_dark_btn"
+            android:background="@drawable/bg_login_light_btn"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_regist"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:enabled="false"
                 android:gravity="center"
                 android:text="@string/regist_now"
                 android:textColor="@android:color/white"

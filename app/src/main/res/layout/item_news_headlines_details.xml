@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@android:color/white"
     android:orientation="vertical"
-    android:padding="10dp">
+   android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,30 +15,34 @@
         android:orientation="horizontal">
 
         <com.feature.projectone.view.CircleImageView
+            android:id="@+id/circleImageView"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            android:src="@mipmap/ic_launcher" />
+            android:src="@mipmap/img_loading_default" />
 
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:text="QQ用户 12345"
+            android:text="QQ用户 ???"
             android:textColor="@color/grayone"
             android:textSize="12sp" />
     </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:ellipsize="end"
         android:maxLines="2"
-        android:text="dasdsadasdasdasdasdsadasdasdasdasd可能毕业于北大，清华，现在每天就在研究了。文化是玩出来的会玩的孩子，能玩的孩子，想玩的孩子一般都很有出息"
+        android:text="可能毕业于北大，清华，现在每天就在研究了。文化是玩出来的会玩的孩子，能玩的孩子，想玩的孩子一般都很有出息"
         android:textColor="@color/normal_black"
         android:textSize="13sp" />
 
     <LinearLayout
+        android:visibility="gone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
@@ -66,6 +72,7 @@
         android:layout_marginTop="10dp">
 
         <TextView
+            android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5分钟前"
@@ -95,7 +102,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="3dp"
                 android:layout_marginRight="8dp"
-                android:text="999"
+                android:text="？？？"
                 android:textColor="@color/normal_gray3"
                 android:textSize="9sp" />
         </LinearLayout>

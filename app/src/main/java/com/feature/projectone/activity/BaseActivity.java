@@ -1,6 +1,7 @@
 package com.feature.projectone.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
@@ -38,14 +39,17 @@ public abstract class BaseActivity extends AppCompatActivity implements JsonInte
         setFlagStatus();//设置状态栏颜色
         ButterKnife.bind(this);//初始化黃油刀插件
 
+        if (getIntent() != null) {
+            handleIntent(getIntent());
+        }
+
         beforeInitView();
         initView();
         afterInitView();
 
-        int dip = CommonUtil.px2dip(this, 335);
-        Log.i("px2sp", "   335   " + dip);
-        int dip1 = CommonUtil.px2dip(this, 74);
-        Log.i("px2sp", "    74  " + dip1);
+    }
+
+    protected void handleIntent(Intent intent) {
     }
 
     /**
@@ -91,8 +95,8 @@ public abstract class BaseActivity extends AppCompatActivity implements JsonInte
      * 提供单例网络请求工具
      */
     public JsonUtils getJsonUtil() {
-        jsonUtils = new JsonUtils();
         if (jsonUtils == null) {
+            Log.i("JsonUtils", "   jsonUtils == null，设置了接口  ");
             jsonUtils = new JsonUtils();
             jsonUtils.setJsonInterfaceListener(this);
             return jsonUtils;

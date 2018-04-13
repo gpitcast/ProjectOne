@@ -41,8 +41,9 @@ public class JsonUtils {
      *
      * @param context 上下文
      * @param msg     请求参数
+     * @param view    防连点击传入的点击控件
      */
-    public void PostJson(Context context, Object msg, final View view) {
+    public void PostJson(final Context context, Object msg, final View view) {
 
         hashMap = (HashMap) msg;
         controller = ((String) hashMap.get("controller"));
@@ -52,18 +53,22 @@ public class JsonUtils {
         view.setEnabled(false);
 
         if (NetWorkUtils.isNetConnected(context)) {
-            HttpUtils.postRequest(msg, new StringCallback() {
+            HttpUtils.postRequest(context, msg, new StringCallback() {
                 @Override
                 public void onSuccess(String json, Call call, Response response) {
+                    if (response.headers().get("User-Token") != null && response.headers().get("User-Token").length() > 0) {
+                        //存储登录返回的token
+                        String user_token = response.headers().get("User-Token");
+                        ShareUtil.putString(context, "User-Token", user_token);
+                    }
                     Logger.e("地址：" + URL + json);
                     readJson(json);
                     view.setEnabled(true);
                 }
-
                 @Override
                 public void onError(Call call, Response response, Exception e) {
                     super.onError(call, response, e);
-                    jsonInterface.JsonResponse(response.code() + "", "网络请求失败", URL, new HashMap<>());
+                    jsonInterface.JsonResponse("-10000" + "", "网络请求失败", URL, new HashMap<>());
                     view.setEnabled(true);
                 }
             });
@@ -71,6 +76,45 @@ public class JsonUtils {
             //本地网络异常处理
             jsonInterface.JsonResponse(Constanst.error_net_code1, "本地网络异常，请确保wifi或者数据流量是否开启", URL, new HashMap<>());
             view.setEnabled(true);
+        }
+    }
+
+
+    /**
+     * 请求网络
+     *
+     * @param context 上下文
+     * @param msg     请求参数
+     */
+    public void PostJson(final Context context, Object msg) {
+
+        hashMap = (HashMap) msg;
+        controller = ((String) hashMap.get("controller"));
+        action = ((String) hashMap.get("action"));
+        URL = HttpUtils.Host + "/" + controller + "/" + action;
+
+        if (NetWorkUtils.isNetConnected(context)) {
+            HttpUtils.postRequest(context, msg, new StringCallback() {
+                @Override
+                public void onSuccess(String json, Call call, Response response) {
+                    if (response.headers().get("User-Token") != null && response.headers().get("User-Token").length() > 0) {
+                        //存储登录返回的token
+                        String user_token = response.headers().get("User-Token");
+                        ShareUtil.putString(context, "User-Token", user_token);
+                    }
+                    Logger.e("地址：" + URL + json);
+                    readJson(json);
+                }
+
+                @Override
+                public void onError(Call call, Response response, Exception e) {
+                    super.onError(call, response, e);
+                    jsonInterface.JsonResponse("-10000" + "", "网络请求失败", URL, new HashMap<>());
+                }
+            });
+        } else {
+            //本地网络异常处理
+            jsonInterface.JsonResponse(Constanst.error_net_code1, "本地网络异常，请确保wifi或者数据流量是否开启", URL, new HashMap<>());
         }
     }
 
@@ -83,12 +127,16 @@ public class JsonUtils {
             if (null != jsonMap) {
                 if (null != jsonMap.get("code")) {
                     String code = (Integer) jsonMap.get("code") + "";
-                    String msg = (String) jsonMap.get("msg");
-                    Object result = jsonMap.get("result");
-                    if (Constanst.success_net_code.equals(code)) {
-                        jsonInterface.JsonResponse(code, msg, URL, result);
+                    if (code != null && code.equals(Constanst.success_net_code)) {
+                        String msg = (String) jsonMap.get("msg");
+                        Object result = jsonMap.get("result");
+                        if (Constanst.success_net_code.equals(code) && result != null) {
+                            jsonInterface.JsonResponse(code, msg, URL, result);
+                        } else {
+                            jsonInterface.JsonResponse(code, msg, URL, result);
+                        }
                     } else {
-                        jsonInterface.JsonResponse(code, msg, URL, result);
+                        jsonInterface.JsonResponse(code, "网络异常", URL, new HashMap<>());
                     }
                 }
             }

@@ -8,7 +8,13 @@ import android.widget.TextView;
 
 import com.feature.projectone.R;
 import com.feature.projectone.adapter.FragmentPagerAdapter;
-import com.feature.projectone.fragment.NewsFragment;
+import com.feature.projectone.fragment.RedianTuijianFragment;
+import com.feature.projectone.fragment.StudyConsultFragment;
+import com.feature.projectone.fragment.TeachConsultFragment;
+import com.feature.projectone.fragment.TeachHeadlinesFragment;
+import com.feature.projectone.other.Constanst;
+import com.feature.projectone.util.HttpUtils;
+import com.feature.projectone.util.ToastUtil;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
@@ -18,6 +24,7 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTit
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.ClipPagerTitleView;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -32,14 +39,75 @@ public class NewsHeadlinesMainActivity extends BaseActivity {
     MagicIndicator magicIndicator;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-
+    @BindView(R.id.tvTitle)
+    TextView tvTitle;
+    private static final String newsIndexUrl = HttpUtils.Host + "/news/index";//新闻列表接口
     private ArrayList<String> navigationList = new ArrayList<>();
     private ArrayList<Fragment> fragmentList = new ArrayList<>();
     private FragmentPagerAdapter pagerAdapter;
+    TeachHeadlinesFragment teachHeadlinesFragment;//教育头条fragment
+    RedianTuijianFragment redianTuijianFragment;//热点推荐fragment
+    TeachConsultFragment teachConsultFragment;//教育咨询fragment
+    StudyConsultFragment studyConsultFragment;//学习咨询fragment
+    private int pageno = 1;//分页参数，默认第一页
 
     @Override
     protected void Response(String code, String msg, String url, Object result) {
+        switch (url) {
+            case newsIndexUrl:
+                if (Constanst.success_net_code.equals(code)) {
+                    HashMap<String, Object> resultMap = (HashMap<String, Object>) result;
+                    ArrayList<HashMap<String, Object>> navList = (ArrayList<HashMap<String, Object>>) resultMap.get("nav");
+                    if (navList != null) {
+                        navigationList.clear();
+                        initData(navList);
+                        initPager();
+                    }
+                } else {
+                    ToastUtil.show(this, msg, 0);
+                }
+                break;
+        }
+    }
 
+    private void initData(ArrayList<HashMap<String, Object>> navList) {
+        for (int i = 0; i < navList.size(); i++) {
+            HashMap<String, Object> map = navList.get(i);
+            navigationList.add(map.get("title") + "");
+        }
+
+        for (int i = 0; i < navigationList.size(); i++) {
+            switch (i) {
+                case 0:
+                    //教育头条
+                    if (teachHeadlinesFragment == null) {
+                        teachHeadlinesFragment = new TeachHeadlinesFragment(navList.get(0));
+                    }
+                    fragmentList.add(teachHeadlinesFragment);
+                    break;
+                case 1:
+                    //热点推荐
+                    if (redianTuijianFragment == null) {
+                        redianTuijianFragment = new RedianTuijianFragment(navList.get(1));
+                    }
+                    fragmentList.add(redianTuijianFragment);
+                    break;
+                case 2:
+                    //教育咨询
+                    if (teachConsultFragment == null) {
+                        teachConsultFragment = new TeachConsultFragment(navList.get(2));
+                    }
+                    fragmentList.add(teachConsultFragment);
+                    break;
+                case 3:
+                    //学习咨询
+                    if (studyConsultFragment == null) {
+                        studyConsultFragment = new StudyConsultFragment(navList.get(3));
+                    }
+                    fragmentList.add(studyConsultFragment);
+                    break;
+            }
+        }
     }
 
     @Override
@@ -49,23 +117,22 @@ public class NewsHeadlinesMainActivity extends BaseActivity {
 
     @Override
     public void beforeInitView() {
-
-        //初始化title的文本信息和fragment
-        navigationList.add("热点推荐");
-        navigationList.add("教育资讯");
-        navigationList.add("热点推荐");
-        navigationList.add("教育视频");
-        navigationList.add("学习资讯");
-
-        for (int i = 0; i < navigationList.size(); i++) {
-            NewsFragment newsFragment = new NewsFragment();
-            fragmentList.add(newsFragment);
-        }
     }
 
     @Override
     public void initView() {
-        initPager();
+        tvTitle.setText(getString(R.string.news_headlines));
+        PostList();
+    }
+
+    private void PostList() {
+        HashMap<Object, Object> map = new HashMap<>();
+        map.put("controller", "news");
+        map.put("action", "index");
+        map.put("page", null);//分页参数  请求横向title数据暂时传null
+        map.put("type", null);//新闻类型(1:教育头条 2:热点推荐 3:教育咨询 4: 学习咨询) 请求横向title数据暂时传null
+        map.put("keywords", null);//关键词(格式：关键词1|关键词2) 关键字暂时传null
+        getJsonUtil().PostJson(this, map);
     }
 
     /**
@@ -90,7 +157,7 @@ public class NewsHeadlinesMainActivity extends BaseActivity {
                 clipPagerTitleView.setText(navigationList.get(index));
                 clipPagerTitleView.setTextColor(getResources().getColor(R.color.normal_black));
                 clipPagerTitleView.setClipColor(getResources().getColor(R.color.orangeone));
-                clipPagerTitleView.setTextSize(40);
+                clipPagerTitleView.setTextSize(32);
                 clipPagerTitleView.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -104,8 +171,9 @@ public class NewsHeadlinesMainActivity extends BaseActivity {
             public IPagerIndicator getIndicator(Context context) {
                 return null;// 没有指示器，因为title的指示作用已经很明显了
             }
-        });
 
+        });
+        commonNavigator.setAdjustMode(true);
         magicIndicator.setNavigator(commonNavigator);//将标题适配器和指示器关联
 
         //关联

@@ -6,8 +6,8 @@ import android.support.v4.view.ViewPager;
 
 import com.feature.projectone.R;
 import com.feature.projectone.adapter.FragmentPagerAdapter;
-import com.feature.projectone.adapter.LoginFragment;
-import com.feature.projectone.adapter.RegistFragment;
+import com.feature.projectone.fragment.LoginFragment;
+import com.feature.projectone.fragment.RegistFragment;
 
 import java.util.ArrayList;
 import java.util.List;

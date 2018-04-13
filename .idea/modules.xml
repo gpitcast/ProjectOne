@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/refresh-layout/refresh-layout.iml" filepath="$PROJECT_DIR$/refresh-layout/refresh-layout.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" filepath="$PROJECT_DIR$/rxretrofitlibrary/rxretrofitlibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/sofia/sofia.iml" filepath="$PROJECT_DIR$/sofia/sofia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/xrecyclerview/xrecyclerview.iml" filepath="$PROJECT_DIR$/xrecyclerview/xrecyclerview.iml" />
     </modules>
   </component>
 </project>

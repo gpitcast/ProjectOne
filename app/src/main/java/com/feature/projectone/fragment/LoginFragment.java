@@ -1,39 +1,30 @@
-package com.feature.projectone.adapter;
+package com.feature.projectone.fragment;
 
 import android.content.Intent;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.feature.projectone.R;
+import com.feature.projectone.activity.ForgetPswActivity;
 import com.feature.projectone.activity.MainActivity;
-import com.feature.projectone.fragment.BaseFragment;
+import com.feature.projectone.activity.SourceDownloadActivity;
 import com.feature.projectone.other.Constanst;
 import com.feature.projectone.util.EtDrawableLeftUtil;
 import com.feature.projectone.util.HttpUtils;
-import com.feature.projectone.util.NetWorkUtils;
+import com.feature.projectone.util.PhoneNumberCheckedUtil;
+import com.feature.projectone.util.ShareUtil;
 import com.feature.projectone.util.ToastUtil;
-import com.lzy.okhttputils.OkHttpUtils;
-import com.lzy.okhttputils.callback.StringCallback;
-import com.orhanobut.logger.Logger;
 
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
 
-import java.io.IOException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.OnClick;
-import okhttp3.Call;
-import okhttp3.Response;
 
 /**
  * Created by Administrator on 2018/4/3.
@@ -52,27 +43,59 @@ public class LoginFragment extends BaseFragment {
 
     private String phoneText;
     private String pswText;
-    private static final String loginUrl = "http://47.104.128.245/api/data/user/login";
+    private static final String loginUrl = HttpUtils.Host + "/user/login";//登录接口
+    private static final String isLoginUrl = HttpUtils.Host + "/user/is_login";//查看用户是否登陆
 
     @Override
     protected void Response(String code, String msg, String url, Object result) {
         switch (url) {
+            //是否登录接口
+            case isLoginUrl:
+                if (Constanst.success_net_code.equals(code)) {
+                    HashMap<String, Object> resultMap = (HashMap<String, Object>) result;
+                    String status = resultMap.get("status") + "";
+                    if ("0".equals(status)) {
+                        //该账号处于登录状态，弹出吐司提醒用户
+                        ToastUtil.show(getActivity(), resultMap.get("msg") + "", 0);
+                    } else {
+                        //该账号处于未登录状态，执行登录操作
+                        Login();
+                    }
+                } else {
+                    ToastUtil.show(getActivity(), msg, 0);
+                }
+                break;
             //登录接口
             case loginUrl:
                 if (Constanst.success_net_code.equals(code)) {
                     HashMap resultMap = (HashMap) result;
-                    Integer status = (Integer) resultMap.get("status");
-                    if (status == 0) {
+                    String status = (Integer) resultMap.get("status") + "";
+                    if ("0".equals(status)) {
+                        //登录成功
                         startActivity(new Intent(getActivity(), MainActivity.class));
+                        getActivity().finish();
                     } else {
-                        String message = (String) ((HashMap) result).get("msg");
+                        //登录失败
+                        String message = (String) resultMap.get("msg");
                         ToastUtil.show(getActivity(), message, 0);
                     }
                 } else {
                     ToastUtil.show(getActivity(), msg, 0);
                 }
                 break;
+
         }
+    }
+
+    //登录
+    private void Login() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("controller", "user");
+        map.put("action", "login");
+        map.put("type", "1");
+        map.put("username", et_phone.getText().toString().trim());
+        map.put("password", et_psw.getText().toString().trim());
+        getJsonUtil().PostJson(getActivity(), map, tv_login);
     }
 
     @Override
@@ -113,7 +136,6 @@ public class LoginFragment extends BaseFragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                phoneText = charSequence.toString();
                 checkedText();
             }
 
@@ -129,7 +151,6 @@ public class LoginFragment extends BaseFragment {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                pswText = charSequence.toString();
                 checkedText();
             }
 
@@ -143,6 +164,8 @@ public class LoginFragment extends BaseFragment {
      * 判断当手机号输入框和密码输入框都不为空的时候改变登录的背景
      */
     private void checkedText() {
+        phoneText = et_phone.getText().toString().trim();
+        pswText = et_psw.getText().toString().trim();
         if (phoneText != null && phoneText.trim().length() > 0 && pswText != null && pswText.trim().length() > 0) {
             ll_login.setBackgroundResource(R.drawable.bg_login_dark_btn);
             tv_login.setEnabled(true);
@@ -152,18 +175,40 @@ public class LoginFragment extends BaseFragment {
         }
     }
 
-    @OnClick({R.id.tv_login})
+    @OnClick({R.id.tv_login, R.id.tv_forget_psw})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.tv_login:
-                HashMap<String, Object> map = new HashMap<>();
-                map.put("controller", "user");
-                map.put("action", "login");
-                map.put("type", "1");
-                map.put("username", et_phone.getText().toString().trim());
-                map.put("password", et_psw.getText().toString().trim());
-                getJsonUtil().PostJson(getActivity(), map, tv_login);
+                if (et_phone.getText().toString().trim() == null || et_phone.getText().toString().trim().length() == 0) {
+                    ToastUtil.show(getActivity(), getString(R.string.write_phone_number), 0);
+                    return;
+                }
+                if (!PhoneNumberCheckedUtil.checkNumber(et_phone.getText().toString().trim())) {
+                    ToastUtil.show(getActivity(), getString(R.string.write_right_phone_number), 0);
+                    return;
+                }
+                if (et_psw.getText().toString().trim() == null || et_psw.getText().toString().trim().length() == 0) {
+                    ToastUtil.show(getActivity(), getString(R.string.write_right_phone_psw), 0);
+                    return;
+                }
+                //请求用户是否登陆接口
+                isLogin();
+                break;
+            case R.id.tv_forget_psw:
+                startActivity(new Intent(getActivity(), ForgetPswActivity.class));
                 break;
         }
+    }
+
+    //用户是否登陆
+    private void isLogin() {
+        String user_token = ShareUtil.getString(getActivity(), "user_token");
+        Map<String, Object> map = new HashMap<>();
+        map.put("controller", "user");
+        map.put("action", "is_login");
+        if (user_token != null && user_token.length() > 0) {
+            map.put("user_token", user_token);
+        }
+        getJsonUtil().PostJson(getActivity(), map, tv_login);
     }
 }

@@ -18,19 +18,158 @@
         android:background="@android:color/white"
         android:orientation="vertical">
 
-        <android.support.v7.widget.RecyclerView
-            android:layout_marginBottom="10dp"
-            android:id="@+id/recyclerView"
+        <LinearLayout
+            android:id="@+id/ll_book"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
 
+                <TextView
+                    android:id="@+id/tv_title_book"
+                    style="@style/ShaiXuanTitleTextViewStyle"
+                    android:text="@string/book" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/normal_gray" />
+            </LinearLayout>
+
+            <com.feature.projectone.view.MyGridView
+                android:id="@+id/gridView_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="2"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_xueke"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tv_title_xueke"
+                    style="@style/ShaiXuanTitleTextViewStyle"
+                    android:text="@string/xueke" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/normal_gray" />
+            </LinearLayout>
+
+            <com.feature.projectone.view.MyGridView
+                android:id="@+id/gridView_xueke"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="4"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_version"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tv_title_version"
+                    style="@style/ShaiXuanTitleTextViewStyle"
+                    android:text="@string/version" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/normal_gray" />
+            </LinearLayout>
+
+            <com.feature.projectone.view.MyGridView
+                android:id="@+id/gridView_version"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="4"
+                android:scrollbars="none" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:visibility="gone"
+            android:id="@+id/ll_grade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp">
+
+                <TextView
+                    android:id="@+id/tv_title_grade"
+                    style="@style/ShaiXuanTitleTextViewStyle"
+                    android:text="@string/grade" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="8dp"
+                    android:background="@color/normal_gray" />
+            </LinearLayout>
+
+            <com.feature.projectone.view.MyGridView
+                android:id="@+id/gridView_grade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3"
+                android:scrollbars="none" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/tv_reset"

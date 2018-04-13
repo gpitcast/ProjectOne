@@ -1,20 +1,16 @@
 package com.feature.projectone.adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.TextView;
 
 import com.feature.projectone.R;
-import com.feature.projectone.inter.OnTvCheckedChangedAdapterListener;
-import com.feature.projectone.inter.OnTvCheckedChangedListener;
-import com.feature.projectone.other.Constanst;
 import com.feature.projectone.view.ShaixuanTextView;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by Administrator on 2018/4/3.
@@ -23,17 +19,17 @@ import java.util.ArrayList;
 
 public class PopGridViewAdapter extends BaseAdapter {
     private Context context;
-    private ArrayList<String> stringList;
-    private OnTvCheckedChangedAdapterListener listener;
+    private List<HashMap<String, Object>> dataList;
+    private int selectPosition;
 
-    public PopGridViewAdapter(Context context, ArrayList<String> stringList) {
+    public PopGridViewAdapter(Context context, List<HashMap<String, Object>> dataList) {
         this.context = context;
-        this.stringList = stringList;
+        this.dataList = dataList;
     }
 
     @Override
     public int getCount() {
-        return stringList == null ? 0 : stringList.size();// 返回Adapter中数据集的条目数
+        return dataList == null ? 0 : dataList.size();// 返回Adapter中数据集的条目数
     }
 
     @Override
@@ -46,8 +42,15 @@ public class PopGridViewAdapter extends BaseAdapter {
         return position;// 取在列表中与指定索引对应的行id
     }
 
-    public void setOnCheckedListener(OnTvCheckedChangedAdapterListener listener) {
-        this.listener = listener;
+
+    public void changeState(int position) {
+        selectPosition = position;
+        notifyDataSetChanged();
+    }
+
+    public void changeDefault() {
+        selectPosition = -1;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -61,13 +64,19 @@ public class PopGridViewAdapter extends BaseAdapter {
         } else {
             vh = ((ViewHolder) convertView.getTag());
         }
-        vh.tv_title.setText(stringList.get(position));
-        vh.tv_title.setOnCheckedChangedListener(new OnTvCheckedChangedListener() {
-            @Override
-            public void onCheckedChange(boolean isChecked) {
-                listener.onCheckedChanged(isChecked, position);
+        vh.tv_title.setText(((HashMap<String, Object>) dataList.get(position)).get("cate_name") + "");
+        //如果当前的position等于传过来点击的position,就去改变他的状态
+        if (selectPosition != -1) {
+            if (position == selectPosition) {
+                vh.tv_title.setChecked();
+            } else {
+                //其他的恢复原来的状态
+                vh.tv_title.setUnCheckd();
             }
-        });
+        } else {
+            //其他的恢复原来的状态
+            vh.tv_title.setUnCheckd();
+        }
         return convertView;
     }
 

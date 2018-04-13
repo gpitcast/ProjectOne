@@ -9,7 +9,6 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 import com.feature.projectone.R;
-import com.feature.projectone.inter.OnTvCheckedChangedListener;
 
 /**
  * Created by Administrator on 2018/4/3.
@@ -18,7 +17,6 @@ import com.feature.projectone.inter.OnTvCheckedChangedListener;
 
 @SuppressLint("AppCompatCustomView")
 public class ShaixuanTextView extends TextView {
-    private OnTvCheckedChangedListener listener;
 
     public ShaixuanTextView(Context context) {
         super(context);
@@ -47,18 +45,27 @@ public class ShaixuanTextView extends TextView {
                     this.setTextColor(getResources().getColor(R.color.normal_black3));
                     isChecked = false;
                 }
-                listener.onCheckedChange(isChecked);
                 break;
         }
         return super.onTouchEvent(event);
     }
 
     public boolean isChecked() {
-        return isChecked();
+        return isChecked;
     }
 
-
-    public void setOnCheckedChangedListener(OnTvCheckedChangedListener listener) {
-        this.listener = listener;
+    //设置当前为选中状态
+    public void setChecked() {
+        isChecked = true;
+        this.setBackgroundResource(R.drawable.bg_shaixuan_checked);
+        this.setTextColor(Color.WHITE);
     }
+
+    //设置当前为未选中状态
+    public void setUnCheckd() {
+        this.setBackgroundResource(R.drawable.bg_shaixuan_normal);
+        this.setTextColor(getResources().getColor(R.color.normal_black3));
+        isChecked = false;
+    }
+
 }

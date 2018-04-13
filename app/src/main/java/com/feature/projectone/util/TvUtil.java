@@ -19,4 +19,13 @@ public class TvUtil {
         tv.getPaint().setFlags(Paint.UNDERLINE_TEXT_FLAG | Paint.ANTI_ALIAS_FLAG);//添加下划线和抗锯齿
 //        tv.getPaint().setAntiAlias(true);//抗锯齿  此方法无效，以示后人
     }
+
+    /**
+     * 去除TextView的下划线
+     *
+     * @param tv
+     */
+    public static void removeUnderLine(TextView tv) {
+        tv.getPaint().setFlags(0 | Paint.ANTI_ALIAS_FLAG);
+    }
 }

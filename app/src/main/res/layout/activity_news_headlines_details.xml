@@ -5,7 +5,7 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_news_title" />
+    <include layout="@layout/layout_title" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,20 +26,23 @@
         android:background="@color/normal_gray" />
 
     <LinearLayout
+        android:id="@+id/ll_comments_one"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_gray2"
         android:orientation="horizontal">
 
-        <EditText
+        <TextView
+            android:id="@+id/tv_write_comments"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:background="@drawable/comments_bg"
             android:drawableLeft="@mipmap/img_pen"
             android:drawablePadding="6dp"
-            android:hint="@string/write_comments"
+            android:gravity="center_vertical"
+            android:text="@string/write_comments"
             android:textColor="@color/normal_gray2"
             android:textSize="13sp" />
 
@@ -52,12 +55,13 @@
 
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/img_talk" />
 
             <TextView
+                android:id="@+id/tv_comments_count"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
@@ -67,23 +71,68 @@
                 android:inputType="text"
                 android:lines="1"
                 android:maxLines="1"
-                android:text="999"
+                android:text="？？？"
                 android:textColor="@android:color/white"
                 android:textSize="10sp" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_centerInParent="true"
                 android:src="@mipmap/img_conllection" />
 
             <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/img_share" />
 
         </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:visibility="gone"
+        android:id="@+id/ll_comments_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/light_gray2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/iv_close_comments"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:src="@mipmap/img_cancel_comments" />
+
+        <EditText
+            android:id="@+id/et_write_comments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/comments_bg"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:hint="@string/keep_net_safe_rule"
+            android:textColor="@android:color/black"
+            android:textColorHint="@color/normal_gray2"
+            android:textSize="13sp" />
+
+        <TextView
+            android:id="@+id/tv_comments_release"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/bg_comments_release_gray"
+            android:gravity="center"
+            android:text="@string/release"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 </LinearLayout>

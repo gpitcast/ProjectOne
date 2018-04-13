@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.feature.projectone.R;
 import com.feature.projectone.activity.NewsHeadlinesMainActivity;
+import com.feature.projectone.activity.SourceDownloadActivity;
 import com.feature.projectone.util.CommonUtil;
 import com.feature.projectone.util.DividerUtil;
 import com.feature.projectone.util.GlideOvalImageLoader;
@@ -80,8 +81,8 @@ public class HomeFragment extends BaseFragment {
 
     @Override
     protected void initViewsAndEvents(View view) {
-        Sofia.with(getActivity())
-                .statusBarBackground(ContextCompat.getColor(getActivity(), R.color.orangeone));
+//        Sofia.with(getActivity())
+//                .statusBarBackground(ContextCompat.getColor(getActivity(), R.color.orangeone));
 //                .navigationBarBackground(ContextCompat.getDrawable(getActivity(), R.color.orangeone));
         for (int i = 0; i < 8; i++) {
             typeList.add(i + "");
@@ -103,7 +104,7 @@ public class HomeFragment extends BaseFragment {
             }
         };
         recyclerType.setLayoutManager(new GridLayoutManager(getActivity(), 4));
-        recyclerType.addItemDecoration(new DividerUtil(0,0,0,CommonUtil.dip2px(getActivity(),20)));
+        recyclerType.addItemDecoration(new DividerUtil(0, 0, 0, CommonUtil.dip2px(getActivity(), 20)));
         recyclerType.setAdapter(typeAdapter);
 
         publishClassAdapter = new CommonAdapter<String>(getActivity(), R.layout.adapter_publishclass, publishClassList) {
@@ -114,7 +115,7 @@ public class HomeFragment extends BaseFragment {
             }
         };
         recyclerPublishClass.setLayoutManager(new GridLayoutManager(getActivity(), 2));
-        recyclerPublishClass.addItemDecoration(new MiddleDividerUtil( CommonUtil.dip2px(getActivity(),7), 0, CommonUtil.dip2px(getActivity(), 12)));
+        recyclerPublishClass.addItemDecoration(new MiddleDividerUtil(CommonUtil.dip2px(getActivity(), 7), 0, CommonUtil.dip2px(getActivity(), 12)));
         recyclerPublishClass.setAdapter(publishClassAdapter);
 
         excellentCourseAdapter = new CommonAdapter<String>(getActivity(), R.layout.adapter_excellentcourse, excellentCourseList) {
@@ -126,7 +127,7 @@ public class HomeFragment extends BaseFragment {
             }
         };
         recyclerExcellentCourse.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerExcellentCourse.addItemDecoration(new DividerUtil(0, 0, 0, CommonUtil.dip2px(getActivity(),17)));
+        recyclerExcellentCourse.addItemDecoration(new DividerUtil(0, 0, 0, CommonUtil.dip2px(getActivity(), 17)));
         recyclerExcellentCourse.setAdapter(excellentCourseAdapter);
 
 
@@ -138,10 +139,13 @@ public class HomeFragment extends BaseFragment {
         typeAdapter.setOnItemClickListener(new MultiItemTypeAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, RecyclerView.ViewHolder holder, int position) {
-                if(position==0){
-                    Intent intent=new Intent(getActivity(), NewsHeadlinesMainActivity.class);
-
-                    startActivity(intent);
+                switch (position) {
+                    case 0:
+                        startActivity(new Intent(getActivity(), NewsHeadlinesMainActivity.class));
+                        break;
+                    case 1:
+                        startActivity(new Intent(getActivity(), SourceDownloadActivity.class));
+                        break;
                 }
             }
 
@@ -150,5 +154,5 @@ public class HomeFragment extends BaseFragment {
                 return false;
             }
         });
-        }
+    }
 }

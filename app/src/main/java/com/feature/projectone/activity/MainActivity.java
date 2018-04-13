@@ -6,6 +6,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -14,6 +16,8 @@ import com.feature.projectone.adapter.FragmentPagerAdapter;
 import com.feature.projectone.fragment.HomeFragment;
 import com.feature.projectone.other.Constanst;
 import com.feature.projectone.util.HttpUtils;
+import com.feature.projectone.util.RbDrawableUtil;
+import com.feature.projectone.util.ToastUtil;
 import com.lzy.okhttputils.OkHttpUtils;
 import com.lzy.okhttputils.callback.StringCallback;
 import com.orhanobut.logger.Logger;
@@ -35,32 +39,53 @@ import okhttp3.Response;
  */
 public class MainActivity extends BaseActivity {
 
-    @BindView(R.id.tvHome)
-    TextView tvHome;
-    @BindView(R.id.tvOrder)
-    TextView tvOrder;
-    @BindView(R.id.tvMsg)
-    TextView tvMsg;
-    @BindView(R.id.tvMine)
-    TextView tvMine;
-    @BindView(R.id.imgHome)
-    ImageView imgHome;
-    @BindView(R.id.imgOrder)
-    ImageView imgOrder;
-    @BindView(R.id.imgMsg)
-    ImageView imgMsg;
-    @BindView(R.id.imgMine)
-    ImageView imgMine;
-    @BindView(R.id.llHome)
-    LinearLayout llHome;
-    @BindView(R.id.llOrder)
-    LinearLayout llOrder;
-    @BindView(R.id.llMsg)
-    LinearLayout llMsg;
-    @BindView(R.id.llMine)
-    LinearLayout llMine;
+//    @BindView(R.id.tvHome)
+//    TextView tvHome;
+//    @BindView(R.id.tvOrder)
+//    TextView tvOrder;
+//    @BindView(R.id.tvMsg)
+//    TextView tvMsg;
+//    @BindView(R.id.tvMine)
+//    TextView tvMine;
+//    @BindView(R.id.imgHome)
+//    ImageView imgHome;
+//    @BindView(R.id.imgOrder)
+//    ImageView imgOrder;
+//    @BindView(R.id.imgMsg)
+//    ImageView imgMsg;
+//    @BindView(R.id.imgMine)
+//    ImageView imgMine;
+//    @BindView(R.id.llHome)
+//    LinearLayout llHome;
+//    @BindView(R.id.llOrder)
+//    LinearLayout llOrder;
+//    @BindView(R.id.llMsg)
+//    LinearLayout llMsg;
+//    @BindView(R.id.llMine)
+//    LinearLayout llMine;
+
     @BindView(R.id.viewPager)
     ViewPager viewPager;
+    @BindView(R.id.rb_home_page)
+    RadioButton rb_home_page;
+    @BindView(R.id.rb_order_list)
+    RadioButton rb_order_list;
+    @BindView(R.id.rb_shopping_car)
+    RadioButton rb_shopping_car;
+    @BindView(R.id.rb_message)
+    RadioButton rb_message;
+    @BindView(R.id.rb_mine)
+    RadioButton rb_mine;
+    @BindView(R.id.line_home_page)
+    View line_home_page;
+    @BindView(R.id.line_order_list)
+    View line_order_list;
+    @BindView(R.id.line_message)
+    View line_message;
+    @BindView(R.id.line_mine)
+    View line_mine;
+    @BindView(R.id.rb_group)
+    RadioGroup rb_group;
 
     private FragmentPagerAdapter pagerAdapter;
     private Fragment homeFragment, orderFragment, msgFragment, mineFragment;
@@ -84,119 +109,76 @@ public class MainActivity extends BaseActivity {
 
     @Override
     public void initView() {
-        PostList();
 
         homeFragment = new HomeFragment();
-
         fragmentList.add(homeFragment);
         pagerAdapter = new FragmentPagerAdapter(getSupportFragmentManager(), this, fragmentList, null);
         viewPager.setAdapter(pagerAdapter);
         viewPager.setOffscreenPageLimit(fragmentList.size());
+
+        initRb();//初始化一些radiobutton的属性
     }
 
-    /**
-     * 请求接口
-     */
-    private void PostList() {
-        OkHttpUtils.post(Constanst.Home_Page)
-                .connTimeOut(HttpUtils.DEFAULT_MILLISECONDS)
-                .writeTimeOut(HttpUtils.DEFAULT_MILLISECONDS)
-                .readTimeOut(HttpUtils.DEFAULT_MILLISECONDS)
-                .execute(new StringCallback() {
-                    @Override
-                    public void onSuccess(String json, Call call, Response response) {
-                        Logger.w("地址：" + Constanst.Home_Page + json);
-                        ObjectMapper objectMapper = new ObjectMapper();
-                        Map<String, Object> jsonMap;
-                        try {
-                            jsonMap = objectMapper.readValue(json, new TypeReference<Map<String, Object>>() {
-                            });
-                            Integer code = (Integer) jsonMap.get("code");
-                            if (code == 200) {
+    private void initRb() {
+        RbDrawableUtil.setEbImgSize(rb_home_page);
+        RbDrawableUtil.setEbImgSize(rb_order_list);
+        RbDrawableUtil.setEbImgSize(rb_shopping_car);
+        RbDrawableUtil.setEbImgSize(rb_message);
+        RbDrawableUtil.setEbImgSize(rb_mine);
 
-                            } else {
-
-                            }
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        }
-                    }
-
-                    @Override
-                    public void onError(Call call, Response response, Exception e) {
-                        super.onError(call, response, e);
-                    }
-                });
+        rb_group.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
+                switch (checkedId) {
+                    case R.id.rb_home_page:
+                        ToastUtil.show(MainActivity.this, "选中了第一个", 0);
+                        line_home_page.setBackgroundColor(getResources().getColor(R.color.orangeone1));
+                        line_order_list.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_message.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_mine.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        break;
+                    case R.id.rb_order_list:
+                        ToastUtil.show(MainActivity.this, "选中了第二个", 0);
+                        line_home_page.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_order_list.setBackgroundColor(getResources().getColor(R.color.orangeone1));
+                        line_message.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_mine.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        break;
+                    case R.id.rb_shopping_car:
+                        ToastUtil.show(MainActivity.this, "选中了第三个", 0);
+                        line_home_page.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_order_list.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_message.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_mine.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        break;
+                    case R.id.rb_message:
+                        ToastUtil.show(MainActivity.this, "选中了第四个", 0);
+                        line_home_page.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_order_list.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_message.setBackgroundColor(getResources().getColor(R.color.orangeone1));
+                        line_mine.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        break;
+                    case R.id.rb_mine:
+                        ToastUtil.show(MainActivity.this, "选中了第五个", 0);
+                        line_home_page.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_order_list.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_message.setBackgroundColor(getResources().getColor(R.color.grayone));
+                        line_mine.setBackgroundColor(getResources().getColor(R.color.orangeone1));
+                        break;
+                }
+            }
+        });
+        rb_group.check(R.id.rb_home_page);//默认选中首页
     }
+
 
     @Override
     public void afterInitView() {
-
     }
 
-    @OnClick({R.id.llHome, R.id.llOrder, R.id.llMsg, R.id.llMine})
+    @OnClick({})
     public void Onclick(View view) {
         switch (view.getId()) {
-            case R.id.llHome:
-                viewPager.setCurrentItem(0);
-                tvHome.setTextColor(getResources().getColor(R.color.orangeone));
-                tvOrder.setTextColor(getResources().getColor(R.color.grayone));
-                tvMsg.setTextColor(getResources().getColor(R.color.grayone));
-                tvMine.setTextColor(getResources().getColor(R.color.grayone));
-                imgHome.setImageResource(R.mipmap.home_2);
-                imgOrder.setImageResource(R.mipmap.clipboardwtick_1);
-                imgMsg.setImageResource(R.mipmap.bubble_1);
-                imgMine.setImageResource(R.mipmap.male_1);
-                llHome.setBackgroundResource(R.mipmap.tabbarbg);
-                llOrder.setBackgroundResource(0);
-                llMsg.setBackgroundColor(0);
-                llMine.setBackgroundColor(0);
-                break;
-            case R.id.llOrder:
-                viewPager.setCurrentItem(1);
-                tvOrder.setTextColor(getResources().getColor(R.color.orangeone));
-                tvHome.setTextColor(getResources().getColor(R.color.grayone));
-                tvMsg.setTextColor(getResources().getColor(R.color.grayone));
-                tvMine.setTextColor(getResources().getColor(R.color.grayone));
-                imgHome.setImageResource(R.mipmap.home_1);
-                imgOrder.setImageResource(R.mipmap.clipboardwtick_2);
-                imgMsg.setImageResource(R.mipmap.bubble_1);
-                imgMine.setImageResource(R.mipmap.male_1);
-                llOrder.setBackgroundResource(R.mipmap.tabbarbg);
-                llHome.setBackgroundResource(0);
-                llMsg.setBackgroundResource(0);
-                llMine.setBackgroundResource(0);
-                break;
-            case R.id.llMsg:
-                viewPager.setCurrentItem(2);
-                tvMsg.setTextColor(getResources().getColor(R.color.orangeone));
-                tvOrder.setTextColor(getResources().getColor(R.color.grayone));
-                tvHome.setTextColor(getResources().getColor(R.color.grayone));
-                tvMine.setTextColor(getResources().getColor(R.color.grayone));
-                imgHome.setImageResource(R.mipmap.home_1);
-                imgOrder.setImageResource(R.mipmap.clipboardwtick_1);
-                imgMsg.setImageResource(R.mipmap.bubble_2);
-                imgMine.setImageResource(R.mipmap.male_1);
-                llMsg.setBackgroundResource(R.mipmap.tabbarbg);
-                llHome.setBackgroundResource(0);
-                llOrder.setBackgroundResource(0);
-                llMine.setBackgroundResource(0);
-                break;
-            case R.id.llMine:
-                viewPager.setCurrentItem(3);
-                tvMine.setTextColor(getResources().getColor(R.color.orangeone));
-                tvOrder.setTextColor(getResources().getColor(R.color.grayone));
-                tvMsg.setTextColor(getResources().getColor(R.color.grayone));
-                tvHome.setTextColor(getResources().getColor(R.color.grayone));
-                imgHome.setImageResource(R.mipmap.home_1);
-                imgOrder.setImageResource(R.mipmap.clipboardwtick_1);
-                imgMsg.setImageResource(R.mipmap.bubble_1);
-                imgMine.setImageResource(R.mipmap.male_2);
-                llMsg.setBackgroundResource(R.mipmap.tabbarbg);
-                llHome.setBackgroundResource(0);
-                llOrder.setBackgroundResource(0);
-                llMine.setBackgroundResource(0);
-                break;
         }
     }
 }

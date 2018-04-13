@@ -16,37 +16,21 @@
 
         <EditText
             android:id="@+id/et_phone"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@drawable/bg_input_gray"
+            style="@style/MyEditTextStyle"
             android:drawableLeft="@mipmap/img_human"
-            android:drawablePadding="10dp"
             android:hint="@string/input_phone"
             android:inputType="number"
-            android:lines="1"
             android:maxLength="11"
-            android:maxLines="1"
-            android:paddingLeft="8dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/light_gray9"
-            android:textSize="14sp" />
+            android:text="13554136943" />
 
         <EditText
             android:id="@+id/et_psw"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
+            style="@style/MyEditTextStyle"
             android:layout_marginTop="18dp"
-            android:background="@drawable/bg_input_gray"
             android:drawableLeft="@mipmap/img_gray_lock"
-            android:drawablePadding="10dp"
             android:hint="@string/input_psw"
             android:inputType="text"
-            android:lines="1"
-            android:maxLines="1"
-            android:paddingLeft="8dp"
-            android:textColor="@android:color/black"
-            android:textColorHint="@color/light_gray9"
-            android:textSize="14sp" />
+            android:text="12345" />
     </LinearLayout>
 
     <RelativeLayout
@@ -79,10 +63,10 @@
         android:orientation="vertical">
 
         <TextView
-            android:enabled="false"
             android:id="@+id/tv_login"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:enabled="false"
             android:gravity="center"
             android:text="@string/login"
             android:textColor="@android:color/white"

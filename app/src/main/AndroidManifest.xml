@@ -10,18 +10,24 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--&lt;!&ndash; 登录界面 &ndash;&gt;-->
-        <!--<activity-->
-        <!--android:name=".activity.LoginActivity"-->
-        <!--android:launchMode="singleTask"/>-->
-
-        <!--&lt;!&ndash; 注册界面 &ndash;&gt;-->
-        <!--<activity android:name=".activity.RegistActivity" />-->
-
         <!-- 登陆与注册界面界面 -->
         <activity
             android:name=".activity.LoginAndRegistActivity"
             android:launchMode="singleTask">
+
+        </activity>
+
+        <!-- 注册协议界面 -->
+        <activity android:name=".activity.RegistAgreementActivty" />
+
+        <!-- 忘记密码界面 -->
+        <activity android:name=".activity.ForgetPswActivity" />
+
+        <!-- 首页界面 -->
+        <activity
+            android:name=".activity.MainActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,20 +35,18 @@
             </intent-filter>
         </activity>
 
-        <!-- 首页界面 -->
-        <activity
-            android:name=".activity.MainActivity"
-            android:launchMode="singleTask"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"></activity>
-
         <!-- 新闻资讯首页界面 -->
-        <activity android:name=".activity.NewsHeadlinesMainActivity" />
+        <activity android:name=".activity.NewsHeadlinesMainActivity" >
+
+        </activity>
 
         <!-- 新闻资讯详情界面 -->
         <activity android:name=".activity.NewsHeadlinesDetailsActivity" />
 
         <!-- 资源下载界面 -->
-        <activity android:name=".activity.SourceDownloadActivity" />
+        <activity android:name=".activity.SourceDownloadActivity"/>
+
+
     </application>
 
     <!-- 允许程序访问有关GSM网络信息权限 -->
@@ -50,4 +54,5 @@
 
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+
 </manifest>
