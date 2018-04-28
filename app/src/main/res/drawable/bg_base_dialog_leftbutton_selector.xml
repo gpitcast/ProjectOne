@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:state_pressed="true">
+        <shape>
+            <solid android:color="@color/light_gray9" />
+            <corners android:bottomLeftRadius="5dp" />
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/bg_base_dialog_leftbutton"/>
+</selector>

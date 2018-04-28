@@ -1,7 +1,12 @@
 package com.feature.projectone.adapter;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,10 +34,14 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
     private RecyclerViewOnItemClickListener listener;
     private List<HashMap<String, Object>> mDataList;
     private NewsHeadlinesGridViewAdapter newsHeadlinesGridViewAdapter;
+    private boolean isSearch;
+    private String searchKey;
 
-    public NewsHeadlinesAdapter(Context context, List<HashMap<String, Object>> mDataList) {
+    public NewsHeadlinesAdapter(Context context, List<HashMap<String, Object>> mDataList, String searchKey, boolean isSearch) {
         this.context = context;
         this.mDataList = mDataList;
+        this.isSearch = isSearch;
+        this.searchKey = searchKey;
     }
 
     public void setOnItemClickListener(RecyclerViewOnItemClickListener listener) {
@@ -53,11 +62,15 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
         switch (att) {
             case "1":
                 vh.ll_setTop.setVisibility(View.VISIBLE);//显示置顶图标
+                vh.ll_hot.setVisibility(View.GONE);
                 break;
             case "2":
                 vh.ll_hot.setVisibility(View.VISIBLE);//显示热点图标
+                vh.ll_setTop.setVisibility(View.GONE);
                 break;
             case "3":
+                vh.ll_hot.setVisibility(View.GONE);
+                vh.ll_setTop.setVisibility(View.GONE);
                 //什么都不用干
                 break;
         }
@@ -65,6 +78,7 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
         vh.tv_style.setText(map.get("cate_name") + "");//类型
         vh.tv_time.setText(map.get("atime") + "");//时间
         vh.tv_reply_count.setText(map.get("comments") + "");//评论数
+        String title = map.get("title") + "";
 
         String type = map.get("type") + "";//新闻格式(1:普通,2:视频)
         switch (type) {
@@ -74,17 +88,44 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
                 if (img_lists == null || img_lists.size() == 0) {
                     //没有图片，只显示横向标题
                     vh.ll_two.setVisibility(View.VISIBLE);
-                    vh.tv_title_two.setText(map.get("title") + "");
+                    vh.ll_one.setVisibility(View.GONE);
+                    vh.gridView.setVisibility(View.GONE);
+                    Log.i("SpannableStringBuilder", "     isSearch1     " + isSearch);
+                    if (isSearch) {
+                        //搜索适配器。改变字体颜色
+                        SpannableStringBuilder builder = setBuilder(title, searchKey);
+                        vh.tv_title_two.setText(builder);
+                    } else {
+                        vh.tv_title_two.setText(title);
+                    }
+
                 } else if (img_lists.size() == 1) {
                     //只有一张图片，显示标题在左，图片在右的布局
                     vh.ll_one.setVisibility(View.VISIBLE);
-                    vh.tv_title_one.setText(map.get("title") + "");
+                    vh.gridView.setVisibility(View.GONE);
+                    vh.ll_two.setVisibility(View.GONE);
+                    Log.i("SpannableStringBuilder", "     isSearch2     " + isSearch);
+                    if (isSearch) {
+                        //搜索适配器。改变字体颜色
+                        SpannableStringBuilder builder = setBuilder(title, searchKey);
+                        vh.tv_title_one.setText(builder);
+                    } else {
+                        vh.tv_title_one.setText(title);
+                    }
                     Picasso.with(context).load(img_lists.get(0)).placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.iv_one);
                 } else {
                     //不止一张图片,显示横向标题和gridview
                     vh.ll_two.setVisibility(View.VISIBLE);
                     vh.gridView.setVisibility(View.VISIBLE);
-                    vh.tv_title_two.setText(map.get("title") + "");
+                    vh.ll_one.setVisibility(View.GONE);
+                    Log.i("SpannableStringBuilder", "     isSearch3     " + isSearch);
+                    if (isSearch) {
+                        //搜索适配器。改变字体颜色
+                        SpannableStringBuilder builder = setBuilder(title, searchKey);
+                        vh.tv_title_two.setText(builder);
+                    } else {
+                        vh.tv_title_two.setText(title);
+                    }
                     vh.gridView.setFocusable(false);
                     newsHeadlinesGridViewAdapter = new NewsHeadlinesGridViewAdapter(context, img_lists);
                     vh.gridView.setAdapter(newsHeadlinesGridViewAdapter);
@@ -94,9 +135,32 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
                 //视频(显示title和视频布局)
                 vh.ll_two.setVisibility(View.VISIBLE);
                 vh.ll_video.setVisibility(View.VISIBLE);
-                vh.tv_title_two.setText(map.get("title") + "");
+                Log.i("SpannableStringBuilder", "     isSearch4     " + isSearch);
+                if (isSearch) {
+                    //搜索适配器。改变字体颜色
+                    SpannableStringBuilder builder = setBuilder(title, searchKey);
+                    vh.tv_title_two.setText(builder);
+                } else {
+                    vh.tv_title_two.setText(title);
+                }
                 Picasso.with(context).load(map.get("img") + "").placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.iv_vedio);
                 break;
+        }
+    }
+
+    public SpannableStringBuilder setBuilder(String str, String key) {
+        if (str != null && key != null) {
+            SpannableStringBuilder builder = new SpannableStringBuilder(str);
+            int startIndex = str.indexOf(key);//*第一个出现的索引位置
+            Log.i("SpannableStringBuilder", "     startIndex     " + startIndex);
+            while (startIndex != -1) {
+                builder.setSpan(new ForegroundColorSpan(context.getResources().getColor(R.color.orangeone1)),
+                        startIndex, startIndex + key.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+                startIndex = str.indexOf(key, startIndex + key.length());//*从这个索引往后开始第一个出现的位置
+            }
+            return builder;
+        } else {
+            return null;
         }
     }
 

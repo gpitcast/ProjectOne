@@ -19,8 +19,8 @@ import java.util.HashMap;
 
 public class HttpUtils {
     public static final int DEFAULT_MILLISECONDS = 1000;//超时时间
-        public static final String Host = "http://47.104.128.245/api/data";//主机IP
-//    public static final String Host = "http://47.104.128.245/apidemo/data";//测试主机IP
+    public static final String Host = "http://47.104.128.245/api/data";//主机IP
+    //    public static final String Host = "http://47.104.128.245/apidemo/data";//测试主机IP
     private static HashMap hashMap;
     private static String controller;
     private static String action;
@@ -40,8 +40,8 @@ public class HttpUtils {
 
         Gson gson = new Gson();
         String json = gson.toJson(msg);
-        Logger.e("请求接送：  " + "User-Token:" + ShareUtil.getString(context, "User-Token") + "         " + URL + "   " + json);
-        HttpHeaders httpHeaders = new HttpHeaders("User-Token", ShareUtil.getString(context, "User-Token"));
+        Logger.e("请求接送：  " + "User-Token:" + ShareUtil.getString(context, Constanst.UER_TOKEN) + "         " + URL + "   " + json);
+        HttpHeaders httpHeaders = new HttpHeaders(Constanst.UER_TOKEN, ShareUtil.getString(context, Constanst.UER_TOKEN));
         if (json != null) {
             OkHttpUtils.post(Host)
                     .connTimeOut(DEFAULT_MILLISECONDS)
@@ -50,7 +50,7 @@ public class HttpUtils {
                     .headers("Accept-Encoding", "identity123456789")
                     .headers("http.keepAlive", "false")
                     .headers("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8")
-                    .headers("User-Token", ShareUtil.getString(context, "User-Token"))
+                    .headers(Constanst.UER_TOKEN, ShareUtil.getString(context, Constanst.UER_TOKEN))
                     .params("vars", json)
                     .execute(stringCallback);
         }

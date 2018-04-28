@@ -1,5 +1,6 @@
 package com.feature.projectone.activity;
 
+import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -8,6 +9,8 @@ import com.feature.projectone.R;
 import com.feature.projectone.adapter.FragmentPagerAdapter;
 import com.feature.projectone.fragment.LoginFragment;
 import com.feature.projectone.fragment.RegistFragment;
+import com.feature.projectone.other.Constanst;
+import com.feature.projectone.util.ShareUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +19,7 @@ import butterknife.BindView;
 
 /**
  * Created by Administrator on 2018/4/3.
+ * 登录与注册activity
  */
 
 public class LoginAndRegistActivity extends BaseActivity {
@@ -46,6 +50,7 @@ public class LoginAndRegistActivity extends BaseActivity {
         initData();
         initPager();
     }
+
 
     private void initData() {
         titleList = new ArrayList<>();

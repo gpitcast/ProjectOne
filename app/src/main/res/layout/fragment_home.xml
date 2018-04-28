@@ -29,6 +29,7 @@
             android:textSize="14sp" />
 
         <LinearLayout
+            android:id="@+id/ll_search"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="27dp"
@@ -36,12 +37,12 @@
             android:gravity="center_vertical"
             android:padding="7dp">
 
-            <EditText
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@null"
-                android:hint="请输入你要关键字…"
+                android:hint="@string/input_key_word"
                 android:singleLine="true"
                 android:textColor="#65FFFFFF"
                 android:textSize="15sp" />

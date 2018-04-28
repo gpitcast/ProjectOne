@@ -131,5 +131,4 @@ public abstract class BaseFragment extends Fragment implements JsonInterface {
 
     protected abstract void initViewsAndEvents(View view);
 
-
 }

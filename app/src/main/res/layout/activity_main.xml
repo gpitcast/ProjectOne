@@ -4,205 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     android:orientation="vertical"
     tools:context="com.feature.projectone.activity.MainActivity">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewPager"
+    <FrameLayout
+        android:id="@+id/framelayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ll_bottom" />
+        android:layout_above="@+id/line_home_page" />
 
-    <!--<RelativeLayout-->
-    <!--android:id="@+id/llBottom"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:clipChildren="false"-->
-    <!--android:orientation="vertical"-->
-    <!--android:visibility="gone">-->
+    <View
+        android:id="@+id/line_home_page"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/ll_bottom"
+        android:background="@color/normal_gray" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/imgLine"-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="15dp"-->
-    <!--android:src="@mipmap/homeline" />-->
-
-    <!--<LinearLayout-->
-    <!--android:layout_width="match_parent"-->
-    <!--android:layout_height="55dp"-->
-    <!--android:layout_below="@id/imgLine"-->
-    <!--android:layout_marginTop="-2dp"-->
-    <!--android:orientation="horizontal">-->
-
-    <!--<LinearLayout-->
-    <!--android:id="@+id/llHome"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="bottom"-->
-    <!--android:layout_weight="1"-->
-    <!--android:background="@mipmap/tabbarbg"-->
-    <!--android:gravity="center"-->
-    <!--android:orientation="vertical"-->
-    <!--android:paddingBottom="5dp"-->
-    <!--android:paddingTop="4dp">-->
-
-    <!--<ImageView-->
-    <!--android:id="@+id/imgHome"-->
-    <!--android:layout_width="20dp"-->
-    <!--android:layout_height="20dp"-->
-    <!--android:layout_above="@id/tvHome"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:src="@mipmap/home_2" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/tvHome"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="9dp"-->
-    <!--android:text="首页"-->
-    <!--android:textColor="#B6B6CD"-->
-    <!--android:textSize="11sp" />-->
-
-    <!--</LinearLayout>-->
+    <LinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:clipChildren="false"
+        android:orientation="horizontal">
 
 
-    <!--<LinearLayout-->
-    <!--android:id="@+id/llOrder"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="bottom"-->
-    <!--android:layout_weight="1"-->
-    <!--android:gravity="center"-->
-    <!--android:orientation="vertical"-->
-    <!--android:paddingBottom="5dp"-->
-    <!--android:paddingTop="4dp">-->
+        <RelativeLayout
+            android:id="@+id/rl_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
-    <!--<ImageView-->
-    <!--android:id="@+id/imgOrder"-->
-    <!--android:layout_width="20dp"-->
-    <!--android:layout_height="20dp"-->
-    <!--android:layout_above="@id/tvOrder"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:src="@mipmap/clipboardwtick_1" />-->
+            <ImageView
+                android:id="@+id/iv_home"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/icon_home_page_red" />
 
-    <!--<TextView-->
-    <!--android:id="@+id/tvOrder"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="9dp"-->
-    <!--android:text="订单"-->
-    <!--android:textColor="#B6B6CD"-->
-    <!--android:textSize="11sp" />-->
-    <!--</LinearLayout>-->
+            <TextView
+                android:id="@+id/tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_home"
+                android:layout_centerInParent="true"
+                android:text="@string/home_page"
+                android:textColor="@color/orangeone1"
+                android:textSize="11sp" />
 
+        </RelativeLayout>
 
-    <!--<RelativeLayout-->
-    <!--android:id="@+id/llCart"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="80dp"-->
-    <!--android:layout_gravity="bottom"-->
-    <!--android:layout_weight="1"-->
-    <!--android:orientation="vertical"-->
-    <!--android:paddingBottom="5dp">-->
+        <RelativeLayout
+            android:id="@+id/rl_order"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
-    <!--<ImageView-->
-    <!--android:id="@+id/imgCart"-->
-    <!--android:layout_width="32dp"-->
-    <!--android:layout_height="32dp"-->
-    <!--android:layout_above="@id/tvCart"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:scaleType="fitCenter"-->
-    <!--android:src="@mipmap/cartbig" />-->
+            <ImageView
+                android:id="@+id/iv_order"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/icon_order_list_gray" />
 
-    <!--<TextView-->
-    <!--android:id="@+id/tvCart"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="9dp"-->
-    <!--android:text="购物车"-->
-    <!--android:textColor="#B6B6CD"-->
-    <!--android:textSize="11sp" />-->
+            <TextView
+                android:id="@+id/tv_order"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_order"
+                android:layout_centerInParent="true"
+                android:text="@string/order_list"
+                android:textColor="@color/grayone"
+                android:textSize="11sp" />
 
-    <!--</RelativeLayout>-->
+        </RelativeLayout>
 
+        <RelativeLayout
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="8dp">
 
-    <!--<LinearLayout-->
-    <!--android:id="@+id/llMsg"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="bottom"-->
-    <!--android:layout_weight="1"-->
-    <!--android:gravity="center"-->
-    <!--android:orientation="vertical"-->
-    <!--android:paddingBottom="5dp"-->
-    <!--android:paddingTop="4dp">-->
+            <LinearLayout
+                android:id="@+id/ll_shopping_car"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bg_shopping_car_button"
+                android:gravity="center"
+                android:orientation="vertical">
 
-    <!--<ImageView-->
-    <!--android:id="@+id/imgMsg"-->
-    <!--android:layout_width="20dp"-->
-    <!--android:layout_height="20dp"-->
-    <!--android:layout_above="@id/tvMsg"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:src="@mipmap/bubble_1" />-->
+                <ImageView
+                    android:id="@+id/iv_shopping_car"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/icon_shopping_car_gray" />
+            </LinearLayout>
 
-    <!--<TextView-->
-    <!--android:id="@+id/tvMsg"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="9dp"-->
-    <!--android:text="消息"-->
-    <!--android:textColor="#B6B6CD"-->
-    <!--android:textSize="11sp" />-->
+            <TextView
+                android:id="@+id/tv_shopping_car"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_shopping_car"
+                android:layout_centerInParent="true"
+                android:text="@string/shopping_car"
+                android:textColor="@color/grayone"
+                android:textSize="11sp" />
 
+        </RelativeLayout>
 
-    <!--</LinearLayout>-->
+        <RelativeLayout
+            android:id="@+id/rl_message"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
+            <ImageView
+                android:id="@+id/iv_message"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/icon_message_gray" />
 
-    <!--<LinearLayout-->
-    <!--android:id="@+id/llMine"-->
-    <!--android:layout_width="0dp"-->
-    <!--android:layout_height="match_parent"-->
-    <!--android:layout_gravity="bottom"-->
-    <!--android:layout_weight="1"-->
-    <!--android:gravity="center"-->
-    <!--android:orientation="vertical">-->
+            <TextView
+                android:id="@+id/tv_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_message"
+                android:layout_centerInParent="true"
+                android:text="@string/message"
+                android:textColor="@color/grayone"
+                android:textSize="11sp" />
 
-    <!--<ImageView-->
-    <!--android:id="@+id/imgMine"-->
-    <!--android:layout_width="20dp"-->
-    <!--android:layout_height="20dp"-->
-    <!--android:layout_above="@id/tvMine"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginTop="4dp"-->
-    <!--android:src="@mipmap/male_1" />-->
+        </RelativeLayout>
 
-    <!--<TextView-->
-    <!--android:id="@+id/tvMine"-->
-    <!--android:layout_width="wrap_content"-->
-    <!--android:layout_height="wrap_content"-->
-    <!--android:layout_alignParentBottom="true"-->
-    <!--android:layout_centerHorizontal="true"-->
-    <!--android:layout_marginBottom="5dp"-->
-    <!--android:layout_marginTop="9dp"-->
-    <!--android:text="我的"-->
-    <!--android:textColor="#B6B6CD"-->
-    <!--android:textSize="11sp" />-->
+        <RelativeLayout
+            android:id="@+id/rl_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
 
+            <ImageView
+                android:id="@+id/iv_mine"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@mipmap/icon_mine_gray" />
 
-    <!--</LinearLayout>-->
+            <TextView
+                android:id="@+id/tv_mine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/iv_mine"
+                android:layout_centerInParent="true"
+                android:text="@string/mine"
+                android:textColor="@color/grayone"
+                android:textSize="11sp" />
 
-
-    <!--</LinearLayout>-->
-    <!--</RelativeLayout>-->
-
-    <include layout="@layout/layout_main_videogroup" />
+        </RelativeLayout>
+    </LinearLayout>
 </RelativeLayout>

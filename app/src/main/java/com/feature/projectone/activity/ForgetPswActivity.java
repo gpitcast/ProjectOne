@@ -79,14 +79,17 @@ public class ForgetPswActivity extends BaseActivity {
                     HashMap<String, Object> resultMap = (HashMap<String, Object>) result;
                     String status = resultMap.get("status") + "";
                     if ("0".equals(status)) {
+                        dismissLoadingDialog();
                         //找回成功
                         ToastUtil.show(this, resultMap.get("msg") + "", 0);
                         finish();
                     } else {
+                        dismissLoadingDialog();
                         //找回失败
                         ToastUtil.show(this, resultMap.get("msg") + "", 0);
                     }
                 } else {
+                    dismissLoadingDialog();
                     ToastUtil.show(this, msg, 0);
                 }
                 break;
@@ -219,6 +222,7 @@ public class ForgetPswActivity extends BaseActivity {
                     ToastUtil.show(this, getString(R.string.phone_code_time_out), 0);
                     return;
                 }
+                showLoadingDialog();
                 reSetPsw();//请求重新设置密码接口
                 break;
             case R.id.tv_get_number:

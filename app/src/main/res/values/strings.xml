@@ -51,4 +51,18 @@
     <string name="shopping_car">购物车</string>
     <string name="message">消息</string>
     <string name="mine">我的</string>
+    <string name="input_key_word">请输入关键字</string>
+    <string name="cancel">取消</string>
+    <string name="search_history">搜索历史</string>
+    <string name="clean">清空</string>
+    <string name="need_login_first">请先登录</string>
+    <string name="old_reply">原评论</string>
+    <string name="all_reply">全部回复</string>
+    <string name="write_reply">写回复...</string>
+    <string name="reply">回复</string>
+    <string name="all_check">全选</string>
+    <string name="delete">删除</string>
+    <string name="editOrCancel">编辑/取消</string>
+    <string name="just_loading">正在下载</string>
+    <string name="load_finish">下载完成</string>
 </resources>

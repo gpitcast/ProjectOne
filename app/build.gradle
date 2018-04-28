@@ -11,6 +11,10 @@ android {
 
         //Enabling multidex support.
         multiDexEnabled true
+        //X5兼容64位手机
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
     }
     buildTypes {
         release {
@@ -36,9 +40,10 @@ dependencies {
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
     implementation project(':baseadapter-recyclerview')
-    implementation project(':rxretrofitlibrary')
     implementation project(':banner')
     compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
     implementation project(':refresh-layout')
     /*           上拉下拉加载的recyclerView            */
     implementation project(':xrecyclerview')
@@ -62,5 +67,18 @@ dependencies {
     implementation files('libs/aliyun-java-sdk-dysmsapi-1.0.0.jar')
     /*           强大的recyclerView的adapter，可以实现多种炫酷效果             */
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.26'
-
+    /*        下载框架    */
+    compile 'com.liulishuo.filedownloader:library:1.7.2'
+    /*       使用okgo和okserver下载框架(其实下载功能是okserver提供的)      */
+    compile 'com.lzy.net:okgo:3.0.4'
+    //必须使用
+    compile 'com.lzy.net:okserver:2.0.5'
+    /*           监听键盘显示隐藏的工具框架               */
+    compile 'com.azimolabs.keyboardwatcher:keyboardwatcher:0.1.3'
+    /*         解压zip文件的jar包       */
+    implementation files('libs/zip4j_1.3.2.jar')
+    /*         好看的加载中diaolog        */
+    compile 'com.github.ForgetAll:LoadingDialog:v1.0.4'
+    /*          腾讯tbs，未来预览pdf，word文件          */
+    implementation files('libs/tbs_sdk_thirdapp_v3.6.0.1183_43604_sharewithdownload_withoutGame_obfs_20180211_105126.jar')
 }

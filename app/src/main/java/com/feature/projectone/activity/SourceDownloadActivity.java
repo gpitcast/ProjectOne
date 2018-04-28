@@ -1,15 +1,14 @@
 package com.feature.projectone.activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -28,8 +27,8 @@ import com.feature.projectone.other.Constanst;
 import com.feature.projectone.util.HttpUtils;
 import com.feature.projectone.util.ToastUtil;
 import com.feature.projectone.util.TvUtil;
-import com.feature.projectone.util.ViewMeasureUtil;
 import com.feature.projectone.view.MyGridView;
+import com.xiasuhuei321.loadingdialog.view.LoadingDialog;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.CommonNavigator;
@@ -102,7 +101,6 @@ public class SourceDownloadActivity extends BaseActivity {
     private ReadingBookFragment readingBookFragment;
     private WordDictationFragment wordDictationFragment;
 
-
     @Override
     protected void Response(String code, String msg, String url, Object result) {
         switch (url) {
@@ -131,11 +129,6 @@ public class SourceDownloadActivity extends BaseActivity {
     public void setContentLayout() {
         setContentView(R.layout.activity_resource_download);
     }
-
-    private int rlTitleHeight;
-    private int rlMagicIndicatorHeght;
-    private int viewLineHeght;
-
 
     @Override
     public void beforeInitView() {
@@ -266,7 +259,7 @@ public class SourceDownloadActivity extends BaseActivity {
     public void afterInitView() {
     }
 
-    @OnClick({R.id.tvBack, R.id.ll_shaixuan})
+    @OnClick({R.id.tvBack, R.id.ll_shaixuan, R.id.tvTitleRight})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.tvBack:
@@ -274,6 +267,9 @@ public class SourceDownloadActivity extends BaseActivity {
                 break;
             case R.id.ll_shaixuan:
                 initShaiXuanPopWindow();
+                break;
+            case R.id.tvTitleRight:
+                startActivity(new Intent(this, SourceDownloadListActivity.class));
                 break;
         }
     }
@@ -586,4 +582,6 @@ public class SourceDownloadActivity extends BaseActivity {
             popupWindow.dismiss();//关闭筛选popwindow
         }
     }
+
+
 }

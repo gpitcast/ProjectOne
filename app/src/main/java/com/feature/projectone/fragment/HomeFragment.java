@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import com.bumptech.glide.Glide;
 import com.feature.projectone.R;
 import com.feature.projectone.activity.NewsHeadlinesMainActivity;
+import com.feature.projectone.activity.NewsSearchActivity;
 import com.feature.projectone.activity.SourceDownloadActivity;
 import com.feature.projectone.util.CommonUtil;
 import com.feature.projectone.util.DividerUtil;
@@ -25,13 +26,14 @@ import com.zhy.adapter.recyclerview.base.ViewHolder;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2018/3/16.
+ * 主界面 首页fragment
  */
 
 public class HomeFragment extends BaseFragment {
-
 
     @BindView(R.id.recyclerType)
     RecyclerView recyclerType;
@@ -41,7 +43,6 @@ public class HomeFragment extends BaseFragment {
     RecyclerView recyclerExcellentCourse;
     @BindView(R.id.banner)
     Banner banner;
-
 
     private CommonAdapter<String> typeAdapter;
     private ArrayList<String> typeList = new ArrayList<>();
@@ -154,5 +155,14 @@ public class HomeFragment extends BaseFragment {
                 return false;
             }
         });
+    }
+
+    @OnClick({R.id.ll_search})
+    public void OnClick(View view) {
+        switch (view.getId()) {
+            case R.id.ll_search:
+                startActivity(new Intent(getActivity(), NewsSearchActivity.class));
+                break;
+        }
     }
 }

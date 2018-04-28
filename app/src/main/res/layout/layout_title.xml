@@ -13,7 +13,7 @@
         android:layout_centerVertical="true"
         android:layout_marginLeft="7.5dp"
         android:layout_marginTop="20.5dp"
-        android:drawableLeft="@mipmap/back"
+        android:drawableLeft="@mipmap/back_white"
         android:drawablePadding="7.5dp"
         android:gravity="center"
         android:text="返回"

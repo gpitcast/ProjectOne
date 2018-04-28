@@ -71,18 +71,18 @@
                 android:id="@+id/iv_download"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:src="@mipmap/img_downing_btn" />
+                android:src="@mipmap/img_down_error_btn" />
 
             <TextView
+                android:visibility="gone"
                 android:id="@+id/tv_loading_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="99%"
+                android:text="？%"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="normal"
-                android:visibility="gone" />
+                android:textStyle="normal" />
         </RelativeLayout>
     </LinearLayout>
 

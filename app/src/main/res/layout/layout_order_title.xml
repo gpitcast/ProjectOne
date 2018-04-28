@@ -14,7 +14,7 @@
         android:layout_centerVertical="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@mipmap/back"/>
+        android:src="@mipmap/back_white"/>
 
     <TextView
         android:id="@+id/tvTitle"

@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import com.feature.projectone.R;
@@ -12,6 +13,7 @@ import com.feature.projectone.fragment.RedianTuijianFragment;
 import com.feature.projectone.fragment.StudyConsultFragment;
 import com.feature.projectone.fragment.TeachConsultFragment;
 import com.feature.projectone.fragment.TeachHeadlinesFragment;
+import com.feature.projectone.inter.MyPassViewListener;
 import com.feature.projectone.other.Constanst;
 import com.feature.projectone.util.HttpUtils;
 import com.feature.projectone.util.ToastUtil;
@@ -34,7 +36,7 @@ import butterknife.OnClick;
  * 资讯头条首页界面
  */
 
-public class NewsHeadlinesMainActivity extends BaseActivity {
+public class NewsHeadlinesMainActivity extends BaseActivity implements MyPassViewListener {
     @BindView(R.id.magicIndicator)
     MagicIndicator magicIndicator;
     @BindView(R.id.viewPager)
@@ -69,6 +71,8 @@ public class NewsHeadlinesMainActivity extends BaseActivity {
                 break;
         }
     }
+
+    private String difType = "normal";//区分搜索列表还是普通列表
 
     private void initData(ArrayList<HashMap<String, Object>> navList) {
         for (int i = 0; i < navList.size(); i++) {
@@ -208,5 +212,10 @@ public class NewsHeadlinesMainActivity extends BaseActivity {
                 finish();
                 break;
         }
+    }
+
+    @Override
+    public EditText getEtSearch() {
+        return null;
     }
 }

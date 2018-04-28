@@ -1,19 +1,24 @@
 package com.feature.projectone.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 
 import com.feature.projectone.R;
 import com.feature.projectone.activity.NewsHeadlinesDetailsActivity;
 import com.feature.projectone.adapter.NewsHeadlinesAdapter;
+import com.feature.projectone.inter.MyPassViewListener;
 import com.feature.projectone.inter.RecyclerViewOnItemClickListener;
 import com.feature.projectone.other.Constanst;
 import com.feature.projectone.util.HttpUtils;
+import com.feature.projectone.util.ShareUtil;
 import com.feature.projectone.util.ToastUtil;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
@@ -40,8 +45,9 @@ public class TeachHeadlinesFragment extends BaseFragment {
     private boolean isRefresh;
 
     private NewsHeadlinesAdapter newsHeadlinesAdapter;
-    private HashMap<String, Object> typeMap;
+    private HashMap<String, Object> typeMap;//用来区分板块的map
     private static final String newsIndexUrl = HttpUtils.Host + "/news/index";//新闻列表接口
+
     private List<HashMap<String, Object>> mDataList = new ArrayList<>();//存储列表数据集合
 
     public TeachHeadlinesFragment() {
@@ -50,6 +56,7 @@ public class TeachHeadlinesFragment extends BaseFragment {
     @SuppressLint("ValidFragment")
     public TeachHeadlinesFragment(HashMap<String, Object> map) {
         this.typeMap = map;
+
     }
 
     @Override
@@ -125,7 +132,7 @@ public class TeachHeadlinesFragment extends BaseFragment {
     protected void initViewsAndEvents(View view) {
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         xRecyclerView.setLayoutManager(manager);
-        newsHeadlinesAdapter = new NewsHeadlinesAdapter(getActivity(), mDataList);
+        newsHeadlinesAdapter = new NewsHeadlinesAdapter(getActivity(), mDataList,"",false);
         xRecyclerView.setAdapter(newsHeadlinesAdapter);
         View headView1 = LayoutInflater.from(getActivity()).inflate(R.layout.layout_empty_head, null);
         View headView2 = LayoutInflater.from(getActivity()).inflate(R.layout.layout_empty_head, null);
@@ -150,6 +157,7 @@ public class TeachHeadlinesFragment extends BaseFragment {
                 isRefresh = true;
                 pageno = 1;
                 PostList();
+
             }
 
             @Override
@@ -166,8 +174,10 @@ public class TeachHeadlinesFragment extends BaseFragment {
         footerView.setLayoutParams(layoutParams);
         footerView.setBackgroundColor(getResources().getColor(R.color.white));
         xRecyclerView.setFootView(footerView);
+        xRecyclerView.loadMoreComplete();
     }
 
+    //普通列表请求数据
     private void PostList() {
         HashMap<Object, Object> map = new HashMap<>();
         map.put("controller", "news");

@@ -61,9 +61,9 @@ public class RegistFragment extends BaseFragment {
     @BindView(R.id.tv_regist)
     TextView tv_regist;
 
-    private static final String registUrl = "http://47.104.128.245/api/data/user/register";//注册接口
-    private static final String loginUrl = "http://47.104.128.245/api/data/user/login";//登录接口
-    private static final String isRegistUrl = "http://47.104.128.245/api/data/user/is_register";//用户是否注册接口
+    private static final String registUrl = HttpUtils.Host + "/user/register";//注册接口
+    private static final String loginUrl = HttpUtils.Host + "/user/login";//登录接口
+    private static final String isRegistUrl = HttpUtils.Host + "/user/is_register";//用户是否注册接口
     private String phoneText;
     private String pswText;
     private String coedText;
@@ -102,10 +102,12 @@ public class RegistFragment extends BaseFragment {
                         // 未被注册，执行注册接口
                         regist();
                     } else {
+                        dismissLoadingDialog();
                         //已经被注册，弹出吐司提醒用户
                         ToastUtil.show(getActivity(), resultMap.get("msg") + "", 0);
                     }
                 } else {
+                    dismissLoadingDialog();
                     ToastUtil.show(getActivity(), msg, 0);
                 }
                 break;
@@ -119,10 +121,12 @@ public class RegistFragment extends BaseFragment {
                         //注册成功自动登录
                         autoLogin();
                     } else {
+                        dismissLoadingDialog();
                         //注册失败
                         ToastUtil.show(getActivity(), resultMap.get("msg") + "", 0);
                     }
                 } else {
+                    dismissLoadingDialog();
                     ToastUtil.show(getActivity(), msg, 0);
                 }
                 break;
@@ -139,7 +143,9 @@ public class RegistFragment extends BaseFragment {
                         String message = (String) resultMap.get("msg");
                         ToastUtil.show(getActivity(), message, 0);
                     }
+                    dismissLoadingDialog();
                 } else {
+                    dismissLoadingDialog();
                     ToastUtil.show(getActivity(), msg, 0);
                 }
                 break;
@@ -297,6 +303,7 @@ public class RegistFragment extends BaseFragment {
                     ToastUtil.show(getActivity(), getString(R.string.phone_code_time_out), 0);
                     return;
                 }
+                showLoadingDialog();
                 ///请求用户是否注册接口
                 isRegist();
                 break;

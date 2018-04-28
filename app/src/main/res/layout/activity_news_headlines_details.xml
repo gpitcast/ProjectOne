@@ -36,7 +36,9 @@
             android:id="@+id/tv_write_comments"
             android:layout_width="0dp"
             android:layout_height="30dp"
-            android:layout_margin="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:background="@drawable/comments_bg"
             android:drawableLeft="@mipmap/img_pen"
@@ -46,59 +48,94 @@
             android:textColor="@color/normal_gray2"
             android:textSize="13sp" />
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="18dp"
-            android:layout_weight="1">
+            android:layout_weight="1"
+            android:orientation="horizontal">
 
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/img_talk" />
+                <ImageView
+                    android:id="@+id/iv_comments"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/img_talk" />
 
-            <TextView
-                android:id="@+id/tv_comments_count"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"
-                android:layout_marginTop="9dp"
-                android:background="@drawable/comments_count_bg"
-                android:gravity="center"
-                android:inputType="text"
-                android:lines="1"
-                android:maxLines="1"
-                android:text="？？？"
-                android:textColor="@android:color/white"
-                android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tv_comments_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/comments_count_bg"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="？？？"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+            </RelativeLayout>
 
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/img_conllection" />
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/iv_share"
+                android:layout_toRightOf="@+id/tv_comments_count"
+                android:layout_weight="1">
 
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:src="@mipmap/img_share" />
+                <ImageView
+                    android:id="@+id/iv_dianzan"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/img_dianzan_gray" />
 
-        </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_dianzan_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="9dp"
+                    android:background="@drawable/comments_count_bg"
+                    android:gravity="center"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:maxLines="1"
+                    android:text="？？？"
+                    android:textColor="@android:color/white"
+                    android:textSize="10sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/iv_share"
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/img_share" />
+            </RelativeLayout>
+        </LinearLayout>
     </LinearLayout>
 
     <LinearLayout
-        android:visibility="gone"
         android:id="@+id/ll_comments_two"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/light_gray2"
         android:gravity="center_vertical"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <ImageView
             android:id="@+id/iv_close_comments"

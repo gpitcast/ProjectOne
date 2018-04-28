@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.feature.projectone.R;
 
@@ -23,7 +24,7 @@ public class LoadingDialog extends Dialog {
     private ImageView imgLoading;
 
     public LoadingDialog(@NonNull Context context) {
-        this(context, R.style.CustomDialog);
+        this(context, R.style.mDialog);
         this.context = context;
     }
 
@@ -37,7 +38,7 @@ public class LoadingDialog extends Dialog {
         super.onCreate(savedInstanceState);
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_loading, null);
         imgLoading = view.findViewById(R.id.imgLoading);
-        Animation animation = new RotateAnimation(0, 359,Animation.RELATIVE_TO_SELF,0.5f,Animation.RELATIVE_TO_SELF,0.5f);
+        Animation animation = new RotateAnimation(0, 359, Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF, 0.5f);
         animation.setDuration(3000);
         animation.setRepeatCount(ValueAnimator.INFINITE);
 //        animation.setRepeatCount(8);//动画的重复次数

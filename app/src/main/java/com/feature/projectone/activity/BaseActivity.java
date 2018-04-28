@@ -7,16 +7,15 @@ import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 
 import com.feature.projectone.R;
 import com.feature.projectone.dialog.LoadingDialog;
 import com.feature.projectone.inter.JsonInterface;
-import com.feature.projectone.util.CommonUtil;
 import com.feature.projectone.util.JsonUtils;
-
-import org.greenrobot.eventbus.EventBus;
+import com.feature.projectone.util.SoftUtil;
 
 import butterknife.ButterKnife;
 
@@ -138,13 +137,5 @@ public abstract class BaseActivity extends AppCompatActivity implements JsonInte
      * 实例化控件之后的操作
      */
     public abstract void afterInitView();
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);//activity销毁EventBus
-    }
-
 
 }

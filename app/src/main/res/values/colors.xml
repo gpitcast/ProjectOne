@@ -34,5 +34,13 @@
     <color name="light_gray10">#6e6e6e</color>
     <color name="light_gray11">#c3c3c6</color>
     <color name="light_red">#fad6d7</color>
-
+    <color name="light_blue">#e9eef1</color>
+    <color name="dark_gray">#868893</color>
+    <color name="normal_black4">#868e98</color>
+    <color name="light_gray12">#f4f3f4</color>
+    <color name="dark_black2">#222222</color>
+    <color name="light_gray13">#e6e6e6</color>
+    <color name="light_gray14">#ecedf1</color>
+    <color name="light_red2">#faa5af</color>
+    <color name="light_gray15">#e7e7e7</color>
 </resources>

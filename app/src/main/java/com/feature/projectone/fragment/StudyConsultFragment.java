@@ -123,7 +123,7 @@ public class StudyConsultFragment extends BaseFragment {
     protected void initViewsAndEvents(View view) {
         LinearLayoutManager manager = new LinearLayoutManager(getActivity());
         xRecyclerView.setLayoutManager(manager);
-        newsHeadlinesAdapter = new NewsHeadlinesAdapter(getActivity(), mDataList);
+        newsHeadlinesAdapter = new NewsHeadlinesAdapter(getActivity(), mDataList, "", false);
         xRecyclerView.setAdapter(newsHeadlinesAdapter);
         View headView1 = LayoutInflater.from(getActivity()).inflate(R.layout.layout_empty_head, null);
         View headView2 = LayoutInflater.from(getActivity()).inflate(R.layout.layout_empty_head, null);
@@ -164,6 +164,7 @@ public class StudyConsultFragment extends BaseFragment {
         footerView.setLayoutParams(layoutParams);
         footerView.setBackgroundColor(getResources().getColor(R.color.white));
         xRecyclerView.setFootView(footerView);
+        xRecyclerView.loadMoreComplete();
     }
 
     private void PostList() {

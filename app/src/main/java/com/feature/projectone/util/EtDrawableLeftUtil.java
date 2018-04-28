@@ -8,6 +8,7 @@ import org.w3c.dom.Text;
 
 /**
  * Created by Administrator on 2018/3/30.
+ * EditText
  */
 
 public class EtDrawableLeftUtil {
@@ -20,7 +21,20 @@ public class EtDrawableLeftUtil {
     public static void setEtImgSize(EditText et) {
         Drawable leftDrawable = et.getCompoundDrawables()[0];
         if (leftDrawable != null) {
-            leftDrawable.setBounds(0, 0, 45, 42);
+            leftDrawable.setBounds(0, 0, 38, 38);
+            et.setCompoundDrawables(leftDrawable, et.getCompoundDrawables()[1], et.getCompoundDrawables()[2], et.getCompoundDrawables()[3]);
+        }
+    }
+
+    /**
+     * 设置搜索editText左边图片的宽高
+     *
+     * @param et 要设置的editText
+     */
+    public static void setSearchEtImgSize(EditText et) {
+        Drawable leftDrawable = et.getCompoundDrawables()[0];
+        if (leftDrawable != null) {
+            leftDrawable.setBounds(0, 0, 30, 30);
             et.setCompoundDrawables(leftDrawable, et.getCompoundDrawables()[1], et.getCompoundDrawables()[2], et.getCompoundDrawables()[3]);
         }
     }

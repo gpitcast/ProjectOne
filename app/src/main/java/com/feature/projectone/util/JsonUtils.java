@@ -56,15 +56,16 @@ public class JsonUtils {
             HttpUtils.postRequest(context, msg, new StringCallback() {
                 @Override
                 public void onSuccess(String json, Call call, Response response) {
-                    if (response.headers().get("User-Token") != null && response.headers().get("User-Token").length() > 0) {
+                    if (response.headers().get(Constanst.UER_TOKEN) != null && response.headers().get(Constanst.UER_TOKEN).length() > 0) {
                         //存储登录返回的token
-                        String user_token = response.headers().get("User-Token");
-                        ShareUtil.putString(context, "User-Token", user_token);
+                        String user_token = response.headers().get(Constanst.UER_TOKEN);
+                        ShareUtil.putString(context, Constanst.UER_TOKEN, user_token);
                     }
                     Logger.e("地址：" + URL + json);
                     readJson(json);
                     view.setEnabled(true);
                 }
+
                 @Override
                 public void onError(Call call, Response response, Exception e) {
                     super.onError(call, response, e);
@@ -97,10 +98,10 @@ public class JsonUtils {
             HttpUtils.postRequest(context, msg, new StringCallback() {
                 @Override
                 public void onSuccess(String json, Call call, Response response) {
-                    if (response.headers().get("User-Token") != null && response.headers().get("User-Token").length() > 0) {
+                    if (response.headers().get(Constanst.UER_TOKEN) != null && response.headers().get(Constanst.UER_TOKEN).length() > 0) {
                         //存储登录返回的token
-                        String user_token = response.headers().get("User-Token");
-                        ShareUtil.putString(context, "User-Token", user_token);
+                        String user_token = response.headers().get(Constanst.UER_TOKEN);
+                        ShareUtil.putString(context, Constanst.UER_TOKEN, user_token);
                     }
                     Logger.e("地址：" + URL + json);
                     readJson(json);
@@ -126,7 +127,7 @@ public class JsonUtils {
             });
             if (null != jsonMap) {
                 if (null != jsonMap.get("code")) {
-                    String code = (Integer) jsonMap.get("code") + "";
+                    String code = jsonMap.get("code") + "";
                     if (code != null && code.equals(Constanst.success_net_code)) {
                         String msg = (String) jsonMap.get("msg");
                         Object result = jsonMap.get("result");
@@ -136,7 +137,12 @@ public class JsonUtils {
                             jsonInterface.JsonResponse(code, msg, URL, result);
                         }
                     } else {
-                        jsonInterface.JsonResponse(code, "网络异常", URL, new HashMap<>());
+                        String msg = jsonMap.get("msg") + "";
+                        if (msg != null && msg.length() > 0) {
+                            jsonInterface.JsonResponse(code, msg, URL, new HashMap<>());
+                        } else {
+                            jsonInterface.JsonResponse(code, "网络异常", URL, new HashMap<>());
+                        }
                     }
                 }
             }

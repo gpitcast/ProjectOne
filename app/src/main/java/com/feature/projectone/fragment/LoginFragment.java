@@ -57,11 +57,13 @@ public class LoginFragment extends BaseFragment {
                     if ("0".equals(status)) {
                         //该账号处于登录状态，弹出吐司提醒用户
                         ToastUtil.show(getActivity(), resultMap.get("msg") + "", 0);
+                        dismissLoadingDialog();
                     } else {
                         //该账号处于未登录状态，执行登录操作
                         Login();
                     }
                 } else {
+                    dismissLoadingDialog();
                     ToastUtil.show(getActivity(), msg, 0);
                 }
                 break;
@@ -72,14 +74,21 @@ public class LoginFragment extends BaseFragment {
                     String status = (Integer) resultMap.get("status") + "";
                     if ("0".equals(status)) {
                         //登录成功
+                        //存储登录的用户名和用户密码
+                        ShareUtil.putString(getActivity(), "username", et_phone.getText().toString().trim());
+                        ShareUtil.putString(getActivity(), "psw", et_psw.getText().toString().trim());
+                        dismissLoadingDialog();
+                        //跳转界面
                         startActivity(new Intent(getActivity(), MainActivity.class));
                         getActivity().finish();
                     } else {
                         //登录失败
                         String message = (String) resultMap.get("msg");
                         ToastUtil.show(getActivity(), message, 0);
+                        dismissLoadingDialog();
                     }
                 } else {
+                    dismissLoadingDialog();
                     ToastUtil.show(getActivity(), msg, 0);
                 }
                 break;
@@ -191,6 +200,7 @@ public class LoginFragment extends BaseFragment {
                     ToastUtil.show(getActivity(), getString(R.string.write_right_phone_psw), 0);
                     return;
                 }
+                showLoadingDialog();
                 //请求用户是否登陆接口
                 isLogin();
                 break;
