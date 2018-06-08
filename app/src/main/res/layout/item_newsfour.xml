@@ -24,7 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="193dp"
             android:scaleType="centerCrop"
-            android:src="@mipmap/a" />
+            android:src="@mipmap/img_loading_default" />
 
         <ImageView
             android:id="@+id/imgPlay"

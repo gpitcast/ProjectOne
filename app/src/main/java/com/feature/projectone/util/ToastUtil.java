@@ -51,4 +51,16 @@ public class ToastUtil {
             }
         }
     }
+
+    public static void show(final Context context, final String text, final int type) {
+
+        if (toast == null) {
+            toast = Toast.makeText(context, text, type);
+            toast.show();
+        } else {
+            toast.setText(text);
+            toast.setDuration(type);
+            toast.show();
+        }
+    }
 }

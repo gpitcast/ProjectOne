@@ -26,6 +26,7 @@ import com.feature.projectone.util.ShareUtil;
 import com.feature.projectone.util.SoftUtil;
 import com.feature.projectone.util.ToastUtil;
 import com.feature.projectone.view.CircleImageView;
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.squareup.picasso.Picasso;
 
@@ -199,6 +200,8 @@ public class ReplyDetailsActivity extends BaseActivity implements KeyboardWatche
         xRecyclerView.addHeaderView(headView2);
         xRecyclerView.setPullRefreshEnabled(false);
         xRecyclerView.setLoadingMoreEnabled(true);
+        xRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
+        //刷新和加载监听
         xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {
@@ -242,7 +245,7 @@ public class ReplyDetailsActivity extends BaseActivity implements KeyboardWatche
         tv_name = ((TextView) headView1.findViewById(R.id.tv_name));//名称
         tv_content = ((TextView) headView1.findViewById(R.id.tv_content));//内容
         tv_time = ((TextView) headView1.findViewById(R.id.tv_time));//时间
-        Picasso.with(this).load(bundle.getString("img_url")).placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(circleImageView);
+        Picasso.with(this).load(bundle.getString("img_url")).placeholder(R.mipmap.img_loading).error(R.mipmap.img_load_error).into(circleImageView);
         tv_name.setText(bundle.getString("username"));
         tv_content.setText(bundle.getString("content"));
         tv_time.setText(bundle.getString("atime"));

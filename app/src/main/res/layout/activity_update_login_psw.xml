@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_white_head" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/normal_gray" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical">
+
+
+                <EditText
+                    android:id="@+id/et_phone"
+                    style="@style/MyEditTextStyle"
+                    android:drawableLeft="@mipmap/img_human"
+                    android:hint="@string/input_regist_phone"
+                    android:inputType="number"
+                    android:maxLength="11" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="18dp"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/et_code"
+                        style="@style/MyEditTextStyle"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:drawableLeft="@mipmap/img_number"
+                        android:hint="@string/input_code"
+                        android:inputType="number"
+                        android:maxLength="6" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_get_number"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_get_number_orange"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tv_get_number"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/get_phone_number"
+                            android:textColor="@color/normal_orange"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_new_psw"
+                    style="@style/MyEditTextStyle"
+                    android:layout_marginTop="18dp"
+                    android:drawableLeft="@mipmap/img_lock"
+                    android:hint="@string/input_normal_psw"
+                    android:maxLength="16" />
+
+                <EditText
+                    android:id="@+id/et_confirm_new_psw"
+                    style="@style/MyEditTextStyle"
+                    android:layout_marginTop="18dp"
+                    android:drawableLeft="@mipmap/img_lock"
+                    android:hint="确认新密码"
+                    android:maxLength="16" />
+
+                <LinearLayout
+                    android:id="@+id/ll_commit"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="23dp"
+                    android:background="@drawable/bg_login_light_btn"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_commit"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:text="@string/submit"
+                        android:textColor="@android:color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

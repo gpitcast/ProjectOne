@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <LinearLayout
@@ -60,10 +61,7 @@
             android:textColor="@color/orangeone" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/light_gray13" />
+    <include layout="@layout/layout_small_line" />
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/xRecyclerView"

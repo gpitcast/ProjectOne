@@ -93,11 +93,13 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <View
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/grayone" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <include layout="@layout/layout_small_line" />
+            </FrameLayout>
 
         </LinearLayout>
     </LinearLayout>

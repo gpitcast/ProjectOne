@@ -10,6 +10,10 @@
     <color name="grayone">#B6B6C0</color>
     <color name="yellow">#fff000</color>
     <color name="white">#ffffff</color>
+    <!--  0.25透明的白色  -->
+    <color name="alpha_white">#40ffffff</color>
+    <!-- 0.80透明的白色  -->
+    <color name="eighty_alpha_white">#ccffffff</color>
     <color name="dark_red">#b2001d</color>
     <color name="light_gray">#f5f5f5</color>
     <color name="normal_gray">#dcdcdc</color>
@@ -43,4 +47,17 @@
     <color name="light_gray14">#ecedf1</color>
     <color name="light_red2">#faa5af</color>
     <color name="light_gray15">#e7e7e7</color>
+    <color name="normal_yellow">#ffea39</color>
+    <color name="light_blue2">#d3fcff</color>
+    <color name="normal_orange2">#ffad4d</color>
+    <color name="normal_yellow1">#ffd97f</color>
+    <color name="light_gray16">#8f8f99</color>
+    <color name="transparent">#00000000</color>
+    <color name="translucent_white">#61FFFFFF</color>
+    <color name="light_blue1">#49afff</color>
+    <color name="light_gray17">#bebec9</color>
+    <color name="normal_blue1">#3b9de9</color>
+    <color name="light_gray18">#a2a2ab</color>
+    <color name="normal_yellow2">#ffc949</color>
+    <color name="dark_gray1">#a1a1a1</color>
 </resources>

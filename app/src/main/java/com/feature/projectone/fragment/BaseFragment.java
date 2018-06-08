@@ -44,6 +44,7 @@ public abstract class BaseFragment extends Fragment implements JsonInterface {
         }
     }
 
+
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);

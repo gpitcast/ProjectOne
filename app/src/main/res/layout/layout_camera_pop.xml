@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_take_picture"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="拍摄一张"
+        android:textColor="@color/orangeone"
+        android:textSize="15sp" />
+
+    <include layout="@layout/layout_small_line" />
+
+    <TextView
+        android:id="@+id/tv_from_camera"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="从相册选取"
+        android:textColor="@color/orangeone"
+        android:textSize="15sp" />
+
+    <include layout="@layout/layout_big_line" />
+
+    <RelativeLayout
+        android:id="@+id/rl_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="取消"
+            android:textColor="@color/orangeone"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="1dp"
+            android:layout_alignEnd="@+id/tv_cancel"
+            android:layout_alignStart="@+id/tv_cancel"
+            android:layout_below="@+id/tv_cancel"
+            android:background="@color/orangeone" />
+    </RelativeLayout>
+</LinearLayout>

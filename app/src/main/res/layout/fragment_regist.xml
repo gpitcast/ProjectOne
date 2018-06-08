@@ -15,13 +15,76 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
+            android:layout_height="30dp"
             android:orientation="horizontal">
 
-            <include layout="@layout/layout_teacher" />
+            <RelativeLayout
+                android:id="@+id/rl_teacher"
+                android:layout_width="170dp"
+                android:layout_height="30dp"
+                android:layout_centerInParent="true">
 
-            <include layout="@layout/layout_student" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_blue_choose">
+
+                    <FrameLayout
+                        android:id="@+id/framelayout"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_blue_choose_student"
+                        android:gravity="center"
+                        android:orientation="horizontal" />
+
+                    <LinearLayout
+                        android:onClick="onClick1"
+                        android:id="@+id/ll_student"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_student"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@mipmap/img_white_student" />
+
+                        <TextView
+                            android:id="@+id/tv_student"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/student"
+                            android:textColor="@color/light_orange"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:onClick="onClick2"
+                        android:id="@+id/ll_teacher"
+                        android:layout_width="85dp"
+                        android:layout_height="match_parent"
+                        android:layout_toRightOf="@+id/ll_student"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/iv_teacher"
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@mipmap/img_blue_teacher" />
+
+                        <TextView
+                            android:id="@+id/tv_teacher"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/teacher"
+                            android:textColor="@color/light_orange"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
 
         </RelativeLayout>
 

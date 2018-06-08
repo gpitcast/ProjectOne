@@ -12,6 +12,9 @@ import android.support.v4.app.Fragment;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Administrator on 2018/4/17.
  * 6.0敏感权限请求工具类
@@ -28,6 +31,30 @@ public class PermissionUtil {
         } else {
             //已经拥有权限
             return true;
+        }
+    }
+
+    public static List<String> permissionList = new ArrayList<>();
+
+    //一次请求多个权限
+    public static boolean checkPermission(Context context, String[] permissions, int code) {
+        permissionList.clear();
+        for (int i = 0; i < permissions.length; i++) {
+            if (ContextCompat.checkSelfPermission(context, permissions[i]) != PackageManager.PERMISSION_GRANTED) {
+                permissionList.add(permissions[i]);
+            }
+        }
+
+        if (permissionList.isEmpty()) {
+            return true;//遍历完所有的权限，list为空代表所有的权限都是拥有的
+        } else {
+            String[] deniedPermissions = new String[permissionList.size()];
+            //没有权限，调用系统请求权限
+            for (int i = 0; i < permissionList.size(); i++) {
+                deniedPermissions[i] = permissionList.get(i);
+            }
+            ActivityCompat.requestPermissions(((Activity) context), deniedPermissions, code);
+            return false;
         }
     }
 

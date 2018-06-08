@@ -58,22 +58,20 @@
                     android:textSize="12sp" />
             </RelativeLayout>
 
-            <View
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="16dp"
-                android:background="@color/normal_gray" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <include layout="@layout/layout_small_line" />
+            </FrameLayout>
 
             <WebView
                 android:id="@+id/webView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="12dp"
-                android:alpha="0.6"
-                android:background="@color/normal_gray" />
+            <include layout="@layout/layout_big_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -97,10 +95,8 @@
                     android:textStyle="bold" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:background="@color/normal_gray" />
+            <include layout="@layout/layout_small_line" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

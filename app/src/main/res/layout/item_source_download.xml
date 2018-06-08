@@ -74,7 +74,6 @@
                 android:src="@mipmap/img_down_error_btn" />
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/tv_loading_percent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -82,12 +81,10 @@
                 android:text="？%"
                 android:textColor="@android:color/white"
                 android:textSize="16sp"
-                android:textStyle="normal" />
+                android:textStyle="normal"
+                android:visibility="gone" />
         </RelativeLayout>
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="8dp"
-        android:background="@color/light_gray5" />
+    <include layout="@layout/layout_big_line" />
 </LinearLayout>

@@ -53,7 +53,7 @@ public class NewsHeadlinesGridViewAdapter extends BaseAdapter {
             vh = ((MyViewHolder) convertView.getTag());
         }
         String imgUrl = img_lists.get(position);
-        Picasso.with(context).load(imgUrl).placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.iv);
+        Picasso.with(context).load(imgUrl).placeholder(R.mipmap.img_loading).error(R.mipmap.img_load_error).into(vh.iv);
         return convertView;
     }
 

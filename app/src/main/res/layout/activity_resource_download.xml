@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_title" />
+    <include layout="@layout/layout_blue_head" />
 
     <RelativeLayout
         android:id="@+id/rl_magicIndicator"
@@ -54,11 +55,7 @@
         </RelativeLayout>
     </RelativeLayout>
 
-    <View
-        android:id="@+id/view_line"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/normal_gray" />
+    <include layout="@layout/layout_small_line" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"

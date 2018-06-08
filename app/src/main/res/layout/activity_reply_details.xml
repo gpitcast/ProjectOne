@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <RelativeLayout
@@ -42,10 +43,7 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/light_gray13" />
+    <include layout="@layout/layout_small_line"/>
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/xRecyclerView"
@@ -53,10 +51,7 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/normal_gray" />
+    <include layout="@layout/layout_small_line"/>
 
     <LinearLayout
         android:id="@+id/ll_comments_two"

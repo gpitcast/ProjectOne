@@ -49,7 +49,7 @@ public class NewsHeadLinesDetailsAdapter extends RecyclerView.Adapter {
         HashMap<String, Object> userinfo = (HashMap<String, Object>) map.get("userinfo");
         if (userinfo != null && userinfo.size() != 0) {
             Picasso.with(context).load(userinfo.get("img_url") + "")
-                    .placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.circleImageView);//头像
+                    .placeholder(R.mipmap.img_loading).error(R.mipmap.img_load_error).into(vh.circleImageView);//头像
             vh.tv_name.setText(userinfo.get("username") + "");//用户名称
         }
         vh.tv_content.setText(map.get("content") + "");//评论内容

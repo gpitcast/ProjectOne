@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.view.View;
 
 import com.feature.projectone.R;
 import com.feature.projectone.adapter.FragmentPagerAdapter;
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2018/4/3.
@@ -74,5 +76,14 @@ public class LoginAndRegistActivity extends BaseActivity {
     @Override
     public void afterInitView() {
 
+    }
+
+    @OnClick({R.id.tvBack})
+    public void OnClick(View view) {
+        switch (view.getId()) {
+            case R.id.tvBack:
+                finish();
+                break;
+        }
     }
 }

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_blue_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="11dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="15dp"
+        android:paddingTop="11dp">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="16dp"
+            android:src="@mipmap/icon_folder" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4.5dp"
+            android:layout_weight="1"
+            android:text="共 3 项"
+            android:textColor="@color/normal_black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20MB"
+            android:textColor="@color/light_gray16"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <include layout="@layout/layout_small_line" />
+
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dark_blue_btn"
+        android:gravity="center"
+        android:text="一键下载"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_margin="15dp"
+        android:textColor="@android:color/white"
+        android:textSize="15sp" />
+
+</LinearLayout>

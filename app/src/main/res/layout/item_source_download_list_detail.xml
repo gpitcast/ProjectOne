@@ -14,13 +14,13 @@
         android:paddingTop="10dp">
 
         <CheckBox
-            android:visibility="gone"
             android:id="@+id/checkBox"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/my_check_box_style"
-            android:button="@null" />
+            android:button="@null"
+            android:visibility="gone" />
 
         <LinearLayout
             android:id="@+id/ll_base"
@@ -69,11 +69,13 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <View
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="8dp"
-                android:background="@color/grayone" />
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp">
+
+                <include layout="@layout/layout_small_line" />
+            </FrameLayout>
 
         </LinearLayout>
     </LinearLayout>

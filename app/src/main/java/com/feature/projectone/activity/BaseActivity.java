@@ -33,15 +33,13 @@ public abstract class BaseActivity extends AppCompatActivity implements JsonInte
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setFullScreen(isFullScreen);
-        setContentLayout();
+//        setFullScreen(isFullScreen);
+        setContentLayout();//设置布局
         setFlagStatus();//设置状态栏颜色
         ButterKnife.bind(this);//初始化黃油刀插件
-
         if (getIntent() != null) {
             handleIntent(getIntent());
         }
-
         beforeInitView();
         initView();
         afterInitView();
@@ -95,7 +93,6 @@ public abstract class BaseActivity extends AppCompatActivity implements JsonInte
      */
     public JsonUtils getJsonUtil() {
         if (jsonUtils == null) {
-            Log.i("JsonUtils", "   jsonUtils == null，设置了接口  ");
             jsonUtils = new JsonUtils();
             jsonUtils.setJsonInterfaceListener(this);
             return jsonUtils;

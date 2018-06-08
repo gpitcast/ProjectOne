@@ -29,6 +29,7 @@ public class ShareUtil {
     public static void removeString(Context context, String key) {
         SharedPreferences.Editor editor = getSharedPreferences(context).edit();
         editor.remove(key);
+        editor.commit();
     }
 
     //检查SharedPreferences是否有这条数据的存储,true代表存在，false代表不存在

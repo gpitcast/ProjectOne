@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/white"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_title" />
+    <include layout="@layout/layout_blue_head" />
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -23,12 +24,14 @@
             app:tabTextAppearance="@style/LoginAndRegistTabTextViewStyle"
             app:tabTextColor="@android:color/black" />
 
-        <View
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="1dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="bottom"
-            android:layout_marginBottom="2dp"
-            android:background="@color/light_gray8" />
+            android:layout_marginBottom="2dp">
+
+            <include layout="@layout/layout_small_line" />
+        </FrameLayout>
     </FrameLayout>
 
     <android.support.v4.view.ViewPager

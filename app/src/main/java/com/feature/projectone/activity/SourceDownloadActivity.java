@@ -69,8 +69,6 @@ public class SourceDownloadActivity extends BaseActivity {
     RelativeLayout rl_title;
     @BindView(R.id.rl_magicIndicator)
     RelativeLayout rl_magicIndicator;
-    @BindView(R.id.view_line)
-    View view_line;
 
     private List<Fragment> fragmentList;
     private static final String shaixuanUrl = HttpUtils.Host + "/source/cate";//筛选接口

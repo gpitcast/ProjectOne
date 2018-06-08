@@ -24,6 +24,7 @@ import com.feature.projectone.util.ShareUtil;
 import com.feature.projectone.util.SoftUtil;
 import com.feature.projectone.util.ToastUtil;
 import com.feature.projectone.util.WebViewUtil;
+import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.io.Serializable;
@@ -284,6 +285,8 @@ public class NewsHeadlinesDetailsActivity extends BaseActivity {
         xRecyclerView.addHeaderView(headView2);
         xRecyclerView.setPullRefreshEnabled(false);
         xRecyclerView.setLoadingMoreEnabled(true);
+        xRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
+        //刷新和加载监听
         xRecyclerView.setLoadingListener(new XRecyclerView.LoadingListener() {
             @Override
             public void onRefresh() {

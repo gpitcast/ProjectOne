@@ -112,7 +112,7 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
                     } else {
                         vh.tv_title_one.setText(title);
                     }
-                    Picasso.with(context).load(img_lists.get(0)).placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.iv_one);
+                    Picasso.with(context).load(img_lists.get(0)).placeholder(R.mipmap.img_loading).error(R.mipmap.img_load_error).into(vh.iv_one);
                 } else {
                     //不止一张图片,显示横向标题和gridview
                     vh.ll_two.setVisibility(View.VISIBLE);
@@ -143,7 +143,7 @@ public class NewsHeadlinesAdapter extends RecyclerView.Adapter {
                 } else {
                     vh.tv_title_two.setText(title);
                 }
-                Picasso.with(context).load(map.get("img") + "").placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.iv_vedio);
+                Picasso.with(context).load(map.get("img") + "").placeholder(R.mipmap.img_loading).error(R.mipmap.img_load_error).into(vh.iv_vedio);
                 break;
         }
     }

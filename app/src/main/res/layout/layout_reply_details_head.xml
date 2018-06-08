@@ -100,11 +100,13 @@
         </RelativeLayout>
     </LinearLayout>
 
-    <View
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="12dp"
-        android:layout_marginTop="12dp"
-        android:background="@color/light_gray5" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <include layout="@layout/layout_big_line" />
+    </FrameLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -128,8 +130,5 @@
             android:textStyle="bold" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/normal_gray" />
+    <include layout="@layout/layout_small_line" />
 </LinearLayout>

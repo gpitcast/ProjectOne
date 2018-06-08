@@ -1,6 +1,11 @@
 package com.feature.projectone.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.Build;
+import android.provider.Settings;
+import android.support.annotation.RequiresApi;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,7 +20,9 @@ import com.feature.projectone.adapter.SourceDownloadListDetailAdapter;
 import com.feature.projectone.bean.CheckItem;
 import com.feature.projectone.inter.RecyclerViewOnItemClickListener;
 import com.feature.projectone.util.FileUtil;
+import com.feature.projectone.util.NetWorkUtils;
 import com.feature.projectone.util.ToastUtil;
+import com.feature.projectone.view.BaseDialog;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 
 import java.io.File;
@@ -128,16 +135,95 @@ public class SourceDownloadListDetailActivity extends BaseActivity implements So
         checkBox_all.setOnCheckedChangeListener(this);//设置全选按钮的checked状态改变监听
 
         sourceDownloadListDetailAdapter.setOnItemClickListener(new RecyclerViewOnItemClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.M)
             @Override
-            public void OnItemClick(View view, int position) {
+            public void OnItemClick(View view, final int position) {
                 ToastUtil.show(SourceDownloadListDetailActivity.this, "点击了第" + position + "个条目", 0);
-                HashMap<String, Object> map = mDataList.get(position);
-                Intent intent = new Intent(SourceDownloadListDetailActivity.this, SourceDownloadSeeFileActivity.class);
-                intent.putExtra("fileName", map.get("fileName") + "");
-                intent.putExtra("filePath", map.get("filePath") + "");
-                startActivity(intent);
+                //跳转到文件预览界面需要WRITE_SETTINGS权限,检查是否有这个权限
+                //关于WRITE_SETTINGS权限的授权，做法是使用startActivityForResult，启动系统设置的授权界面来完成
+                if (Settings.System.canWrite(SourceDownloadListDetailActivity.this)) {
+                    //有权限就检查是否处于wifi状态,不处于弹对话框提醒用户(原因是腾讯的tbs服务会自动下载插件)
+                    if (NetWorkUtils.checkWifiState(SourceDownloadListDetailActivity.this)) {
+                        //处于wifi状态直接进入
+                        HashMap<String, Object> map = mDataList.get(position);
+                        Intent intent = new Intent(SourceDownloadListDetailActivity.this, SourceDownloadSeeFileActivity.class);
+                        intent.putExtra("fileName", map.get("fileName") + "");
+                        intent.putExtra("filePath", map.get("filePath") + "");
+                        startActivity(intent);
+                    } else {
+                        //不处于wifi状态就弹对话框提醒用户
+                        final BaseDialog.Builder builder = new BaseDialog.Builder(SourceDownloadListDetailActivity.this);
+                        builder.setTitle("文件预览功能可能需要下载插件消耗数据流量，是否在wifi连接下再进行下载操作？");
+                        builder.setNegativeButton("好", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                            }
+                        });
+
+                        builder.setPositiveButton("流量多,任性", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                dialogInterface.dismiss();
+                                HashMap<String, Object> map = mDataList.get(position);
+                                Intent intent = new Intent(SourceDownloadListDetailActivity.this, SourceDownloadSeeFileActivity.class);
+                                intent.putExtra("fileName", map.get("fileName") + "");
+                                intent.putExtra("filePath", map.get("filePath") + "");
+                                startActivity(intent);
+                            }
+                        });
+                        builder.create().show();
+                    }
+                } else {
+                    showJumpSettingDialog();
+                }
             }
         });
+    }
+
+    /**
+     * 显示跳转到WRITE_SETTINGS权限设置界面
+     */
+    private void showJumpSettingDialog() {
+        BaseDialog.Builder builder = new BaseDialog.Builder(this);
+        builder.setTitle("文件预览基于腾讯tbs服务,需要你手动打开WRITE_SETTINGS设置,是否跳转到WRITE_SETTINGS界面?");
+        builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+                JumpPermissionActivity();
+            }
+        });
+        builder.create().show();
+    }
+
+    //启动修改设置权限界面
+    private void JumpPermissionActivity() {
+        Intent intent = new Intent(Settings.ACTION_MANAGE_WRITE_SETTINGS);
+        intent.setData(Uri.parse("package:" + getPackageName()));
+        startActivityForResult(intent, 9527);
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode != RESULT_OK) {
+            return;
+        }
+        switch (requestCode) {
+            case 9527:
+                if (Settings.System.canWrite(this)) {
+                    Log.i("WRITE_SETTINGS", "onActivityResult write settings granted   ");
+                }
+                break;
+        }
     }
 
     @Override

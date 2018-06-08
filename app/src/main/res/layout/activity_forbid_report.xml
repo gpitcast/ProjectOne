@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/layout_white_head" />
+
+            <EditText
+                android:id="@+id/et_teacher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="违规老师"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColorHint="@color/grayone"
+                android:textSize="15sp" />
+
+            <include layout="@layout/layout_small_line" />
+
+            <EditText
+                android:id="@+id/et_class"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="课程名称"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:textColorHint="@color/grayone"
+                android:textSize="15sp" />
+
+            <include layout="@layout/layout_big_line" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="举报原因"
+                    android:textColor="@color/normal_black"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/ll_report_reason"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tv_report_reason"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="请选择"
+                        android:textColor="@color/grayone"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/black_arrow_right" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/layout_big_line" />
+
+            <EditText
+                android:id="@+id/et_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:gravity="top"
+                android:hint="请输入举报说明"
+                android:maxLength="255"
+                android:minHeight="100dp"
+                android:padding="10dp"
+                android:textColorHint="@color/grayone"
+                android:textSize="15sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:padding="10dp"
+                android:text="255字"
+                android:textColor="@color/grayone"
+                android:textSize="15sp" />
+
+            <include layout="@layout/layout_big_line" />
+
+            <GridView
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:listSelector="@android:color/transparent"
+                android:numColumns="3" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="10dp"
+                android:text="请上传举报内容图片证据,最多三张"
+                android:textColor="@color/grayone"
+                android:textSize="12sp" />
+
+            <include layout="@layout/layout_big_line" />
+
+            <EditText
+                android:id="@+id/et_phone"
+                style="@style/MyEditTextStyle"
+                android:layout_height="40dp"
+                android:layout_margin="10dp"
+                android:hint="为后续联系你,请填写您的手机号码"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textColor="@color/normal_black"
+                android:textColorHint="@color/grayone"
+                android:textSize="13sp" />
+
+            <LinearLayout
+                android:id="@+id/ll_submit"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_login_dark_btn"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_submit"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/submit"
+                    android:textColor="@android:color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

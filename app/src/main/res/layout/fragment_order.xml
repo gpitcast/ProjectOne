@@ -8,6 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="订单frgament"
-        android:textSize="50sp" />
+        android:text="订单(待开发)"
+        android:textSize="30sp" />
 </LinearLayout>

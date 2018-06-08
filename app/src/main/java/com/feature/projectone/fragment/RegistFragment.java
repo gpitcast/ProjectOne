@@ -1,5 +1,7 @@
 package com.feature.projectone.fragment;
 
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
 import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
@@ -8,8 +10,10 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.aliyuncs.profile.DefaultProfile;
@@ -60,6 +64,23 @@ public class RegistFragment extends BaseFragment {
     LinearLayout ll_regist;
     @BindView(R.id.tv_regist)
     TextView tv_regist;
+    @BindView(R.id.framelayout)
+    FrameLayout framelayout;
+    @BindView(R.id.rl_teacher)
+    RelativeLayout rl_teacher;
+    @BindView(R.id.ll_student)
+    LinearLayout ll_student;
+    @BindView(R.id.ll_teacher)
+    LinearLayout ll_teacher;
+    @BindView(R.id.iv_student)
+    ImageView iv_student;
+    @BindView(R.id.tv_student)
+    TextView tv_student;
+    @BindView(R.id.iv_teacher)
+    ImageView iv_teacher;
+    @BindView(R.id.tv_teacher)
+    TextView tv_teacher;
+
 
     private static final String registUrl = HttpUtils.Host + "/user/register";//注册接口
     private static final String loginUrl = HttpUtils.Host + "/user/login";//登录接口
@@ -67,9 +88,10 @@ public class RegistFragment extends BaseFragment {
     private String phoneText;
     private String pswText;
     private String coedText;
+    private int type = 1;//注册的类型(学生为1,老师为2)默认为1
     private boolean isCodeWork;//验证码是否超时
     private boolean isAgree;//是否同意了协议
-    private int restSeconds = 60;//验证码倒计时总时长
+    private int restSeconds = 300;//验证码倒计时总时长
     private Handler handler = new Handler();
     private Runnable runnable = new Runnable() {
         @Override
@@ -86,7 +108,7 @@ public class RegistFragment extends BaseFragment {
                 TvUtil.addUnderLine(tv_get_number);
                 tv_get_number.setEnabled(true);
                 handler.removeCallbacks(this);
-                restSeconds = 60;
+                restSeconds = 300;
             }
         }
     };
@@ -157,7 +179,7 @@ public class RegistFragment extends BaseFragment {
         Map<String, Object> map = new HashMap<>();
         map.put("controller", "user");
         map.put("action", "register");
-        map.put("type", "1");
+        map.put("type", type);
         map.put("username", et_phone.getText().toString().trim());
         map.put("password", et_psw.getText().toString().trim());
         map.put("is_agree", "1");
@@ -177,7 +199,6 @@ public class RegistFragment extends BaseFragment {
 
     @Override
     protected void onFirstUserVisible() {
-
     }
 
     @Override
@@ -202,6 +223,9 @@ public class RegistFragment extends BaseFragment {
         EtDrawableLeftUtil.setEtImgSize(et_psw);
         TvUtil.addUnderLine(tv_get_number);
         listenEtChanged();
+
+        ll_student.setClickable(false);
+        ll_teacher.setClickable(true);
     }
 
     /**
@@ -271,7 +295,7 @@ public class RegistFragment extends BaseFragment {
         }
     }
 
-    @OnClick({R.id.tv_regist, R.id.iv_isAgree, R.id.tv_get_number, R.id.tv_regist_agreement})
+    @OnClick({R.id.tv_regist, R.id.iv_isAgree, R.id.tv_get_number, R.id.tv_regist_agreement, R.id.ll_student, R.id.ll_teacher})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.tv_regist:
@@ -333,8 +357,92 @@ public class RegistFragment extends BaseFragment {
             case R.id.tv_regist_agreement:
                 startActivity(new Intent(getActivity(), RegistAgreementActivty.class));
                 break;
+            case R.id.ll_student:
+                Log.i("RegistFragment", "    点击了学生         isStudentLeft：" + isStudentLeft);
+                ll_student.setClickable(false);
+
+                Picasso.with(getActivity()).load(R.mipmap.img_white_student).into(iv_student);
+                tv_student.setTextColor(getResources().getColor(R.color.white));
+
+                float halfWidth = (rl_teacher.getWidth() / 2);
+                if (!isStudentLeft) {
+                    final ObjectAnimator translationX = new ObjectAnimator().ofFloat(framelayout, "translationX", halfWidth, 0);
+                    translationX.setDuration(500);
+                    translationX.start();
+                    translationX.addListener(new Animator.AnimatorListener() {
+                        @Override
+                        public void onAnimationStart(Animator animation) {
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            type = 1;
+                            ToastUtil.show(getActivity(), "动画1结束", 0);
+                            isStudentLeft = true;
+                            ll_teacher.setClickable(true);
+
+
+                            Picasso.with(getActivity()).load(R.mipmap.img_blue_teacher).into(iv_teacher);
+                            tv_teacher.setTextColor(getResources().getColor(R.color.orangeone));
+
+                            translationX.removeAllListeners();
+                        }
+
+                        @Override
+                        public void onAnimationCancel(Animator animation) {
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animator animation) {
+                        }
+                    });
+                }
+                break;
+            case R.id.ll_teacher:
+                Log.i("RegistFragment", "    点击了老师         isStudentLeft：" + isStudentLeft);
+
+                ll_teacher.setClickable(false);
+
+                Picasso.with(getActivity()).load(R.mipmap.img_white_teacher).into(iv_teacher);
+                tv_teacher.setTextColor(getResources().getColor(R.color.white));
+
+                float halfWidth1 = (rl_teacher.getWidth() / 2);
+                if (isStudentLeft) {
+                    final ObjectAnimator translationX = new ObjectAnimator().ofFloat(framelayout, "translationX", 0, halfWidth1);
+                    translationX.setDuration(500);
+                    translationX.start();
+                    translationX.addListener(new Animator.AnimatorListener() {
+                        @Override
+                        public void onAnimationStart(Animator animation) {
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animator animation) {
+                            type = 2;
+                            ToastUtil.show(getActivity(), "动画2结束", 0);
+                            isStudentLeft = false;
+                            ll_student.setClickable(true);
+
+                            Picasso.with(getActivity()).load(R.mipmap.img_blue_student).into(iv_student);
+                            tv_student.setTextColor(getResources().getColor(R.color.orangeone));
+
+                            translationX.removeAllListeners();
+                        }
+
+                        @Override
+                        public void onAnimationCancel(Animator animation) {
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animator animation) {
+                        }
+                    });
+                }
+                break;
         }
     }
+
+    private boolean isStudentLeft = true;//记录学生布局在左边还是右边，true代表初始化时在左边
 
     //是否注册
     private void isRegist() {

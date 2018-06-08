@@ -109,12 +109,10 @@ public class LoginFragment extends BaseFragment {
 
     @Override
     protected void onFirstUserVisible() {
-
     }
 
     @Override
     protected void onUserVisible() {
-
     }
 
     @Override
@@ -129,7 +127,7 @@ public class LoginFragment extends BaseFragment {
 
     @Override
     protected void initViewsAndEvents(View view) {
-        listenEtChanged();
+        listenEtChanged();//设置文本变换按钮变化监听
         EtDrawableLeftUtil.setEtImgSize(et_phone);
         EtDrawableLeftUtil.setEtImgSize(et_psw);
     }

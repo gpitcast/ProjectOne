@@ -1,1 +1,1 @@
-include ':app', ':rxretrofitlibrary', ':baseadapter-recyclerview', ':banner', ':sofia', ':refresh-layout', ':xrecyclerview'
+include ':app', ':rxretrofitlibrary', ':sofia', ':refresh-layout', ':xrecyclerview', ':banner', ':baseadapter-recyclerview', ':IMLib', ':IMKit'

@@ -1,5 +1,6 @@
 package com.feature.projectone.activity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.util.Log;
@@ -16,7 +17,9 @@ import com.feature.projectone.adapter.SourceLoadingListAdapter;
 import com.feature.projectone.bean.CheckItem;
 import com.feature.projectone.inter.RecyclerViewOnItemClickListener;
 import com.feature.projectone.util.FileUtil;
+import com.feature.projectone.util.NetWorkUtils;
 import com.feature.projectone.util.ToastUtil;
+import com.feature.projectone.view.BaseDialog;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.lzy.okgo.db.DownloadManager;
 import com.lzy.okgo.model.Progress;
@@ -235,10 +238,10 @@ public class SourceDownloadListActivity extends BaseActivity {
         //设置继续下载 与 暂停下载按钮的监听
         sourceLoadingListAdapter.setOnPlayClickListener(new RecyclerViewOnItemClickListener() {
             @Override
-            public void OnItemClick(View view, int position) {
+            public void OnItemClick(View view, final int position) {
                 HashMap<String, Object> map = loadingDataList.get(position);
                 String tag = map.get("tag") + "";
-                DownloadTask task = OkDownload.getInstance().getTask(tag);
+                final DownloadTask task = OkDownload.getInstance().getTask(tag);
                 if (task == null) {
                     return;
                 }
@@ -246,7 +249,29 @@ public class SourceDownloadListActivity extends BaseActivity {
                 switch (status) {
                     case Progress.NONE:
                         //无状态
-                        task.start();
+                        if (NetWorkUtils.checkWifiState(SourceDownloadListActivity.this)) {
+                            //wifi连接状态
+                            task.start();
+                        } else {
+                            //wifi未连接状态
+                            BaseDialog.Builder builder = new BaseDialog.Builder(SourceDownloadListActivity.this);
+                            builder.setTitle("下载需要消耗数据流量，是否在wifi连接下再进行下载操作？");
+                            builder.setNegativeButton("好", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+
+                            builder.setPositiveButton("继续下载", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                    task.start();
+                                }
+                            });
+                            builder.create().show();
+                        }
                         break;
                     case Progress.WAITING:
                         //等待
@@ -257,7 +282,29 @@ public class SourceDownloadListActivity extends BaseActivity {
                         break;
                     case Progress.PAUSE:
                         //暂停
-                        task.start();
+                        if (NetWorkUtils.checkWifiState(SourceDownloadListActivity.this)) {
+                            //wifi连接状态
+                            task.start();
+                        } else {
+                            //wifi未连接状态
+                            BaseDialog.Builder builder = new BaseDialog.Builder(SourceDownloadListActivity.this);
+                            builder.setTitle("下载需要消耗数据流量，是否在wifi连接下再进行下载操作？");
+                            builder.setNegativeButton("好", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+
+                            builder.setPositiveButton("继续下载", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                    task.start();
+                                }
+                            });
+                            builder.create().show();
+                        }
                         break;
                     case Progress.ERROR:
                         //错误

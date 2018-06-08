@@ -11,12 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- 登陆与注册界面界面 -->
+        <!-- 登陆引导页界面 -->
+        <activity android:name=".activity.ChannelActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 登陆与注册界面 -->
         <activity
             android:name=".activity.LoginAndRegistActivity"
-            android:launchMode="singleTask">
+            android:launchMode="singleTask" />
 
-        </activity>
 
         <!-- 注册协议界面 -->
         <activity android:name=".activity.RegistAgreementActivty" />
@@ -28,13 +36,9 @@
         <activity
             android:name=".activity.MainActivity"
             android:launchMode="singleTask"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustPan">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <!-- 新闻资讯首页界面 -->
         <activity android:name=".activity.NewsHeadlinesMainActivity">
@@ -63,6 +67,180 @@
 
         <!-- 资源下载文件查看界面 -->
         <activity android:name=".activity.SourceDownloadSeeFileActivity" />
+
+        <!-- 签到界面 -->
+        <activity android:name=".activity.SignInActivity" />
+
+        <!-- 修改个人资料界面 -->
+        <activity
+            android:name=".activity.UpdatePersonalDataActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!-- 我的学分界面 -->
+        <activity android:name=".activity.MyCreditActivity" />
+
+        <!--  设置界面 -->
+        <activity android:name=".activity.SettingActivity" />
+
+        <!--  登录密码修改界面 -->
+        <activity android:name=".activity.UpdateLoginPswActivity" />
+
+        <!--    绑定手机号界面   -->
+        <activity android:name=".activity.BindPhoneNumActivity" />
+
+        <!--    短信验证界面   -->
+        <activity android:name=".activity.SmsCheckActivity" />
+
+        <!--    更换手机号界面   -->
+        <activity android:name=".activity.ChangePhoneNumActivity" />
+
+        <!--    绑定新手机号界面   -->
+        <activity android:name=".activity.BindNewPhoneNumActivity" />
+
+        <!--    绑定账户界面   -->
+        <activity android:name=".activity.BindAccountActivity" />
+
+        <!--    我的学习阶段界面   -->
+        <activity android:name=".activity.MyLearningStageActivity" />
+
+        <!--    我的社区界面   -->
+        <activity android:name=".activity.MyCommunityActivity" />
+
+        <!--    社区详情界面   -->
+        <activity android:name=".activity.CommunityDetailActivity" />
+
+        <!--    帮助与反馈界面   -->
+        <activity
+            android:name=".activity.HelpAndFeedBackActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--    常见问题界面   -->
+        <activity android:name=".activity.CommonProblemActivity" />
+
+        <!--    常见问题回答界面   -->
+        <activity android:name=".activity.CommonProblemAnswerActivity" />
+
+        <!--    违规举报界面   -->
+        <activity
+            android:name=".activity.ForbidReportActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--    查看图片照片界面界面   -->
+        <activity android:name=".activity.PlusImageActivity" />
+
+        <!--    爆料与征稿界面   -->
+        <activity
+            android:name=".activity.RevelationAndConllectionActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--    群成员列表界面界面   -->
+        <activity android:name=".activity.GroupMemberListActivity" />
+
+        <!--    群文件夹列表界面界面   -->
+        <activity android:name=".activity.GroupFolderListActivity" />
+
+        <!--    群文件列表界面界面   -->
+        <!--<activity android:name=".activity.GroupFileListActivity" />-->
+
+        <!--    群文件单个文件下载界面   -->
+        <activity android:name=".activity.GroupFileSingleActivity" />
+
+        <!--    群组信息界面   -->
+        <activity android:name=".activity.GroupInformationActivity" />
+
+        <!--    群组列表界面   -->
+        <activity android:name=".activity.GroupListActivity" />
+
+        <!--    联系人界面   -->
+        <activity android:name=".activity.ContactsActivity" />
+
+        <!--    加入社区群界面   -->
+        <activity
+            android:name=".activity.JoinGroupActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--    社区群的公告列表界面   -->
+        <activity android:name=".activity.GroupNoticeListActivity" />
+
+
+        <!--融云的内容提供者-->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.feature.projectone.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/rc_file_path" />
+        </provider>
+
+        <!--会话列表-->
+        <activity
+            android:name="com.feature.projectone.RongIM.ConversationListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.feature.projectone"
+                    android:pathPrefix="/conversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <!--聚合会话列表-->
+        <activity
+            android:name="com.feature.projectone.RongIM.SubConversationListActivtiy"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.feature.projectone"
+                    android:pathPrefix="/subconversationlist"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <!--会话界面-->
+        <activity
+            android:name="com.feature.projectone.RongIM.ConversationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="com.feature.projectone"
+                    android:pathPrefix="/conversation/"
+                    android:scheme="rong" />
+            </intent-filter>
+        </activity>
+
+        <!--融云消息推送广播接收器-->
+        <receiver
+            android:name=".RongIM.SealNotificationReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_ARRIVED" />
+                <action android:name="io.rong.push.intent.MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.MI_MESSAGE_CLICKED" />
+                <action android:name="io.rong.push.intent.THIRD_PARTY_PUSH_STATE" />
+            </intent-filter>
+        </receiver>
+
     </application>
 
     <!-- 允许程序访问有关GSM网络信息权限 -->
@@ -70,16 +248,18 @@
 
     <!-- 网络权限 -->
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <!--   读写Sd卡权限  -->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-
-
-
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <!--  拍照相机的权限  -->
+    <uses-permission android:name="android.permission.CAMERA" />
+
 </manifest>

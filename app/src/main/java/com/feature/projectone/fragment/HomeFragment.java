@@ -93,7 +93,7 @@ public class HomeFragment extends BaseFragment {
         }
         for (int i = 0; i < 4; i++) {
             excellentCourseList.add(i + "");
-            bannerImgIdList.add(R.mipmap.a);
+            bannerImgIdList.add(R.mipmap.img_loading_default);
         }
         banner.setImages(bannerImgIdList).setImageLoader(new GlideOvalImageLoader()).start();
         typeAdapter = new CommonAdapter<String>(getActivity(), R.layout.adapter_type, typeList) {
@@ -104,7 +104,12 @@ public class HomeFragment extends BaseFragment {
 
             }
         };
-        recyclerType.setLayoutManager(new GridLayoutManager(getActivity(), 4));
+        recyclerType.setLayoutManager(new GridLayoutManager(getActivity(), 4) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        });
         recyclerType.addItemDecoration(new DividerUtil(0, 0, 0, CommonUtil.dip2px(getActivity(), 20)));
         recyclerType.setAdapter(typeAdapter);
 
@@ -112,10 +117,15 @@ public class HomeFragment extends BaseFragment {
             @Override
             protected void convert(ViewHolder holder, String s, int position) {
                 holder.setText(R.id.tvContent, "高阶美术教程");
-                Glide.with(getActivity()).load(R.mipmap.a).into((ImageView) holder.getView(R.id.imgIcon));
+                Glide.with(getActivity()).load(R.mipmap.img_loading).into((ImageView) holder.getView(R.id.imgIcon));
             }
         };
-        recyclerPublishClass.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        recyclerPublishClass.setLayoutManager(new GridLayoutManager(getActivity(), 2) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        });
         recyclerPublishClass.addItemDecoration(new MiddleDividerUtil(CommonUtil.dip2px(getActivity(), 7), 0, CommonUtil.dip2px(getActivity(), 12)));
         recyclerPublishClass.setAdapter(publishClassAdapter);
 
@@ -127,7 +137,12 @@ public class HomeFragment extends BaseFragment {
                 holder.setText(R.id.tvIntroduce, "课也是古代专门负责");
             }
         };
-        recyclerExcellentCourse.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerExcellentCourse.setLayoutManager(new LinearLayoutManager(getActivity()) {
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        });
         recyclerExcellentCourse.addItemDecoration(new DividerUtil(0, 0, 0, CommonUtil.dip2px(getActivity(), 17)));
         recyclerExcellentCourse.setAdapter(excellentCourseAdapter);
 

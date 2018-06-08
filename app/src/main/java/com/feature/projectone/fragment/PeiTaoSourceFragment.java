@@ -20,7 +20,9 @@ import com.feature.projectone.adapter.SourceDownloadFragmentAdapter;
 import com.feature.projectone.inter.DownloadIconClickListener;
 import com.feature.projectone.inter.SolveDialogListener;
 import com.feature.projectone.other.Constanst;
+import com.feature.projectone.util.CheckLoginUtil;
 import com.feature.projectone.util.HttpUtils;
+import com.feature.projectone.util.NetWorkUtils;
 import com.feature.projectone.util.PermissionUtil;
 import com.feature.projectone.util.ShareUtil;
 import com.feature.projectone.util.ToastUtil;
@@ -133,7 +135,7 @@ public class PeiTaoSourceFragment extends BaseFragment {
                             ToastUtil.show(getActivity(), msg, 0);
                         }
                     } else {
-//                        //status不等于0代表暂无数据，取消下拉或者上拉状态，弹吐司提醒用户
+                        //status不等于0代表暂无数据，取消下拉或者上拉状态，弹吐司提醒用户
                         if (isLoadMore) {
                             isLoadMore = false;
                             pageno--;
@@ -375,15 +377,35 @@ public class PeiTaoSourceFragment extends BaseFragment {
         sourceDownloadFragmentAdapter.setOnDownloadIconListener(new DownloadIconClickListener() {
 
             @Override
-            public void OnDownLoadClick(SourceDownloadFragmentAdapter.MyViewHolder holder, View view, int position) {
+            public void OnDownLoadClick(SourceDownloadFragmentAdapter.MyViewHolder holder, View view, final int position) {
                 id = ((HashMap<String, Object>) mDataList.get(position)).get("id") + "";
                 title = ((HashMap<String, Object>) mDataList.get(position)).get("title") + "";
                 PeiTaoSourceFragment.this.holder = holder;
-                if (ShareUtil.isExist(getActivity(), Constanst.UER_TOKEN)) {
+                if (CheckLoginUtil.isLogin(getActivity())) {
                     clickPosition = position;
                     if (PermissionUtil.checkPermission(getContext(), PeiTaoSourceFragment.this, Manifest.permission.WRITE_EXTERNAL_STORAGE, writePermissionCode)) {
-                        //有权限直接下载操作
-                        DownloadFile(((HashMap<String, Object>) mDataList.get(position)));
+                        //有权限就检查wifi的连接状态
+                        if (NetWorkUtils.checkWifiState(getActivity())) {
+                            DownloadFile(((HashMap<String, Object>) mDataList.get(position)));
+                        } else {
+                            final BaseDialog.Builder builder = new BaseDialog.Builder(getActivity());
+                            builder.setTitle("下载需要消耗数据流量，是否在wifi连接下再进行下载操作？");
+                            builder.setNegativeButton("好", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    dialogInterface.dismiss();
+                                }
+                            });
+
+                            builder.setPositiveButton("继续下载", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    DownloadFile(((HashMap<String, Object>) mDataList.get(position)));
+                                    dialogInterface.dismiss();
+                                }
+                            });
+                            builder.create().show();
+                        }
                     } else {
                         //没有权限,不需要做任何操作，在工具类已经做过请求权限处理，会执行请求权限回调那一步
                         PeiTaoSourceFragment.this.holder = holder;
@@ -408,6 +430,8 @@ public class PeiTaoSourceFragment extends BaseFragment {
                     //权限请求成功，继续操作(有问题，暂不做继续下载动作)
 //                    DownloadFile(((HashMap<String, Object>) mDataList.get(clickPosition)));
                 } else {
+
+
                     //权限请求失败
                     //当权限申请被拒绝并且shouldShowRequestPermissionRationale() 返回 false 就表示勾选了不再询问
                     if (!PeiTaoSourceFragment.this.shouldShowRequestPermissionRationale(permissions[0])) {

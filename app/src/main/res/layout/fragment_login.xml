@@ -20,8 +20,7 @@
             android:drawableLeft="@mipmap/img_human"
             android:hint="@string/input_phone"
             android:inputType="number"
-            android:maxLength="11"
-            android:text="13554136943" />
+            android:maxLength="11" />
 
         <EditText
             android:id="@+id/et_psw"
@@ -29,8 +28,7 @@
             android:layout_marginTop="18dp"
             android:drawableLeft="@mipmap/img_gray_lock"
             android:hint="@string/input_psw"
-            android:inputType="text"
-            android:text="12345" />
+            android:inputType="text" />
     </LinearLayout>
 
     <RelativeLayout

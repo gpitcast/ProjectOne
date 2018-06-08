@@ -2,34 +2,34 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:minWidth="300dp"
-    android:orientation="vertical"
-   >
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/lay_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:background="@drawable/bg_base_dialog_white"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/dialog_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:text="温馨提示"
-            android:textColor="@color/orangeone"
-            android:textSize="14sp" />
+        <!--<TextView-->
+        <!--android:id="@+id/dialog_title"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="center"-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:text="温馨提示"-->
+        <!--android:textColor="@color/orangeone"-->
+        <!--android:textSize="14sp" />-->
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="0.5dip"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="18dp"
-            android:layout_marginTop="8dip"
-            android:background="@color/light_gray10" />
+        <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.5dip"-->
+        <!--android:layout_marginLeft="18dp"-->
+        <!--android:layout_marginRight="18dp"-->
+        <!--android:layout_marginTop="8dip"-->
+        <!--android:background="@color/light_gray10" />-->
 
         <TextView
             android:id="@+id/tv_title"
@@ -39,16 +39,17 @@
             android:layout_marginTop="8dp"
             android:gravity="center"
             android:lineSpacingMultiplier="1.2"
-            android:minHeight="50dp"
+            android:minHeight="70dp"
             android:paddingLeft="10dip"
             android:paddingRight="10dp"
             android:text="？？？"
-            android:textSize="12sp" />
+            android:textColor="@color/orangeone"
+            android:textSize="15sp" />
 
         <View
             android:layout_width="match_parent"
             android:layout_height="0.5dip"
-            android:background="@color/light_gray10" />
+            android:background="@color/light_gray8" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -65,12 +66,14 @@
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:text="？？" />
+                android:text="？？"
+                android:textColor="@color/orangeone"
+                android:textSize="15sp" />
 
             <View
                 android:layout_width="0.5dp"
                 android:layout_height="match_parent"
-                android:background="@color/light_gray10" />
+                android:background="@color/light_gray8" />
 
             <TextView
                 android:id="@+id/tv_positive"
@@ -82,7 +85,9 @@
                 android:gravity="center"
                 android:paddingBottom="10dp"
                 android:paddingTop="10dp"
-                android:text="？？" />
+                android:text="？？"
+                android:textColor="@color/orangeone"
+                android:textSize="15sp" />
         </LinearLayout>
     </LinearLayout>
 

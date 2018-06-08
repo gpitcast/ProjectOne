@@ -55,7 +55,7 @@ public class ReplyDetailsAdapter extends RecyclerView.Adapter {
         //本条评论的用户信息
         HashMap<String, Object> c_user_info = (HashMap<String, Object>) map.get("c_user_info");
         String img_url = c_user_info.get("img_url") + "";
-        Picasso.with(context).load(img_url).placeholder(R.mipmap.img_loading_default).error(R.mipmap.img_load_error).into(vh.circleImageView);
+        Picasso.with(context).load(img_url).placeholder(R.mipmap.img_loading).error(R.mipmap.img_load_error).into(vh.circleImageView);
         vh.tv_name.setText(c_user_info.get("username") + "");
 
         //本条评论的回复用户信息

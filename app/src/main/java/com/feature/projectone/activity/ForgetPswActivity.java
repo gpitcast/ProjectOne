@@ -46,7 +46,7 @@ public class ForgetPswActivity extends BaseActivity {
 
     private String phoneText;
     private String pswText;
-    private String coedText;
+    private String codeText;
     private boolean isCodeWork;//验证码是否超时
     private int restSeconds = 60;//验证码倒计时总时长
     private static final String updatePswUrl = "http://47.104.128.245/api/data/user/password_back";//找回密码接口
@@ -171,10 +171,10 @@ public class ForgetPswActivity extends BaseActivity {
      */
     private void checkedText() {
         phoneText = et_phone.getText().toString().trim();
-        coedText = et_code.getText().toString().trim();
+        codeText = et_code.getText().toString().trim();
         pswText = et_psw.getText().toString().trim();
 
-        if (phoneText != null && phoneText.trim().length() > 0 && coedText != null && coedText.length() > 0 && pswText != null && pswText.trim().length() > 0) {
+        if (phoneText != null && phoneText.trim().length() > 0 && codeText != null && codeText.length() > 0 && pswText != null && pswText.trim().length() > 0) {
             ll_commit.setBackgroundResource(R.drawable.bg_login_dark_btn);
             tv_commit.setEnabled(true);
         } else {
