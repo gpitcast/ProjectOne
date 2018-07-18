@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <ImageView
@@ -13,11 +14,10 @@
 
     <TextView
         android:id="@+id/tv_type"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="11dp"
         android:layout_marginTop="7.5dp"
-        android:gravity="center_horizontal"
         android:text="？？？"
         android:textColor="@color/light_gray16"
         android:textSize="12.5sp" />

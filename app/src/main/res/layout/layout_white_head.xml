@@ -41,7 +41,6 @@
             android:layout_marginRight="10dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="？？？"
             android:textColor="@color/dark_black2"
             android:textSize="19sp" />
 
@@ -52,11 +51,18 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
-            android:text="@string/explain"
             android:textColor="@color/light_gray10"
             android:textSize="14sp"
             android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/img_right"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_width="23dp"
+            android:layout_height="23dp"
+            android:layout_alignParentRight="true"/>
     </RelativeLayout>
 
-    <include layout="@layout/layout_small_line"/>
+    <include layout="@layout/layout_small_line" />
 </LinearLayout>

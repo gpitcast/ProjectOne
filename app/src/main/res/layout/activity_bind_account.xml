@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_white_head" />
+    <include layout="@layout/layout_blue_head" />
 
     <include layout="@layout/layout_big_line" />
 
@@ -40,12 +40,12 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/tv_phone_bind"
+            android:id="@+id/tv_bind_phone_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="3dp"
-            android:text="188****8888"
+            android:text="？？？"
             android:textColor="@color/grayone"
             android:textSize="15sp" />
 
@@ -88,12 +88,12 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/tv_wechat_bind"
+            android:id="@+id/tv_bind_wechat_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="3dp"
-            android:text="去绑定"
+            android:text="？？？"
             android:textColor="@color/grayone"
             android:textSize="15sp" />
 
@@ -136,11 +136,12 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/tv_bind_qq_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="3dp"
-            android:text="肯德基kfc"
+            android:text="？？？"
             android:textColor="@color/grayone"
             android:textSize="15sp" />
 
@@ -183,11 +184,12 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/tv_bind_weibo_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="3dp"
-            android:text="肯德基kfc"
+            android:text="？？？"
             android:textColor="@color/grayone"
             android:textSize="15sp" />
 

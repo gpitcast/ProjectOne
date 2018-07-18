@@ -58,7 +58,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <com.feature.projectone.view.MyGridView
+            <com.youyi.YWL.view.MyGridView
                 android:id="@+id/gridView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -107,26 +107,26 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:visibility="gone"
                     android:id="@+id/ll_hot"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="7.5dp"
                     android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:visibility="gone">
+                    android:orientation="horizontal">
 
                     <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:src="@mipmap/hot" />
+                        android:layout_width="13dp"
+                        android:layout_height="13dp"
+                        android:src="@mipmap/img_blue_hot" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="3.5dp"
                         android:text="@string/hot"
-                        android:textColor="@color/orangeone1"
-                        android:textSize="11sp" />
+                        android:textColor="@color/orangeone"
+                        android:textSize="10sp" />
                 </LinearLayout>
 
                 <TextView

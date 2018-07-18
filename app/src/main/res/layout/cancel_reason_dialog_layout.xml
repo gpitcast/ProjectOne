@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="270dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp">
+
+        <TextView
+            android:layout_marginLeft="13dp"
+            android:id="@+id/tv_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="取消"
+            android:textColor="@color/orangeone"
+            android:textSize="15sp" />
+
+        <TextView
+            android:layout_marginRight="15dp"
+            android:id="@+id/tv_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:padding="5dp"
+            android:text="确认"
+            android:textColor="@color/orangeone"
+            android:textSize="15sp" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="14dp"
+        android:background="@color/orangeone" />
+
+    <com.pl.wheelview.WheelView
+        android:layout_marginTop="25dp"
+        app:lineColor="@color/white"
+        android:id="@+id/wheelView"
+        app:itemNumber="7"
+        app:normalTextColor="@color/normal_gray6"
+        app:normalTextSize="15sp"
+        app:selectedTextColor="@color/normal_black"
+        app:selectedTextSize="15sp"
+        app:unitHeight="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

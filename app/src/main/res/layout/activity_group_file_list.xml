@@ -51,7 +51,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/bg_dark_blue_btn"
+        android:background="@drawable/bg_blue_fillet_rectangle"
         android:gravity="center"
         android:text="一键下载"
         android:paddingTop="10dp"

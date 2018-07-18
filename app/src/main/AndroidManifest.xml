@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.feature.projectone">
+    package="com.youyi.YWL">
 
     <application
-        android:name=".other.MyApplication"
+        android:name="com.youyi.YWL.other.MyApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/icon_square_fox"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/login_logo"
+        android:roundIcon="@mipmap/icon_half_circle_fox"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
         <!-- 登陆引导页界面 -->
-        <activity android:name=".activity.ChannelActivity">
+        <activity android:name="com.youyi.YWL.activity.ChannelActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,153 +21,300 @@
             </intent-filter>
         </activity>
 
-        <!-- 登陆与注册界面 -->
-        <activity
-            android:name=".activity.LoginAndRegistActivity"
-            android:launchMode="singleTask" />
-
 
         <!-- 注册协议界面 -->
-        <activity android:name=".activity.RegistAgreementActivty" />
+        <activity android:name="com.youyi.YWL.activity.RegistAgreementActivty" />
 
         <!-- 忘记密码界面 -->
-        <activity android:name=".activity.ForgetPswActivity" />
+        <activity android:name="com.youyi.YWL.activity.ForgetPswActivity" />
 
         <!-- 首页界面 -->
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.youyi.YWL.activity.MainActivity"
             android:launchMode="singleTask"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
 
 
         <!-- 新闻资讯首页界面 -->
-        <activity android:name=".activity.NewsHeadlinesMainActivity">
+        <activity android:name="com.youyi.YWL.activity.NewsHeadlinesMainActivity">
 
         </activity>
 
         <!-- 新闻资讯详情界面 -->
-        <activity android:name=".activity.NewsHeadlinesDetailsActivity" />
+        <activity android:name="com.youyi.YWL.activity.NewsHeadlinesDetailsActivity">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.NewsHeadlinesDetailsActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- 资源下载界面 -->
-        <activity android:name=".activity.SourceDownloadActivity" />
+        <activity android:name="com.youyi.YWL.activity.SourceDownloadActivity">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.SourceDownloadActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- 新闻搜索界面 -->
-        <activity android:name=".activity.NewsSearchActivity" />
+        <activity android:name="com.youyi.YWL.activity.NewsSearchActivity" />
 
         <!-- 评论详情界面 -->
         <activity
-            android:name=".activity.ReplyDetailsActivity"
-            android:windowSoftInputMode="adjustResize" />
+            android:name="com.youyi.YWL.activity.ReplyDetailsActivity"
+            android:windowSoftInputMode="adjustResize">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.ReplyDetailsActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- 资源下载列表界面 -->
-        <activity android:name=".activity.SourceDownloadListActivity" />
+        <activity android:name="com.youyi.YWL.activity.SourceDownloadListActivity">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.SourceDownloadListActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!-- 资源下载列表详情界面 -->
-        <activity android:name=".activity.SourceDownloadListDetailActivity" />
+        <activity android:name="com.youyi.YWL.activity.SourceDownloadListDetailActivity" />
 
         <!-- 资源下载文件查看界面 -->
-        <activity android:name=".activity.SourceDownloadSeeFileActivity" />
+        <activity android:name="com.youyi.YWL.activity.SourceDownloadSeeFileActivity" />
 
         <!-- 签到界面 -->
-        <activity android:name=".activity.SignInActivity" />
+        <activity android:name="com.youyi.YWL.activity.SignInActivity">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.SignInActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
 
         <!-- 修改个人资料界面 -->
         <activity
-            android:name=".activity.UpdatePersonalDataActivity"
+            android:name="com.youyi.YWL.activity.UpdatePersonalDataActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <!-- 我的学分界面 -->
-        <activity android:name=".activity.MyCreditActivity" />
+        <activity android:name="com.youyi.YWL.activity.MyCreditActivity" />
 
         <!--  设置界面 -->
-        <activity android:name=".activity.SettingActivity" />
+        <activity android:name="com.youyi.YWL.activity.SettingActivity" />
 
         <!--  登录密码修改界面 -->
-        <activity android:name=".activity.UpdateLoginPswActivity" />
+        <activity android:name="com.youyi.YWL.activity.UpdateLoginPswActivity" />
 
         <!--    绑定手机号界面   -->
-        <activity android:name=".activity.BindPhoneNumActivity" />
+        <activity android:name="com.youyi.YWL.activity.BindPhoneNumActivity" />
 
         <!--    短信验证界面   -->
-        <activity android:name=".activity.SmsCheckActivity" />
+        <activity android:name="com.youyi.YWL.activity.SmsCheckActivity" />
 
         <!--    更换手机号界面   -->
-        <activity android:name=".activity.ChangePhoneNumActivity" />
+        <activity android:name="com.youyi.YWL.activity.ChangePhoneNumActivity" />
 
         <!--    绑定新手机号界面   -->
-        <activity android:name=".activity.BindNewPhoneNumActivity" />
+        <activity android:name="com.youyi.YWL.activity.BindNewPhoneNumActivity" />
 
         <!--    绑定账户界面   -->
-        <activity android:name=".activity.BindAccountActivity" />
+        <activity android:name="com.youyi.YWL.activity.BindAccountActivity" />
 
         <!--    我的学习阶段界面   -->
-        <activity android:name=".activity.MyLearningStageActivity" />
+        <activity android:name="com.youyi.YWL.activity.MyLearningStageActivity">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.MyLearningStageActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!--    我的社区界面   -->
-        <activity android:name=".activity.MyCommunityActivity" />
+        <activity android:name="com.youyi.YWL.activity.MyCommunityActivity">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.MyCommunityActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!--    社区详情界面   -->
-        <activity android:name=".activity.CommunityDetailActivity" />
+        <activity android:name="com.youyi.YWL.activity.CommunityDetailActivity" />
 
         <!--    帮助与反馈界面   -->
         <activity
-            android:name=".activity.HelpAndFeedBackActivity"
-            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+            android:name="com.youyi.YWL.activity.HelpAndFeedBackActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.HelpAndFeedBackActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!--    常见问题界面   -->
-        <activity android:name=".activity.CommonProblemActivity" />
+        <activity android:name="com.youyi.YWL.activity.CommonProblemActivity" />
 
         <!--    常见问题回答界面   -->
-        <activity android:name=".activity.CommonProblemAnswerActivity" />
+        <activity android:name="com.youyi.YWL.activity.CommonProblemAnswerActivity" />
 
         <!--    违规举报界面   -->
         <activity
-            android:name=".activity.ForbidReportActivity"
-            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+            android:name="com.youyi.YWL.activity.ForbidReportActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.ForbidReportActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!--    查看图片照片界面界面   -->
-        <activity android:name=".activity.PlusImageActivity" />
+        <activity android:name="com.youyi.YWL.activity.PlusImageActivity" />
 
         <!--    爆料与征稿界面   -->
         <activity
-            android:name=".activity.RevelationAndConllectionActivity"
-            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+            android:name="com.youyi.YWL.activity.RevelationAndConllectionActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged">
+            <intent-filter>
+                <action android:name="com.youyi.YWL.activity.RevelationAndConllectionActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
 
         <!--    群成员列表界面界面   -->
-        <activity android:name=".activity.GroupMemberListActivity" />
+        <activity android:name="com.youyi.YWL.activity.GroupMemberListActivity" />
 
         <!--    群文件夹列表界面界面   -->
-        <activity android:name=".activity.GroupFolderListActivity" />
-
-        <!--    群文件列表界面界面   -->
-        <!--<activity android:name=".activity.GroupFileListActivity" />-->
+        <activity android:name="com.youyi.YWL.activity.GroupFolderListActivity" />
 
         <!--    群文件单个文件下载界面   -->
-        <activity android:name=".activity.GroupFileSingleActivity" />
+        <activity android:name="com.youyi.YWL.activity.GroupFileSingleActivity" />
 
         <!--    群组信息界面   -->
-        <activity android:name=".activity.GroupInformationActivity" />
+        <activity android:name="com.youyi.YWL.activity.GroupInformationActivity" />
 
         <!--    群组列表界面   -->
-        <activity android:name=".activity.GroupListActivity" />
+        <activity android:name="com.youyi.YWL.activity.GroupListActivity" />
 
         <!--    联系人界面   -->
-        <activity android:name=".activity.ContactsActivity" />
+        <activity android:name="com.youyi.YWL.activity.ContactsActivity" />
 
         <!--    加入社区群界面   -->
         <activity
-            android:name=".activity.JoinGroupActivity"
+            android:name="com.youyi.YWL.activity.JoinGroupActivity"
             android:windowSoftInputMode="stateHidden|stateUnchanged" />
 
         <!--    社区群的公告列表界面   -->
-        <activity android:name=".activity.GroupNoticeListActivity" />
+        <activity android:name="com.youyi.YWL.activity.GroupNoticeListActivity" />
+
+        <!--    文件处理界面   -->
+        <activity android:name="com.youyi.YWL.activity.FileListActivity" />
+
+        <!--    引导界面1   -->
+        <activity android:name="com.youyi.YWL.activity.GuideActivity1" />
+
+        <!--    引导界面2   -->
+        <activity android:name="com.youyi.YWL.activity.GuideActivity2" />
+
+        <!--    引导界面3   -->
+        <activity android:name="com.youyi.YWL.activity.GuideActivity3" />
+
+        <!--    选择学习阶段界面  -->
+        <activity android:name="com.youyi.YWL.activity.ChooseLearningStageActivity" />
+
+        <!--    选择学习阶段年级界面  -->
+        <activity android:name="com.youyi.YWL.activity.ChooseLearningGradeActivity" />
+
+        <!--    选择或修改标签界面  -->
+        <activity android:name="com.youyi.YWL.activity.UpdateTagActivity" />
+
+        <!--    我的社区-申请发帖界面  -->
+        <activity
+            android:name="com.youyi.YWL.activity.ApplyPostActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--    我的社区-社区帖子详情界面  -->
+        <activity android:name=".activity.CommunityPostDetailActivity" />
+
+        <!--    设置-关于我们界面  -->
+        <activity android:name=".activity.AboutUsActivity" />
+
+        <!--        设置-关于我们-联系我们界面       -->
+        <activity android:name=".activity.ContactUsActivity" />
+
+        <!--        登录界面       -->
+        <activity
+            android:name=".activity.LoginActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+
+        <!--        注册界面       -->
+        <activity
+            android:name=".activity.RegistActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--        兑换积分记录界面       -->
+        <activity android:name=".activity.CreditExchangeRecordActivity" />
+
+        <!--       学分商城界面       -->
+        <activity android:name=".activity.CreditMallActivity" />
+
+        <!--       我的订单界面       -->
+        <activity android:name=".activity.MyOrderActivity" />
+
+        <!--       订单详情界面       -->
+        <activity
+            android:name=".activity.OrderDetailActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--       支付订单界面       -->
+        <activity android:name=".activity.OrderPaymentActivity" />
+
+        <!--       确认订单界面       -->
+        <activity android:name=".activity.OrderConfirmActivity" />
+
+        <!--       取消订单界面       -->
+        <activity
+            android:name=".activity.OrderCancelActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--       钱包管理界面       -->
+        <activity android:name=".activity.ManagePurseActivity" />
+
+        <!--       未来币充值界面       -->
+        <activity android:name=".activity.RechargeActivity" />
+
+        <!--微信-->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <!--精品课程界面-->
+        <activity android:name=".activity.ExcellentCourseActivity" />
+
+        <!--精品课程界面2-->
+        <activity android:name=".activity.ExcellentCourseActivity2" />
+
+        <!--精品课程  搜索界面-->
+        <activity android:name=".activity.ExcellentCourseSearchActivity" />
+
+        <!--精品课程  详情界面-->
+        <activity android:name=".activity.ExcellentCourseDetailActivity" />
+
+
+
+
+
+
+
 
 
         <!--融云的内容提供者-->
         <provider
             android:name="android.support.v4.content.FileProvider"
-            android:authorities="com.feature.projectone.FileProvider"
+            android:authorities="com.youyi.YWL.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
@@ -176,7 +324,7 @@
 
         <!--会话列表-->
         <activity
-            android:name="com.feature.projectone.RongIM.ConversationListActivity"
+            android:name="com.youyi.YWL.RongIM.ConversationListActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
 
@@ -186,7 +334,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="com.feature.projectone"
+                    android:host="com.youyi.YWL"
                     android:pathPrefix="/conversationlist"
                     android:scheme="rong" />
             </intent-filter>
@@ -194,7 +342,7 @@
 
         <!--聚合会话列表-->
         <activity
-            android:name="com.feature.projectone.RongIM.SubConversationListActivtiy"
+            android:name="com.youyi.YWL.RongIM.SubConversationListActivtiy"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
 
@@ -204,7 +352,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="com.feature.projectone"
+                    android:host="com.youyi.YWL"
                     android:pathPrefix="/subconversationlist"
                     android:scheme="rong" />
             </intent-filter>
@@ -212,7 +360,7 @@
 
         <!--会话界面-->
         <activity
-            android:name="com.feature.projectone.RongIM.ConversationActivity"
+            android:name="com.youyi.YWL.RongIM.ConversationActivity"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden|adjustResize">
 
@@ -222,15 +370,16 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data
-                    android:host="com.feature.projectone"
+                    android:host="com.youyi.YWL"
                     android:pathPrefix="/conversation/"
                     android:scheme="rong" />
             </intent-filter>
         </activity>
 
+
         <!--融云消息推送广播接收器-->
         <receiver
-            android:name=".RongIM.SealNotificationReceiver"
+            android:name="com.youyi.YWL.RongIM.SealNotificationReceiver"
             android:exported="true">
             <intent-filter>
                 <action android:name="io.rong.push.intent.MESSAGE_ARRIVED" />

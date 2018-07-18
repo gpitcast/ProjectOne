@@ -16,7 +16,8 @@
             android:orientation="vertical"
             android:paddingBottom="20dp">
 
-            <include layout="@layout/layout_white_head" />
+
+            <include layout="@layout/layout_blue_head" />
 
             <include layout="@layout/layout_big_line" />
 
@@ -42,7 +43,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
 
-                <com.feature.projectone.view.YuanJiaoImageView
+                <com.youyi.YWL.view.YuanJiaoImageView
                     android:id="@+id/iv_head"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
@@ -83,12 +84,12 @@
 
                 <EditText
                     android:id="@+id/et_nickName"
-                    android:singleLine="true"
-                    android:layout_marginRight="10dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
                     android:background="@null"
+                    android:singleLine="true"
                     android:text="？？？"
                     android:textColor="@color/grayone"
                     android:textSize="15sp" />
@@ -121,11 +122,11 @@
                 <EditText
                     android:id="@+id/et_realName"
                     android:layout_width="match_parent"
-                    android:layout_marginRight="10dp"
-                    android:singleLine="true"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
+                    android:layout_marginRight="10dp"
                     android:background="@null"
+                    android:singleLine="true"
                     android:text="？？？"
                     android:textColor="@color/grayone"
                     android:textSize="15sp" />
@@ -408,17 +409,23 @@
                     android:textSize="14sp" />
             </LinearLayout>
 
-            <TextView
-                android:id="@+id/tv_save_update"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_margin="10dp"
-                android:background="@drawable/bg_dark_blue_btn"
+                android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="保存修改"
-                android:textColor="@android:color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_save_update"
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/bg_blue_choose_student"
+                    android:gravity="center"
+                    android:text="保存修改"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

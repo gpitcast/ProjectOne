@@ -5,8 +5,7 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_white_head" />
-
+    <include layout="@layout/layout_blue_head" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -41,18 +40,22 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_marginTop="40dp">
 
         <TextView
-            android:textStyle="bold"
             android:id="@+id/tv_next_step"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="250dp"
+            android:background="@drawable/bg_blue_choose_student"
+            android:gravity="center"
             android:text="下一步"
-            android:textColor="@color/normal_orange"
-            android:textSize="15sp" />
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <View
             android:layout_width="wrap_content"
@@ -60,6 +63,7 @@
             android:layout_alignEnd="@+id/tv_next_step"
             android:layout_alignStart="@+id/tv_next_step"
             android:layout_below="@+id/tv_next_step"
-            android:background="@color/normal_orange" />
+            android:background="@color/normal_orange"
+            android:visibility="gone" />
     </RelativeLayout>
 </LinearLayout>

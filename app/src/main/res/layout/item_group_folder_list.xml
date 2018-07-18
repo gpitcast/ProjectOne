@@ -22,8 +22,12 @@
             <ImageView
                 android:id="@+id/iv_file_type"
                 android:layout_width="50dp"
+                android:layout_height="50dp" />
+
+            <FrameLayout
+                android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:src="@mipmap/img_type_pdf" />
+                android:background="#66ffffff" />
 
             <ImageView
                 android:id="@+id/iv_download_status"
@@ -55,7 +59,6 @@
                     android:layout_weight="1"
                     android:ellipsize="end"
                     android:singleLine="true"
-                    android:text="奥数课时一(上).zip"
                     android:textColor="@color/normal_black"
                     android:textSize="14sp" />
 
@@ -64,7 +67,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="50dp"
-                    android:text="04-30"
+                    android:text="？？-？？"
                     android:textColor="@color/light_gray16"
                     android:textSize="10sp" />
             </LinearLayout>
@@ -74,7 +77,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="9dp"
-                android:text="30MB"
                 android:textColor="@color/light_gray16"
                 android:textSize="10sp" />
         </LinearLayout>

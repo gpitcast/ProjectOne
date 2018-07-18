@@ -42,7 +42,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:drawableLeft="@mipmap/hot"
+            android:drawableLeft="@mipmap/img_blue_hot"
             android:drawablePadding="3.5dp"
             android:textColor="#f8444d"
             android:textSize="11sp"

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_white_head" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@mipmap/bg_change_blue"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="95dp"
+            android:layout_height="71dp"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/icon_wallet" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="¥ 1000"
+            android:textColor="@color/normal_yellow1"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="120dp"
+            android:layout_height="25dp"
+            android:background="@drawable/bg_yellow_circle_rectangle"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:text="查看资金明细"
+                android:textColor="@color/normal_black1"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginLeft="3dp"
+                android:rotation="180"
+                android:src="@mipmap/icon_black_arrow_right" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <include layout="@layout/layout_big_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="23dp"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/icon_money_package" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="个人钱包"
+            android:textColor="@color/normal_black"
+            android:textSize="15sp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_goto_recharge"
+            android:layout_marginRight="15dp"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
+            android:background="@drawable/bg_blue_choose_student"
+            android:gravity="center"
+            android:text="去充值"
+            android:textColor="@color/white" />
+    </LinearLayout>
+</LinearLayout>

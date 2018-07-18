@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_base"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_tag_name"
+        android:layout_width="40dp"
+        android:layout_height="20dp"
+        android:background="@drawable/bg_blue_choose_student"
+        android:gravity="center"
+        android:text="语文"
+        android:textColor="@color/white"
+        android:textSize="12sp" />
+
+</LinearLayout>

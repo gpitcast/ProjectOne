@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_base"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
@@ -13,8 +14,8 @@
 
         <ImageView
             android:id="@+id/iv_head"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="55dp"
+            android:layout_height="55dp"
             android:layout_marginBottom="8.5dp"
             android:layout_marginTop="8.5dp"
             android:scaleType="fitXY" />
@@ -30,9 +31,11 @@
                 android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="？？？"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:maxWidth="150dp"
                 android:textColor="@color/normal_black"
-                android:textSize="14sp" />
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -42,8 +45,8 @@
                 android:orientation="horizontal">
 
                 <ImageView
-                    android:layout_width="9.5dp"
-                    android:layout_height="12dp"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
                     android:src="@mipmap/icon_group_address" />
 
                 <TextView
@@ -51,24 +54,26 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="？？"
+                    android:ellipsize="end"
+                    android:maxWidth="120dp"
+                    android:singleLine="true"
                     android:textColor="@color/light_gray16"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
                 <ImageView
-                    android:layout_width="9.5dp"
-                    android:layout_height="12dp"
+                    android:layout_width="13dp"
+                    android:layout_height="15dp"
                     android:layout_marginLeft="17dp"
-                    android:src="@mipmap/icon_group_member" />
+                    android:scaleType="fitXY"
+                    android:src="@mipmap/icon_group_member_red" />
 
                 <TextView
                     android:id="@+id/tv_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="3dp"
-                    android:text="？？"
                     android:textColor="@color/light_gray16"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -76,9 +81,11 @@
                 android:id="@+id/tv_instraction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="？？"
-                android:textColor="@color/light_gray16"
+                android:layout_marginTop="5dp"
+                android:ellipsize="end"
+                android:maxWidth="150dp"
+                android:singleLine="true"
+                android:textColor="@color/light_gray11"
                 android:textSize="10sp" />
         </LinearLayout>
 
@@ -89,13 +96,11 @@
 
         <TextView
             android:id="@+id/tv_join_group"
-            android:layout_width="55dp"
-            android:layout_height="20dp"
-            android:background="@drawable/bg_dark_blue_btn"
+            android:layout_width="60dp"
+            android:layout_height="25dp"
             android:gravity="center"
-            android:text="？？？"
             android:textColor="@android:color/white"
-            android:textSize="10sp" />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <include layout="@layout/layout_small_line" />

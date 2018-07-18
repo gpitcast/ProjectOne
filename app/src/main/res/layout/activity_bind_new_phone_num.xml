@@ -5,7 +5,7 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_white_head" />
+    <include layout="@layout/layout_blue_head" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -54,9 +54,8 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="@string/get_phone_number"
-                    android:textColor="@color/normal_orange"
-                    android:textSize="14sp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/orangeone"
+                    android:textSize="14sp" />
             </LinearLayout>
 
         </LinearLayout>
@@ -65,7 +64,7 @@
             android:id="@+id/et_psw"
             style="@style/MyEditTextStyle"
             android:layout_marginTop="18dp"
-            android:drawableLeft="@mipmap/img_lock"
+            android:drawableLeft="@mipmap/img_white_lock"
             android:hint="@string/input_normal_psw"
             android:inputType="number"
             android:maxLength="16"
@@ -75,22 +74,20 @@
         <LinearLayout
             android:id="@+id/ll_commit"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="23dp"
-            android:background="@drawable/bg_login_light_btn"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal|bottom"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_commit"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:enabled="false"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="250dp"
+                android:background="@drawable/bg_login_light_btn"
                 android:gravity="center"
                 android:text="@string/submit"
                 android:textColor="@android:color/white"
-                android:textSize="15sp"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

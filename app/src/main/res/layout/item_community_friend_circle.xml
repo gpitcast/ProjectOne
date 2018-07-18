@@ -18,38 +18,42 @@
             android:orientation="horizontal">
 
             <TextView
+                android:id="@+id/tv_user_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="王迅"
+                android:text="？"
                 android:textColor="@color/orangeone"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
-                android:text="2018.12.30 18:18"
+                android:text="？？？"
                 android:textColor="@color/light_gray11"
                 android:textSize="14sp" />
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:ellipsize="end"
             android:singleLine="true"
-            android:text="语文到底学习什么,学习语文的十大好处,赶快教育孩子学号语文吧"
+            android:text="？"
             android:textColor="@color/normal_black" />
 
         <TextView
+            android:id="@+id/tv_content"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:ellipsize="end"
             android:lines="2"
             android:maxLines="2"
-            android:text="高中文言文,古诗文难精点一网打尽高中文言文,古诗文难精点一网打尽高中文言文,古诗文难精点一网打尽高中文言文,古诗文难精点一网打尽高中文言文,古诗文难精点一网打尽高中文言文"
+            android:text="？"
             android:textColor="@color/grayone"
             android:textSize="11sp" />
 
@@ -76,10 +80,11 @@
                     android:src="@mipmap/img_dianzan_gray_small" />
 
                 <TextView
+                    android:id="@+id/tv_dianzan_counts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="27"
+                    android:text="？"
                     android:textColor="@color/grayone"
                     android:textSize="12sp" />
             </LinearLayout>
@@ -97,10 +102,11 @@
                     android:src="@mipmap/iv_talk_small" />
 
                 <TextView
+                    android:id="@+id/tv_reply_counts"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="12"
+                    android:text="？"
                     android:textColor="@color/grayone"
                     android:textSize="12sp" />
             </LinearLayout>

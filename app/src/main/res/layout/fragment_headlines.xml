@@ -1,11 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-        <com.jcodecraeer.xrecyclerview.XRecyclerView
-            android:id="@+id/xRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-</LinearLayout>
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        android:id="@+id/ll_preload_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray5"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_preload_layout"
+            android:layout_width="117dp"
+            android:layout_height="117dp"
+            android:layout_marginTop="138dp"
+            android:src="@mipmap/img_boy_running1" />
+
+        <TextView
+            android:id="@+id/tv_preload_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="努力加载中..."
+            android:textColor="@color/normal_black"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</RelativeLayout>

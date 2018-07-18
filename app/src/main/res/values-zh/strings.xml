@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">盈未来</string>
 
@@ -6,9 +5,11 @@
     <string name="input_username">请输入用户名</string>
     <string name="input_phone">请输入手机号</string>
     <string name="input_regist_phone">请输入您注册的手机号</string>
-    <string name="input_code">请输入验证码</string>
+    <string name="input_bind_phone">请输入您要绑定的手机号</string>
+    <string name="input_code">请输入手机验证码</string>
     <string name="input_psw">请输入密码</string>
     <string name="input_normal_psw">请填写6-16位新密码</string>
+    <string name="input_old_psw">请输入原账户密码</string>
     <string name="back">返回</string>
     <string name="login">登录</string>
     <string name="regist">注册</string>
@@ -39,7 +40,7 @@
     <string name="write_right_phone_code">请输入正确的验证码</string>
     <string name="phone_code_error">验证码输入有误，请重新输入</string>
     <string name="write_right_phone_psw">请输入密码</string>
-    <string name="write_six_phone_psw">请输入6-16位新密码</string>
+    <string name="write_six_phone_psw">请输入6-20位新密码</string>
     <string name="agree_regist_agreement">请同意注册协议</string>
     <string name="phone_code_time_out">验证码超时，请重新获取验证码</string>
     <string name="set_top">置顶</string>
@@ -72,4 +73,8 @@
     <string name="diamond_vip">钻石会员</string>
     <string name="normal_vip">普通会员</string>
     <string name="vip_center">会员中心</string>
+    <string name="explain">说明</string>
+    <string name="exit_login">退出登录</string>
+    <string name="bind_now">立即绑定</string>
+
 </resources>

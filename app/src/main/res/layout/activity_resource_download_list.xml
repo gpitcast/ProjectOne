@@ -65,42 +65,68 @@
 
     <include layout="@layout/layout_small_line" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/just_loading"
-        android:textColor="@color/orangeone1"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <include layout="@layout/layout_small_line" />
-
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/xRecyclerView_loading"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="10dp"
-        android:text="@string/load_finish"
-        android:textColor="@color/orangeone"
-        android:textSize="14sp"
-        android:textStyle="bold" />
-
-    <include layout="@layout/layout_small_line" />
-
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/xRecyclerView"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_weight="1"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/just_loading"
+                android:textColor="@color/orangeone1"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <include layout="@layout/layout_small_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <com.jcodecraeer.xrecyclerview.XRecyclerView
+                    android:id="@+id/xRecyclerView_loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/load_finish"
+                android:textColor="@color/orangeone"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <include layout="@layout/layout_small_line" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:descendantFocusability="blocksDescendants">
+
+                <com.jcodecraeer.xrecyclerview.XRecyclerView
+                    android:id="@+id/xRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
     <LinearLayout
         android:id="@+id/ll_caozuo"

@@ -4,59 +4,138 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/layout_blue_head" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/orangeone"
-        android:gravity="center"
+        android:layout_height="250dp"
+        android:background="@mipmap/bg_jianbian_blue"
         android:orientation="vertical">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:orientation="horizontal">
+        <RelativeLayout
+            android:id="@+id/rl_title"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:id="@+id/tvBack"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:drawableLeft="@mipmap/back_white"
+                android:drawablePadding="7.5dp"
+                android:gravity="center"
+                android:paddingLeft="7.5dp"
+                android:text="返回"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/tvTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:maxWidth="200dp"
+                    android:singleLine="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvTileNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/tvTitle"
+                    android:layout_marginBottom="3dp"
+                    android:layout_toRightOf="@+id/tvTitle"
+                    android:textColor="@android:color/white"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/img_blue_lamp" />
+                android:id="@+id/imgTitleRight"
+                android:layout_width="23dp"
+                android:layout_height="23dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="7.5dp"
+                android:layout_marginTop="17.5dp"
+                android:src="@mipmap/search"
+                android:visibility="gone" />
 
             <TextView
+                android:id="@+id/tvTitleRight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="首页内容会根据学习阶段生成"
-                android:textColor="@color/light_blue1"
-                android:textSize="12sp" />
-        </LinearLayout>
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="7.5dp"
+                android:textColor="@android:color/white"
+                android:textSize="13sp" />
 
-        <com.feature.projectone.view.CircleImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="15dp"
-            android:src="@mipmap/meinv" />
+        </RelativeLayout>
+
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/bg_white_gradle"
-            android:orientation="vertical"
-            android:paddingBottom="3dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingTop="3dp">
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <TextView
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="小学五年级"
-                android:textColor="@android:color/white"
-                android:textSize="18sp" />
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/img_blue_lamp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="首页内容会根据学习阶段生成"
+                    android:textColor="@color/light_blue4"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <com.youyi.YWL.view.CircleImageView
+                android:id="@+id/circleImageView"
+                android:layout_width="78dp"
+                android:layout_height="78dp"
+                android:layout_marginTop="15dp"
+                android:src="@mipmap/meinv" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_white_gradle"
+                android:orientation="vertical"
+                android:paddingBottom="3dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="3dp">
+
+                <TextView
+                    android:id="@+id/tv_learning_stage"
+                    android:layout_width="100dp"
+                    android:layout_height="25dp"
+                    android:gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
@@ -77,9 +156,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:background="@android:color/white"
-        android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="15dp">
 
@@ -89,10 +167,11 @@
             android:src="@mipmap/img_blue_hearts" />
 
         <TextView
+            android:id="@+id/tv_learning_tags"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="数学"
+            android:maxLength="15"
             android:textColor="@color/normal_blue1"
             android:textSize="18sp" />
 
@@ -102,6 +181,7 @@
             android:layout_weight="1" />
 
         <TextView
+            android:id="@+id/tv_choose_tag"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_blue_choose"
@@ -113,23 +193,12 @@
             android:textColor="@color/normal_blue1"
             android:textSize="14sp" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:background="@drawable/bg_blue_choose"
-            android:paddingBottom="3dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="3dp"
-            android:text="更换标签"
-            android:textColor="@color/normal_blue1"
-            android:textSize="14sp" />
     </LinearLayout>
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView
         android:id="@+id/xRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:visibility="gone" />
 
 </LinearLayout>

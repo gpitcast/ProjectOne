@@ -14,7 +14,10 @@
     <color name="alpha_white">#40ffffff</color>
     <!-- 0.80透明的白色  -->
     <color name="eighty_alpha_white">#ccffffff</color>
+    <!-- 0.60透明的白色  -->
+    <color name="sixty_alpha_white">#66ffffff</color>
     <color name="dark_red">#b2001d</color>
+    <color name="dark_red2">#cb3535</color>
     <color name="light_gray">#f5f5f5</color>
     <color name="normal_gray">#dcdcdc</color>
     <color name="normal_blue">#498de1</color>
@@ -60,4 +63,40 @@
     <color name="light_gray18">#a2a2ab</color>
     <color name="normal_yellow2">#ffc949</color>
     <color name="dark_gray1">#a1a1a1</color>
+    <color name="light_gray19">#f2f2f2</color>
+    <color name="normal_gray4">#e3e3e3</color>
+    <color name="light_gray20">#c3c3c8</color>
+    <color name="light_gray21">#fafafa</color>
+    <color name="normal_black1">#404040</color>
+    <color name="normal_black5">#323232</color>
+    <color name="light_gray22">#989898</color>
+    <color name="light_gray23">#c7c7c7</color>
+    <color name="light_gray24">#9a9a9a</color>
+    <color name="light_gray25">#7e7e7e</color>
+    <color name="normal_black6">#818181</color>
+    <color name="light_gray26">#715900</color>
+    <color name="normal_yellow3">#f7941e</color>
+    <color name="normal_blue2">#479fe5</color>
+    <color name="normal_green">#21bf28</color>
+    <color name="normal_orange1">#ff5c25</color>
+    <color name="light_blue3">#39a8ff</color>
+    <color name="light_blue4">#49cdfe</color>
+    <color name="light_blue5">#1a82ff</color>
+    <color name="light_gray27">#8d8d8d</color>
+    <color name="light_blue6">#f1f9ff</color>
+    <color name="light_blue7">#cee8fd</color>
+    <color name="normal_black7">#686868</color>
+    <color name="dark_gray2">#c6c6c6</color>
+    <color name="dark_gray3">#9f9f9f</color>
+    <color name="light_blue8">#edf7ff</color>
+    <color name="normal_red1">#c66a6a</color>
+    <color name="normal_gray5">#a4a4a4</color>
+    <color name="normal_gray6">#909090</color>
+    <color name="normal_brown">#d67400</color>
+    <color name="light_brown">#ffefdd</color>
+    <color name="light_blue9">#e9f3f8</color>
+    <color name="light_red3">#fbf1f2</color>
+    <color name="normal_green1">#08ab00</color>
+    <color name="normal_white">#fdfdfd</color>
+
 </resources>

@@ -34,7 +34,7 @@
                         android:scaleType="fitXY"
                         android:src="@mipmap/img_group_information_circle" />
 
-                    <com.feature.projectone.view.CircleImageView
+                    <com.youyi.YWL.view.CircleImageView
                         android:id="@+id/circleImageView"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -54,7 +54,6 @@
                     android:textSize="14sp" />
 
                 <LinearLayout
-                    android:descendantFocusability="blocksDescendants"
                     android:id="@+id/ll_group_member"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -62,6 +61,7 @@
                     android:layout_marginLeft="40dp"
                     android:layout_marginRight="40dp"
                     android:layout_marginTop="21dp"
+                    android:descendantFocusability="blocksDescendants"
                     android:orientation="vertical">
 
 
@@ -101,10 +101,10 @@
                         <ImageView
                             android:layout_width="8.5dp"
                             android:layout_height="13.5dp"
-                            android:src="@mipmap/icon_black_arrow_right" />
+                            android:src="@mipmap/icon_gray_arrow_right" />
                     </LinearLayout>
 
-                    <com.feature.projectone.view.MyGridView
+                    <com.youyi.YWL.view.MyGridView
                         android:id="@+id/gridView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
 
-                    <com.feature.projectone.view.IosSwitch
+                    <com.youyi.YWL.view.IosSwitch
                         android:id="@+id/iosSwitch_no_msg"
                         android:layout_width="50dp"
                         android:layout_height="25dp" />
@@ -291,7 +291,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
 
-                    <com.feature.projectone.view.IosSwitch
+                    <com.youyi.YWL.view.IosSwitch
                         android:id="@+id/iosSwitch_top_tlak"
                         android:layout_width="50dp"
                         android:layout_height="25dp" />
@@ -306,21 +306,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/light_gray5"
+                android:gravity="center_horizontal"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_delete_logout"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_dark_blue_btn"
+                    android:background="@drawable/bg_blue_choose_student"
                     android:gravity="center"
                     android:text="删除并退出"
                     android:textColor="@android:color/white"
-                    android:textSize="15sp"
+                    android:textSize="18sp"
                     android:textStyle="bold" />
             </LinearLayout>
 

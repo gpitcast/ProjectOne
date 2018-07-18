@@ -26,7 +26,7 @@
             android:layout_marginLeft="11dp"
             android:text="语文学习500社群"
             android:textColor="@color/normal_black"
-            android:textSize="14sp" />
+            android:textSize="16sp" />
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -42,13 +42,13 @@
                 android:paddingTop="5dp">
 
                 <TextView
-                    android:layout_width="55dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/bg_dark_blue_btn"
+                    android:layout_width="60dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/bg_blue_fillet_rectangle"
                     android:gravity="center"
                     android:text="开始聊天"
                     android:textColor="@android:color/white"
-                    android:textSize="10sp" />
+                    android:textSize="12sp" />
 
             </FrameLayout>
 

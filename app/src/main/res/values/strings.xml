@@ -40,7 +40,7 @@
     <string name="write_right_phone_code">请输入正确的验证码</string>
     <string name="phone_code_error">验证码输入有误，请重新输入</string>
     <string name="write_right_phone_psw">请输入密码</string>
-    <string name="write_six_phone_psw">请输入6-16位新密码</string>
+    <string name="write_six_phone_psw">请输入6-20位新密码</string>
     <string name="agree_regist_agreement">请同意注册协议</string>
     <string name="phone_code_time_out">验证码超时，请重新获取验证码</string>
     <string name="set_top">置顶</string>

@@ -15,7 +15,7 @@
         android:orientation="horizontal"
         android:paddingBottom="10dp">
 
-        <com.feature.projectone.view.CircleImageView
+        <com.youyi.YWL.view.CircleImageView
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:src="@mipmap/meinv" />

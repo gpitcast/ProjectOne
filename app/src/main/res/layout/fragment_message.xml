@@ -2,69 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:layout_height="400dp"
+        android:background="@color/orangeone"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/bt1"
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="单聊" />
-
-        <Button
-            android:id="@+id/bt2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="群聊" />
-
-        <Button
-            android:id="@+id/bt3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="所有单聊列表" />
-
-        <Button
-            android:id="@+id/bt4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="群成员列表" />
-
-        <Button
-            android:id="@+id/bt5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="群文件列表" />
-
-        <Button
-            android:id="@+id/bt6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="群组信息" />
-
-        <Button
-            android:id="@+id/bt7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="群组列表" />
-
-        <Button
-            android:id="@+id/bt8"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="联系人" />
+            android:layout_height="match_parent"
+            android:layout_marginTop="52.5dp"
+            android:src="@mipmap/bg_sign_message_blue" />
 
     </LinearLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:text="立即登入,与我们随时联系"
+        android:textColor="@color/light_gray24"
+        android:textSize="10dp" />
 
-    <include layout="@layout/rong_im_head" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22.5dp"
+        android:orientation="horizontal">
 
-    <com.jcodecraeer.xrecyclerview.XRecyclerView
-        android:id="@+id/xRecyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/tv_regist"
+            android:layout_width="81dp"
+            android:layout_height="26dp"
+            android:background="@drawable/bg_blue_choose_student"
+            android:gravity="center"
+            android:text="@string/regist"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="81dp"
+            android:layout_height="26dp"
+            android:layout_marginLeft="24dp"
+            android:background="@drawable/bg_blue_choose"
+            android:gravity="center"
+            android:text="登入"
+            android:textColor="@color/light_gray25"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
 </LinearLayout>

@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:layout_alignParentBottom="true"
+                android:src="@mipmap/bg_learning_state" />
+
+            <RelativeLayout
+                android:id="@+id/rl_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade_one"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <TextView
+                        android:id="@+id/tv_grade_one"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="一年级"
+                        android:textColor="@color/normal_black"
+                        android:textSize="14sp" />
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_unchecked" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_second"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@+id/rl_top"
+                android:layout_marginTop="4dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade_six"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <TextView
+                        android:id="@+id/tv_grade_six"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="六年级"
+                        android:textColor="@color/normal_black"
+                        android:textSize="14sp" />
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_unchecked" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade_two"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="153dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <TextView
+                        android:id="@+id/tv_grade_two"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="二年级"
+                        android:textColor="@color/normal_black"
+                        android:textSize="14sp" />
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_unchecked" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="177.5dp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_checked" />
+
+                    <TextView
+                        android:id="@+id/tv_learning_stage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="？？"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ll_second"
+                android:layout_marginTop="58dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade_five"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <TextView
+                        android:id="@+id/tv_grade_five"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="五年级"
+                        android:textColor="@color/normal_black"
+                        android:textSize="14sp" />
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_unchecked" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade_three"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:layout_marginLeft="153dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <TextView
+                        android:id="@+id/tv_grade_three"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="三年级"
+                        android:textColor="@color/normal_black"
+                        android:textSize="14sp" />
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_unchecked" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_fourth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_third"
+                android:layout_marginTop="62.5dp"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/rl_grade_four"
+                    android:layout_width="65dp"
+                    android:layout_height="65dp"
+                    android:background="@drawable/bg_blue_cirlce_line">
+
+                    <TextView
+                        android:id="@+id/tv_grade_four"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="16dp"
+                        android:text="四年级"
+                        android:textColor="@color/normal_black"
+                        android:textSize="14sp" />
+
+                    <com.youyi.YWL.view.CircleImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:layout_centerInParent="true"
+                        android:src="@mipmap/bg_learning_state_unchecked" />
+
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_back"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rl_fourth"
+                android:layout_marginTop="175dp"
+                android:gravity="center_horizontal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_back"
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
+                    android:background="@drawable/bg_blue_choose_student"
+                    android:gravity="center"
+                    android:text="返回"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_below="@+id/ll_back" />
+        </RelativeLayout>
+    </ScrollView>
+</LinearLayout>

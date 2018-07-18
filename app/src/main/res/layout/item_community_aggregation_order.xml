@@ -16,12 +16,13 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
-            <com.feature.projectone.view.CircleImageView
+            <com.youyi.YWL.view.CircleImageView
+                android:id="@+id/circleImageView"
                 android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:src="@mipmap/meinv" />
+                android:layout_height="60dp" />
 
             <TextView
+                android:id="@+id/tv_hot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="45dp"
@@ -30,7 +31,8 @@
                 android:paddingRight="3dp"
                 android:text="热门"
                 android:textColor="@android:color/white"
-                android:textSize="8sp" />
+                android:textSize="8sp"
+                android:visibility="gone" />
         </RelativeLayout>
 
         <LinearLayout
@@ -42,23 +44,23 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="高中语文兴趣小组"
-                android:textColor="@color/light_gray16"
-                android:textSize="14sp" />
+                android:textColor="@color/normal_black"
+                android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/tv_instruction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="高中文言文,古诗文难精点一网打尽高中文言文,古诗文难精点一网打尽高中文言文,古诗文难精点一网打尽"
                 android:textColor="@color/grayone"
-                android:textSize="11sp" />
+                android:textSize="12sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -69,13 +71,13 @@
             android:orientation="vertical">
 
             <TextView
+                android:textSize="12sp"
                 android:id="@+id/tv_join"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/bg_blue_line"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:gravity="center"
                 android:padding="3dp"
-                android:text="申请加入"
-                android:textColor="@color/orangeone" />
+                android:textColor="@color/white" />
         </LinearLayout>
     </LinearLayout>
 

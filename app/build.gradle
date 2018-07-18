@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 26
     defaultConfig {
-        applicationId "com.feature.projectone"
+        applicationId "com.youyi.YWL"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -16,14 +16,17 @@ android {
             abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
         }
     }
-    splits {
-        abi {
-            enable true
-            reset()
-            include 'x86', 'armeabi-v7a', 'x86_64'
-            universalApk true
-        }
-    }
+
+//    下面的配置将生成的APK分割成多个内核的APK,例如x86的APK,Arm的APK等
+//    splits {
+//        abi {
+//            enable true
+//            reset()
+//            include 'x86', 'armeabi-v7a', 'x86_64'
+//            universalApk true
+//        }
+//    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -90,7 +93,7 @@ dependencies {
     /*         EvnetBus             */
     compile 'org.greenrobot:eventbus:3.1.1'
 
-    /*           替代viewPagerIndicator的空间       */
+    /*           替代viewPagerIndicator的控件       */
     compile 'com.github.hackware1993:MagicIndicator:1.5.0'
 
     /*           加载图片框架        */
@@ -147,4 +150,13 @@ dependencies {
 
     /*              卡片布局              */
     compile 'com.android.support:cardview-v7:26.0.0-alpha1'
+
+    /*              无限轮播图             */
+    compile 'com.bigkoo:ConvenientBanner:2.1.4'
+
+    /*             自定义的wheelview          */
+    compile 'com.pl:wheelview:0.7.2'
+
+    /*            微信SDK          */
+    compile 'com.tencent.mm.opensdk:wechat-sdk-android-with-mta:+'
 }

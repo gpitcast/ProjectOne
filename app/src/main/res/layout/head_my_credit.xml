@@ -6,7 +6,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="100dp"
         android:background="@mipmap/img_sign_in_credit_bg"
         android:gravity="center_vertical"
         android:orientation="horizontal">
@@ -14,15 +14,15 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="30dp"
-            android:text="当前学分："
+            android:layout_marginLeft="15dp"
+            android:text="当前积分："
             android:textColor="@android:color/white"
             android:textSize="18sp" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="26"
+            android:text="1000"
             android:textColor="@color/normal_yellow1"
             android:textSize="25sp"
             android:textStyle="bold" />
@@ -33,20 +33,17 @@
             android:layout_weight="1" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:id="@+id/ll_my_credit"
+            android:layout_width="120dp"
+            android:layout_height="41dp"
+            android:layout_marginRight="15dp"
             android:background="@drawable/bg_white_line"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:paddingBottom="8dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:paddingTop="8dp">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="23dp"
-                android:layout_height="23dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:src="@mipmap/img_jifen_store" />
 
             <TextView
@@ -63,27 +60,24 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="39dp"
         android:background="@android:color/white"
         android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:paddingBottom="10dp"
-        android:paddingTop="10dp">
+        android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="14dp"
+            android:layout_height="16dp"
             android:layout_marginLeft="10dp"
-            android:src="@mipmap/img_obtain_credit_history" />
+            android:src="@mipmap/img_exchange_history" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
-            android:text="学分获得记录"
+            android:text="学分获得及明细"
             android:textColor="@color/normal_black"
-            android:textSize="15sp"
-            android:textStyle="bold" />
+            android:textSize="15sp" />
 
     </LinearLayout>
 

@@ -7,53 +7,35 @@
 
     <include layout="@layout/layout_blue_head" />
 
-    <RelativeLayout
-        android:id="@+id/rl_magicIndicator"
+    <LinearLayout
+        android:id="@+id/ll_magicIndicator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <net.lucode.hackware.magicindicator.MagicIndicator
             android:id="@+id/magicIndicator"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_gravity="center_vertical" />
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1" />
 
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentRight="true">
+        <LinearLayout
+            android:id="@+id/ll_shaixuan"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:gravity="center"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:alpha="0.6"
-                android:background="@drawable/bg_shaixuan_button"
-                android:gravity="center"
-                android:orientation="horizontal" />
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/img_blue_shaixuan" />
 
-            <LinearLayout
-                android:id="@+id/ll_shaixuan"
-                android:layout_width="50dp"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:orientation="horizontal">
+        </LinearLayout>
 
-                <ImageView
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:src="@mipmap/img_shaixuan_button" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="2dp"
-                    android:text="@string/shaixuan"
-                    android:textColor="@android:color/darker_gray"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-        </RelativeLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
     <include layout="@layout/layout_small_line" />
 

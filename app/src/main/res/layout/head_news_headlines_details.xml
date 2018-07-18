@@ -19,7 +19,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
-                android:text="？？？"
                 android:textColor="@android:color/black"
                 android:textSize="19sp"
                 android:textStyle="bold" />
@@ -41,8 +40,7 @@
                         android:id="@+id/tv_xiaobian"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="？？？"
-                        android:textColor="@color/normal_black"
+                        android:textColor="@color/orangeone"
                         android:textSize="12sp" />
 
                 </LinearLayout>
@@ -53,7 +51,6 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:alpha="0.6"
-                    android:text="？？？？-？？-？？ ？？:？？"
                     android:textColor="@color/normal_black"
                     android:textSize="12sp" />
             </RelativeLayout>
@@ -64,6 +61,7 @@
                 android:layout_marginTop="16dp">
 
                 <include layout="@layout/layout_small_line" />
+
             </FrameLayout>
 
             <WebView
@@ -71,18 +69,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
-            <include layout="@layout/layout_big_line" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_height="42dp"
+                android:background="@color/light_gray5"
                 android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:paddingLeft="8dp">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="18dp"
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
                     android:src="@mipmap/icon_comments" />
 
                 <TextView
@@ -91,11 +89,9 @@
                     android:layout_marginLeft="8dp"
                     android:text="@string/comments"
                     android:textColor="@color/dark_black"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:textSize="15sp" />
             </LinearLayout>
 
-            <include layout="@layout/layout_small_line" />
 
         </LinearLayout>
     </ScrollView>
