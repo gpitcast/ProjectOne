@@ -1,13 +1,21 @@
 package com.youyi.YWL.activity;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.TextView;
 
 import com.youyi.YWL.R;
 import com.youyi.YWL.adapter.ExcellentCourseSearchGridAdapter;
 import com.youyi.YWL.fragment.ExcellentCourseSearchAboutFragment;
+import com.youyi.YWL.util.SearchHistoryDao;
+import com.youyi.YWL.util.SoftUtil;
+import com.youyi.YWL.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +29,8 @@ import butterknife.OnClick;
  */
 
 public class ExcellentCourseSearchActivity extends BaseActivity {
+    @BindView(R.id.et_search)
+    EditText et_search;
 
     private ExcellentCourseSearchAboutFragment excellentCourseSearchAboutFragment;
 
@@ -40,6 +50,25 @@ public class ExcellentCourseSearchActivity extends BaseActivity {
     @Override
     public void initView() {
         showSearchFragment();
+
+        et_search.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent keyEvent) {
+
+                if (actionId == EditorInfo.IME_ACTION_SEARCH || actionId == EditorInfo.IME_ACTION_SEND || actionId == EditorInfo.IME_ACTION_DONE
+                        || (keyEvent != null && keyEvent.getKeyCode() == KeyEvent.ACTION_DOWN && keyEvent.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
+                    if (et_search.getText().toString().trim() != null && et_search.getText().toString().trim().length() > 0) {
+                        SoftUtil.hideSoft(ExcellentCourseSearchActivity.this);//隐藏键盘
+                        startActivity(new Intent(ExcellentCourseSearchActivity.this, ExcellentCourseActivity2.class));
+                    } else {
+                        ToastUtil.show(ExcellentCourseSearchActivity.this, "搜索关键字不能为空", 0);
+                    }
+                    return true;
+                }
+                return false;
+            }
+        });
+
     }
 
     public void showSearchFragment() {

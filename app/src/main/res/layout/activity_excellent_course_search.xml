@@ -38,6 +38,8 @@
                 android:src="@mipmap/icon_black_search" />
 
             <EditText
+                android:id="@+id/et_search"
+                android:imeOptions="actionSearch"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"

@@ -16,8 +16,8 @@
     <declare-styleable name="MaterialHeader">
         <attr name="mhPrimaryColor" format="color" />
         <attr name="mhShadowColor" format="color" />
-        <attr name="mhShadowRadius" format="dimension"/>
-        <attr name="mhShowBezierWave" format="boolean"/>
+        <attr name="mhShadowRadius" format="dimension" />
+        <attr name="mhShowBezierWave" format="boolean" />
     </declare-styleable>
 
     <declare-styleable name="CircleImageView">
@@ -26,4 +26,11 @@
         <attr name="civ_border_overlay" format="boolean" />
         <attr name="civ_fill_color" format="color" />
     </declare-styleable>
+
+    <!--圆角图片的圆角角度-->
+    <declare-styleable name="RoundImageView">
+        <!-- 圆角角度-->
+        <attr name="rounded_corners" format="dimension" />
+    </declare-styleable>
+
 </resources>

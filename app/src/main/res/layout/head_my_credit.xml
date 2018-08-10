@@ -20,9 +20,9 @@
             android:textSize="18sp" />
 
         <TextView
+            android:id="@+id/tv_current_credit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1000"
             android:textColor="@color/normal_yellow1"
             android:textSize="25sp"
             android:textStyle="bold" />

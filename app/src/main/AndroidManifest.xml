@@ -280,7 +280,7 @@
         <!--       钱包管理界面       -->
         <activity android:name=".activity.ManagePurseActivity" />
 
-        <!--       未来币充值界面       -->
+        <!--       充值界面       -->
         <activity android:name=".activity.RechargeActivity" />
 
         <!--微信-->
@@ -302,6 +302,41 @@
 
         <!--精品课程  详情界面-->
         <activity android:name=".activity.ExcellentCourseDetailActivity" />
+
+        <!--   充值支付界面  -->
+        <activity android:name=".activity.RechargePaymentActivity" />
+
+        <!--   积分商城商品详情界面  -->
+        <activity
+            android:name=".activity.CreditGoodsDetailsActivity"
+            android:windowSoftInputMode="stateHidden|stateUnchanged" />
+
+        <!--   在线听力界面  -->
+        <activity android:name=".activity.OnlineHearingActivity" />
+
+        <!--   在线听力筛选界面   -->
+        <activity android:name=".activity.OnlineHearingShaixuanActivity" />
+
+        <!--   在线听力详情界面   -->
+        <activity android:name=".activity.OnlineHearingDetailActivity" />
+
+        <!--   在线听力搜索界面   -->
+        <activity
+            android:name=".activity.OnlineHearingSearchActivity" />
+
+        <!--   在线听力搜索结果界面   -->
+        <activity android:name=".activity.OnlineHearingSearchResultActivity" />
+
+        <!--   精品微课界面   -->
+        <activity android:name=".activity.ExcellentWeikeActivity" />
+
+
+
+
+
+
+
+
 
 
 

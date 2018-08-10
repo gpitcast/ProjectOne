@@ -94,8 +94,8 @@
         android:orientation="vertical">
 
         <com.youyi.YWL.view.CircleImageView
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="265dp"
+            android:layout_height="265dp"
             android:src="@mipmap/img_guide_bulb" />
 
     </LinearLayout>
@@ -151,10 +151,14 @@
         </LinearLayout>
     </LinearLayout>
 
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
     <View
         android:layout_width="match_parent"
         android:layout_height="5dp"
-        android:layout_marginTop="70dp"
         android:background="@color/normal_gray4" />
 
     <TextView

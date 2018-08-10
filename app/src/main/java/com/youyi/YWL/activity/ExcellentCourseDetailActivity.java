@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -124,7 +125,7 @@ public class ExcellentCourseDetailActivity extends BaseActivity {
             public IPagerTitleView getTitleView(Context context, final int i) {
                 ClipPagerTitleView clipPagerTitleView = new ClipPagerTitleView(context);
                 clipPagerTitleView.setText(titleList.get(i));
-                clipPagerTitleView.setTextSize(32);
+                clipPagerTitleView.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16, getApplicationContext().getResources().getDisplayMetrics()));
                 clipPagerTitleView.setTextColor(getResources().getColor(R.color.normal_black));
                 clipPagerTitleView.setClipColor(getResources().getColor(R.color.orangeone));
                 clipPagerTitleView.setOnClickListener(new View.OnClickListener() {

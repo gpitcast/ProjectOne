@@ -76,6 +76,7 @@
     <color name="normal_black6">#818181</color>
     <color name="light_gray26">#715900</color>
     <color name="normal_yellow3">#f7941e</color>
+    <color name="alpha_normal_yellow3">#33f7941e</color>
     <color name="normal_blue2">#479fe5</color>
     <color name="normal_green">#21bf28</color>
     <color name="normal_orange1">#ff5c25</color>
@@ -98,5 +99,21 @@
     <color name="light_red3">#fbf1f2</color>
     <color name="normal_green1">#08ab00</color>
     <color name="normal_white">#fdfdfd</color>
+    <color name="normal_white1">#f3f3f3</color>
+    <color name="light_blue10">#bce5f6</color>
+    <color name="light_blue11">#d3edf8</color>
+    <color name="light_blue12">#b6edf5</color>
+    <color name="light_blue13">#c0f4fc</color>
+    <color name="light_blue14">#bdf5f3</color>
+    <color name="light_blue15">#c6fcfa</color>
+    <color name="light_blue16">#bdf5e7</color>
+    <color name="light_blue17">#caf9ed</color>
+    <color name="normal_blue3">#90b6c6</color>
+    <color name="dark_gray4">#7f8488</color>
+    <color name="light_blue18">#39b8e7</color>
+    <color name="normal_green2">#5fd485</color>
+    <color name="normal_orange3">#ffa63c</color>
+    <color name="normal_red2">#fa6e7b</color>
+    <color name="normal_yellow4">#fff5e8</color>
 
 </resources>

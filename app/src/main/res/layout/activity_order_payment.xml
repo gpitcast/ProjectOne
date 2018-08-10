@@ -222,9 +222,11 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/tv_goto_recharge"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="28dp"
+                    android:layout_marginLeft="23dp"
+                    android:padding="5dp"
                     android:text="余额不足,可先充值"
                     android:textColor="@color/dark_red2"
                     android:textSize="14sp" />

@@ -1,5 +1,6 @@
 package com.youyi.YWL.fragment;
 
+import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import com.jcodecraeer.xrecyclerview.ProgressStyle;
 import com.jcodecraeer.xrecyclerview.XRecyclerView;
 import com.youyi.YWL.R;
+import com.youyi.YWL.activity.ExcellentCourseDetailActivity;
 import com.youyi.YWL.adapter.SubjectAdapter;
+import com.youyi.YWL.inter.RecyclerViewOnItemClickListener;
 
 import butterknife.BindView;
 
@@ -72,6 +75,13 @@ public class SubjectBiologyFragment extends BaseFragment {
 
             @Override
             public void onLoadMore() {
+            }
+        });
+
+        subjectAdapter.setOnItemClickListener(new RecyclerViewOnItemClickListener() {
+            @Override
+            public void OnItemClick(View view, int position) {
+                startActivity(new Intent(getActivity(), ExcellentCourseDetailActivity.class));
             }
         });
 

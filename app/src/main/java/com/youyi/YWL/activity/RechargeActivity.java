@@ -1,5 +1,8 @@
 package com.youyi.YWL.activity;
 
+import android.content.Intent;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
@@ -7,6 +10,9 @@ import android.widget.TextView;
 
 import com.youyi.YWL.R;
 import com.youyi.YWL.adapter.RechargeAdapter;
+import com.youyi.YWL.adapter.RechargeRecyclerAdapter;
+import com.youyi.YWL.inter.RecyclerViewOnItemClickListener;
+import com.youyi.YWL.util.ToastUtil;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,17 +23,17 @@ import butterknife.OnClick;
 
 /**
  * Created by Administrator on 2018/7/12.
- * 未来币充值界面
+ * 充值界面
  */
 
 public class RechargeActivity extends BaseActivity {
     @BindView(R.id.tv_title)
     TextView tv_title;
-    @BindView(R.id.gridView)
-    GridView gridView;
-
-    private List<HashMap<String, Object>> gridViewList;
-    private RechargeAdapter rechargeAdapter;
+    @BindView(R.id.tv_right)
+    TextView tv_right;
+    @BindView(R.id.recyclerView)
+    RecyclerView recyclerView;
+    private RechargeRecyclerAdapter rechargeRecyclerAdapter;
 
     @Override
     protected void Response(String code, String msg, String url, Object result) {
@@ -41,81 +47,41 @@ public class RechargeActivity extends BaseActivity {
 
     @Override
     public void beforeInitView() {
-
     }
 
     @Override
     public void initView() {
-        tv_title.setText("未来币充值");
-        initGridViewData();
-        initGridView();
+        tv_title.setText("充值");
+        tv_right.setVisibility(View.VISIBLE);
+        tv_right.setText("充值须知");
+        tv_right.setTextColor(getResources().getColor(R.color.dark_black2));
+        initRecyclerView();
     }
 
-    private void initGridViewData() {
-        gridViewList = new ArrayList<>();
-
-        HashMap<String, Object> map0 = new HashMap<>();
-        map0.put("amount", "8.00");
-        map0.put("isChecked", false);
-        gridViewList.add(map0);
-
-        HashMap<String, Object> map1 = new HashMap<>();
-        map1.put("amount", "58.00");
-        map1.put("isChecked", false);
-        gridViewList.add(map1);
-
-        HashMap<String, Object> map2 = new HashMap<>();
-        map2.put("amount", "88.00");
-        map2.put("isChecked", false);
-        gridViewList.add(map2);
-
-        HashMap<String, Object> map3 = new HashMap<>();
-        map3.put("amount", "8.00");
-        map3.put("isChecked", false);
-        gridViewList.add(map3);
-
-        HashMap<String, Object> map4 = new HashMap<>();
-        map4.put("amount", "108.00");
-        map4.put("isChecked", false);
-        gridViewList.add(map4);
-
-        HashMap<String, Object> map5 = new HashMap<>();
-        map5.put("amount", "188.00");
-        map5.put("isChecked", false);
-        gridViewList.add(map5);
-
-        HashMap<String, Object> map6 = new HashMap<>();
-        map6.put("amount", "588.00");
-        map6.put("isChecked", false);
-        gridViewList.add(map6);
-
-        HashMap<String, Object> map7 = new HashMap<>();
-        map7.put("amount", "888.00");
-        map7.put("isChecked", false);
-        gridViewList.add(map7);
-
-        HashMap<String, Object> map8 = new HashMap<>();
-        map8.put("amount", "1088.00");
-        map8.put("isChecked", false);
-        gridViewList.add(map8);
-    }
-
-    private void initGridView() {
-        rechargeAdapter = new RechargeAdapter(this, gridViewList);
-        gridView.setAdapter(rechargeAdapter);
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+    private void initRecyclerView() {
+        LinearLayoutManager manager = new LinearLayoutManager(this) {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                HashMap<String, Object> map = gridViewList.get(position);
-                Boolean isChecked = (Boolean) map.get("isChecked");
-                
+            public boolean canScrollVertically() {
+                return false;
+            }
+        };
+        recyclerView.setLayoutManager(manager);
+
+        rechargeRecyclerAdapter = new RechargeRecyclerAdapter(this);
+        recyclerView.setAdapter(rechargeRecyclerAdapter);
+        rechargeRecyclerAdapter.setOnItemClickListener(new RecyclerViewOnItemClickListener() {
+            @Override
+            public void OnItemClick(View view, int position) {
+                ToastUtil.show(RechargeActivity.this, "点击了第" + position + "个条目", 0);
+                Intent intent = new Intent(RechargeActivity.this, RechargePaymentActivity.class);
+                startActivity(intent);
             }
         });
     }
 
+
     @Override
     public void afterInitView() {
-
     }
 
     @OnClick({R.id.ll_back})

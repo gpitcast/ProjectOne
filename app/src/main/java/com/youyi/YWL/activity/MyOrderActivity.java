@@ -3,6 +3,7 @@ package com.youyi.YWL.activity;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.util.TypedValue;
 import android.view.View;
 import android.widget.TextView;
 
@@ -135,7 +136,7 @@ public class MyOrderActivity extends BaseActivity {
             public IPagerTitleView getTitleView(Context context, final int i) {
                 ClipPagerTitleView clipPagerTitleView = new ClipPagerTitleView(context);
                 clipPagerTitleView.setText(titleList.get(i));
-                clipPagerTitleView.setTextSize(28);
+                clipPagerTitleView.setTextSize(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 14, getApplicationContext().getResources().getDisplayMetrics()));
                 clipPagerTitleView.setTextColor(getResources().getColor(R.color.normal_black));
                 clipPagerTitleView.setClipColor(getResources().getColor(R.color.orangeone));
                 clipPagerTitleView.setOnClickListener(new View.OnClickListener() {
@@ -152,7 +153,7 @@ public class MyOrderActivity extends BaseActivity {
                 LinePagerIndicator linePagerIndicator = new LinePagerIndicator(context);
                 linePagerIndicator.setColors(getResources().getColor(R.color.orangeone));
                 linePagerIndicator.setLineHeight(4);
-                linePagerIndicator.setLineWidth(100);
+                linePagerIndicator.setLineWidth(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 50, getApplicationContext().getResources().getDisplayMetrics()));
                 linePagerIndicator.setMode(LinePagerIndicator.MODE_EXACTLY);
                 return linePagerIndicator;
             }

@@ -34,13 +34,19 @@
             android:src="@mipmap/icon_play_white_circle" />
     </RelativeLayout>
 
-    <net.lucode.hackware.magicindicator.MagicIndicator
-        android:id="@+id/magicIndicator"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:layout_marginLeft="28dp"
-        android:layout_marginRight="28dp"
-        android:background="@color/white" />
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/magicIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="28dp"
+            android:layout_marginRight="28dp" />
+    </LinearLayout>
 
     <include layout="@layout/layout_normal_line" />
 

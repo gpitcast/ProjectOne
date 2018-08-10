@@ -19,21 +19,21 @@ import java.util.List;
 
 public class ExcellentCourseSearchGridAdapter extends BaseAdapter {
     private Context context;
-    private List<String> gridList;
+    private List<String> hotGridList;
 
-    public ExcellentCourseSearchGridAdapter(Context context, List<String> gridList) {
+    public ExcellentCourseSearchGridAdapter(Context context, List<String> hotGridList) {
         this.context = context;
-        this.gridList = gridList;
+        this.hotGridList = hotGridList;
     }
 
     @Override
     public int getCount() {
-        return gridList == null ? 0 : gridList.size();
+        return hotGridList == null ? 0 : hotGridList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return gridList.get(position);
+        return hotGridList.get(position);
     }
 
     @Override
@@ -54,7 +54,7 @@ public class ExcellentCourseSearchGridAdapter extends BaseAdapter {
             holder = ((MyViewHolder) convertView.getTag());
         }
 
-        holder.tv_name.setText(gridList.get(position));
+        holder.tv_name.setText(hotGridList.get(position));
 
         return convertView;
     }

@@ -17,28 +17,31 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="注册送积分"
+                android:text="？？？"
                 android:textColor="@color/light_gray16"
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/tv_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
-                android:text="2018.12.12"
+                android:text="？？？"
                 android:textColor="@color/grayone"
                 android:textSize="11sp" />
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="15dp"
-            android:text="+5积分"
+            android:text="？"
             android:textColor="@color/orangeone"
             android:textSize="13sp" />
     </RelativeLayout>

@@ -1,5 +1,6 @@
 package com.youyi.YWL.activity;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.TextView;
 
@@ -42,11 +43,16 @@ public class OrderPaymentActivity extends BaseActivity {
 
     }
 
-    @OnClick({R.id.ll_back})
+    @OnClick({R.id.ll_back,R.id.tv_goto_recharge})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.ll_back:
                 finish();
+                break;
+            case R.id.tv_goto_recharge:
+                //余额不足,去充值
+                Intent intent = new Intent(this, RechargeActivity.class);
+                startActivity(intent);
                 break;
         }
     }

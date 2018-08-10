@@ -12,7 +12,15 @@
         android:drawable="@mipmap/img_boy_running3"
         android:duration="200" />
     <item
-        android:drawable="@mipmap/img_boy_running2"
+        android:drawable="@mipmap/img_boy_running4"
+        android:duration="200" />
+
+    <item
+        android:drawable="@mipmap/img_boy_running5"
+        android:duration="200" />
+
+    <item
+        android:drawable="@mipmap/img_boy_running6"
         android:duration="200" />
 
 </animation-list>

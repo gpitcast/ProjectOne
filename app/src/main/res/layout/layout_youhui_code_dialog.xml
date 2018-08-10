@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@color/normal_white1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:gravity="center"
+            android:text="使用优惠码"
+            android:textColor="@color/orangeone"
+            android:textSize="15sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="14dp"
+            android:background="@color/orangeone" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_youhui_code"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_gray15"
+                android:gravity="center_vertical"
+                android:hint="输入优惠码"
+                android:padding="8dp"
+                android:textColorHint="@color/normal_gray5"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="25dp"
+            android:layout_marginTop="17dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:background="@drawable/bg_blue_choose"
+                android:gravity="center"
+                android:text="取消"
+                android:textColorHint="@color/normal_black"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_confirm"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bg_blue_choose_student"
+                android:gravity="center"
+                android:text="确认"
+                android:textColor="@color/white"
+                android:textColorHint="@color/normal_black"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

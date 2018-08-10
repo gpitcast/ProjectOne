@@ -2,9 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/rong_im_head" />
+    <include layout="@layout/layout_white_head_no_left_text" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -16,30 +17,20 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <LinearLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/light_gray5"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
+                android:layout_height="200dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_recharge_pig" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
-                    android:text="请选择合适的充值金额"
-                    android:textColor="@color/normal_black"
-                    android:textSize="14sp" />
-
-            </LinearLayout>
-
-            <GridView
-                android:id="@+id/gridView"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerView"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:numColumns="3" />
+                android:layout_height="match_parent" />
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

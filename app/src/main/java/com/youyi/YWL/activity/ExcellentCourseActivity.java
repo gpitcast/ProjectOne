@@ -290,7 +290,7 @@ public class ExcellentCourseActivity extends BaseActivity {
                 finish();
                 break;
             case R.id.img_right_search:
-                startActivity(new Intent(this, ExcellentCourseActivity2.class));
+                startActivity(new Intent(this, ExcellentCourseSearchActivity.class));
                 break;
         }
     }

@@ -103,7 +103,9 @@ public class LoginActivity extends BaseActivity {
                             //从其他有意图的界面跳转到登录界面的,登录成功跳转到意图跳转的界面,或者点赞等功能的当前界面
                             EventBus.getDefault().post("刷新MainActivity");
                             LoginCarrier invoker = (LoginCarrier) this.getIntent().getParcelableExtra(LoginInterceptor.mINVOKER);
-                            invoker.invoke(this);
+                            if (invoker!=null){
+                                invoker.invoke(this);
+                            }
                         }
                         finish();
                     } else {
@@ -177,7 +179,11 @@ public class LoginActivity extends BaseActivity {
                 break;
             case R.id.tv_regist:
                 //快速注册
-                startActivity(new Intent(this, RegistActivity.class));
+                Intent intent = new Intent(this, RegistActivity.class);
+                if (type != null) {
+                    intent.putExtra("type", type);
+                }
+                startActivity(intent);
                 break;
             case R.id.tv_forget_psw:
                 //忘记密码

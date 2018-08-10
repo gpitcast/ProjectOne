@@ -4,6 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -37,11 +38,18 @@ public class SubjectAdapter extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        MyViewHolder vh = (MyViewHolder) holder;
+        final MyViewHolder vh = (MyViewHolder) holder;
         LinearLayoutManager manager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
         vh.recyclerView.setLayoutManager(manager);
         SubjectAdapterTagAdapter subjectAdapterTagAdapter = new SubjectAdapterTagAdapter(context, type);
         vh.recyclerView.setAdapter(subjectAdapterTagAdapter);
+
+        vh.recyclerView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return vh.ll_base.onTouchEvent(event);
+            }
+        });
     }
 
     @Override

@@ -95,14 +95,11 @@ public class ExcellentCourseActivity2 extends BaseActivity {
     public void afterInitView() {
     }
 
-    @OnClick({R.id.ll_back, R.id.img_right_search})
+    @OnClick({R.id.ll_back})
     public void OnClick(View view) {
         switch (view.getId()) {
             case R.id.ll_back:
                 finish();
-                break;
-            case R.id.img_right_search:
-                startActivity(new Intent(this, ExcellentCourseSearchActivity.class));
                 break;
         }
     }
