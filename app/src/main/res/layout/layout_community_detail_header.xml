@@ -10,30 +10,30 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="150dp"
             android:scaleType="fitXY"
-            android:src="@mipmap/bg_change_orange" />
+            android:src="@mipmap/bg_change_blue_and_green" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="160dp"
+            android:layout_height="150dp"
             android:orientation="horizontal"
             android:paddingBottom="25dp"
-            android:paddingLeft="15dp"
+            android:paddingLeft="23dp"
             android:paddingRight="15dp"
-            android:paddingTop="25dp">
+            android:paddingTop="33dp">
 
             <RelativeLayout
-                android:layout_width="83dp"
-                android:layout_height="83dp">
+                android:layout_width="82dp"
+                android:layout_height="82dp">
 
-                <com.youyi.YWL.view.CircleImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_centerInParent="true"
                     android:src="@mipmap/img_white_picture" />
 
-                <com.youyi.YWL.view.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
@@ -43,7 +43,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="14dp"
                 android:orientation="vertical">
 
                 <TextView
@@ -51,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:textSize="15sp"
+                    android:textSize="16sp"
                     android:textStyle="bold" />
 
                 <LinearLayout
@@ -72,7 +72,7 @@
                         android:id="@+id/tv_member_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="32dp"
                         android:textColor="@android:color/white"
                         android:textSize="14sp" />
                 </LinearLayout>
@@ -86,7 +86,7 @@
                         android:id="@+id/tv_join_type"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/bg_white_line"
+                        android:background="@drawable/bg_white_line_dark_orange_solid"
                         android:paddingBottom="2dp"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
@@ -99,7 +99,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_white_line"
+                        android:background="@drawable/bg_white_line_normal_orange_solid"
                         android:paddingBottom="2dp"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
@@ -113,7 +113,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:background="@drawable/bg_white_line"
+                        android:background="@drawable/bg_white_line_light_orange_solid"
                         android:paddingBottom="2dp"
                         android:paddingLeft="5dp"
                         android:paddingRight="5dp"
@@ -125,10 +125,5 @@
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>
-
-    <include layout="@layout/layout_big_line" />
-
-
-    <include layout="@layout/layout_small_line" />
 
 </LinearLayout>

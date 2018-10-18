@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical">
 
     <LinearLayout
@@ -27,7 +28,7 @@
             android:layout_marginLeft="14dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_search_history"
+            android:background="@drawable/bg_search_history_gray"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -39,13 +40,14 @@
 
             <EditText
                 android:id="@+id/et_search"
-                android:imeOptions="actionSearch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginLeft="9dp"
                 android:layout_marginRight="12dp"
                 android:background="@null"
+                android:gravity="center_vertical"
                 android:hint="输入关键字开始搜索"
+                android:imeOptions="actionSearch"
                 android:singleLine="true"
                 android:textColor="@color/normal_black"
                 android:textColorHint="@color/dark_gray1"
@@ -54,6 +56,7 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/tv_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="9dp"
@@ -63,8 +66,97 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/framelayout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="17dp"
+                android:text="热门搜索"
+                android:textColor="@color/normal_black"
+                android:textSize="16sp" />
+
+            <com.youyi.ywl.view.MyGridView
+                android:id="@+id/gridView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:numColumns="4"
+                android:scrollbars="none" />
+
+            <LinearLayout
+                android:id="@+id/ll_history_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="历史搜索"
+                        android:textColor="@color/normal_black"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_clean_history"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="12dp"
+                            android:layout_height="15dp"
+                            android:src="@mipmap/icon_trash_gray" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:text="清空"
+                            android:textColor="@color/light_gray16"
+                            android:textSize="13sp" />
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:descendantFocusability="blocksDescendants"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/recyclerView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="15dp" />
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

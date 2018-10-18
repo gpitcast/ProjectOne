@@ -17,7 +17,7 @@
             android:layout_width="95dp"
             android:layout_height="71dp"
             android:layout_marginLeft="15dp"
-            android:src="@mipmap/icon_wallet" />
+            android:src="@mipmap/icon_light_wallet" />
 
         <TextView
             android:layout_width="0dp"

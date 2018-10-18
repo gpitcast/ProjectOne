@@ -25,7 +25,7 @@
             android:background="@color/normal_gray" />
     </LinearLayout>
 
-    <com.youyi.YWL.view.MyGridView
+    <com.youyi.ywl.view.MyGridView
         android:listSelector="@android:color/transparent"
         android:id="@+id/gridView"
         android:layout_width="match_parent"

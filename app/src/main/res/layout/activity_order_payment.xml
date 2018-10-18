@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/rong_im_head" />
+    <include layout="@layout/layout_blue_head" />
 
     <ScrollView
         android:layout_width="match_parent"

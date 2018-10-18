@@ -34,7 +34,7 @@
                         android:scaleType="fitXY"
                         android:src="@mipmap/img_group_information_circle" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/circleImageView"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
@@ -104,7 +104,7 @@
                             android:src="@mipmap/icon_gray_arrow_right" />
                     </LinearLayout>
 
-                    <com.youyi.YWL.view.MyGridView
+                    <com.youyi.ywl.view.MyGridView
                         android:id="@+id/gridView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -262,7 +262,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
 
-                    <com.youyi.YWL.view.IosSwitch
+                    <com.youyi.ywl.view.IosSwitch
                         android:id="@+id/iosSwitch_no_msg"
                         android:layout_width="50dp"
                         android:layout_height="25dp" />
@@ -291,7 +291,7 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
 
-                    <com.youyi.YWL.view.IosSwitch
+                    <com.youyi.ywl.view.IosSwitch
                         android:id="@+id/iosSwitch_top_tlak"
                         android:layout_width="50dp"
                         android:layout_height="25dp" />

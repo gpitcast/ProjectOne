@@ -7,5 +7,5 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
-        android:background="@color/normal_gray" />
+        android:background="@color/light_gray5" />
 </LinearLayout>

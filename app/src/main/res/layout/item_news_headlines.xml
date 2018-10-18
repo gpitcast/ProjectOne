@@ -58,7 +58,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <com.youyi.YWL.view.MyGridView
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

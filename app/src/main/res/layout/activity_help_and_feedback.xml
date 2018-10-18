@@ -365,7 +365,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/bg_login_light_btn"
+                android:background="@drawable/bg_blue_light_btn"
                 android:orientation="vertical">
 
                 <TextView

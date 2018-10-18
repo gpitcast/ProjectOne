@@ -5,7 +5,7 @@
     android:background="@color/white"
     android:orientation="vertical">
 
-    <include layout="@layout/rong_im_head" />
+    <include layout="@layout/layout_blue_head" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -27,7 +27,7 @@
                 android:textColor="@color/orangeone"
                 android:textSize="14sp" />
 
-            <com.youyi.YWL.view.MyGridView
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView_choose_interest"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -67,7 +67,7 @@
                 android:layout_marginTop="17dp"
                 android:background="@color/orangeone" />
 
-            <com.youyi.YWL.view.MyGridView
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView_subject"
                 android:layout_width="wrap_content"
                 android:layout_height="135dp"
@@ -107,7 +107,7 @@
                 android:layout_marginTop="17dp"
                 android:background="@color/orangeone" />
 
-            <com.youyi.YWL.view.MyGridView
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView_interest"
                 android:layout_width="match_parent"
                 android:layout_height="135dp"

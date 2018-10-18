@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="225dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="112dp"
+        android:src="@mipmap/img_guide4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="49dp"
+        android:text="学习圈"
+        android:textColor="@color/dark_black3"
+        android:textSize="29sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="知识共享智慧交流"
+        android:textColor="@color/normal_black8"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_start_study_journey"
+        android:background="@drawable/bg_half_circle_black_line_yellow_solid"
+        android:layout_width="129dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="39dp"
+        android:gravity="center"
+        android:text="开启学习之旅"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</LinearLayout>

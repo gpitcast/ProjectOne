@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_blue_head" />
+
+    <LinearLayout
+        android:id="@+id/ll_add_new_address"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="200dp"
+            android:text="暂无收货地址,"
+            android:textColor="@color/normal_gray5"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击下方按钮,添加邮寄地址"
+            android:textColor="@color/normal_gray5"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_new_address"
+            android:layout_width="250dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_blue_choose_student"
+            android:gravity="center"
+            android:text="新建地址"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+
+    <com.jcodecraeer.xrecyclerview.XRecyclerView
+        android:id="@+id/xRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+</LinearLayout>

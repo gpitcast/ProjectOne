@@ -2,10 +2,58 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
-    <ScrollView
+    <LinearLayout
+        android:id="@+id/ll_search_title"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/orangeone"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="25dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="7dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_search_history_gray"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:layout_marginLeft="9dp"
+                android:src="@mipmap/icon_black_search" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="4dp"
+                android:background="@null"
+                android:hint="输入关键字开始搜索"
+                android:singleLine="true"
+                android:textColor="@color/normal_black"
+                android:textColorHint="@color/dark_gray1"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_sign_in"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginRight="7dp"
+            android:padding="5dp"
+            android:src="@mipmap/icon_home_page_sign" />
+
+    </LinearLayout>
+
+    <com.youyi.ywl.view.GradationScrollView
+        android:id="@+id/gradationScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:descendantFocusability="blocksDescendants"
@@ -17,21 +65,26 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.bigkoo.convenientbanner.ConvenientBanner xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/convenientBanner"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="160dp"
-                app:autoTurningTime="2000"
-                app:canLoop="true" />
+                android:layout_height="wrap_content">
 
-            <com.youyi.YWL.view.MyGridView
+                <com.bigkoo.convenientbanner.ConvenientBanner
+                    xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/convenientBanner"
+                    android:layout_width="match_parent"
+                    android:layout_height="160dp"
+                    app:autoTurningTime="2000"
+                    app:canLoop="true" />
+
+            </RelativeLayout>
+
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="28dp"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
                 android:layout_marginTop="13dp"
+                android:listSelector="@null"
                 android:numColumns="4"
                 android:scrollbars="none" />
 
@@ -52,10 +105,11 @@
                     android:src="@mipmap/icon_hot_news" />
 
                 <TextView
+                    android:id="@+id/tv_hot_news"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="14dp"
+                    android:layout_marginLeft="5dp"
                     android:text="热点新闻"
                     android:textColor="@color/normal_black1"
                     android:textSize="18sp"
@@ -81,8 +135,8 @@
                         android:textSize="13sp" />
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="6dp"
+                        android:layout_height="11dp"
                         android:layout_marginLeft="2dp"
                         android:src="@mipmap/arrowone" />
 
@@ -117,8 +171,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
                 android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
                 android:layout_marginTop="22dp"
                 android:orientation="horizontal">
 
@@ -126,29 +180,55 @@
                     android:layout_width="15dp"
                     android:layout_height="18dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@mipmap/icon_group_member_blue" />
+                    android:src="@mipmap/icon_hot_news" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
-                    android:text="社区群推荐"
+                    android:text="习题讲解"
                     android:textColor="@color/normal_black1"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:id="@+id/ll_more_example_explain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="更多"
+                        android:textColor="@color/light_gray22"
+                        android:textSize="13sp" />
+
+                    <ImageView
+                        android:layout_width="6dp"
+                        android:layout_height="11dp"
+                        android:layout_marginLeft="2dp"
+                        android:src="@mipmap/arrowone" />
+
+                </LinearLayout>
             </LinearLayout>
 
-            <LinearLayout
+            <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="130dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:orientation="vertical">
+                android:layout_marginTop="14dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/img_loading_default" />
 
-                <include layout="@layout/layout_small_line" />
-            </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -156,13 +236,16 @@
                 android:descendantFocusability="blocksDescendants">
 
                 <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyclerView_group"
+                    android:id="@+id/recyclerView_example_explain"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="30dp"
                     android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp" />
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="12dp" />
             </RelativeLayout>
         </LinearLayout>
-    </ScrollView>
+    </com.youyi.ywl.view.GradationScrollView>
+
+
 </LinearLayout>

@@ -13,8 +13,8 @@
 
         <ImageView
             android:id="@+id/iv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="16dp"
+            android:layout_height="13dp"
             android:src="@mipmap/icon_community_blue_user" />
 
         <TextView

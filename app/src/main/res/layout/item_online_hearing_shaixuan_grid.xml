@@ -8,12 +8,16 @@
         android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
         android:background="@drawable/bg_blue_line"
+        android:ellipsize="end"
         android:gravity="center"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
-        android:text="初中学练优"
-        android:textSize="13sp"
-        android:textColor="@color/normal_black3" />
+        android:singleLine="true"
+        android:text="？？？"
+        android:textColor="@color/normal_black3"
+        android:textSize="13sp" />
 
 </LinearLayout>

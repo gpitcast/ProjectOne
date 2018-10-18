@@ -11,7 +11,7 @@
         android:orientation="horizontal"
         android:padding="10dp">
 
-        <com.youyi.YWL.view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/iv_head"
             android:layout_width="50dp"
             android:layout_height="50dp"

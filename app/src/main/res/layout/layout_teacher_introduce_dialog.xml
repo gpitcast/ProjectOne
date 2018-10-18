@@ -25,14 +25,14 @@
             android:layout_width="82dp"
             android:layout_height="82dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/bg_blue_all_circle">
+            android:background="@drawable/bg_blue_circle_line">
 
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/circleImageView"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_centerInParent="true"
-                android:src="@mipmap/meinv_teacher" />
+                android:layout_centerInParent="true" />
 
         </RelativeLayout>
 
@@ -43,17 +43,18 @@
             android:layout_below="@+id/rl_head"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="雪健老师"
+            android:text="？？"
             android:textColor="@color/orangeone"
             android:textSize="14sp" />
 
         <TextView
+            android:id="@+id/tv_teacher_instroction"
             android:layout_width="220dp"
             android:layout_height="195dp"
             android:layout_below="@+id/tv_teacher_name"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:text="老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介老师简介"
+            android:text="？？？"
             android:textColor="@color/normal_black"
             android:textSize="12sp" />
 
@@ -74,11 +75,11 @@
 
         <FrameLayout
             android:id="@+id/fl_cancel"
-            android:layout_marginTop="40dp"
-            android:layout_centerHorizontal="true"
-            android:layout_below="@+id/ll_introduction"
             android:layout_width="25dp"
-            android:layout_height="25dp"/>
+            android:layout_height="25dp"
+            android:layout_below="@+id/ll_introduction"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
 
     </RelativeLayout>
 </LinearLayout>

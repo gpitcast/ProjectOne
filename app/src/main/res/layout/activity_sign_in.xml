@@ -30,12 +30,6 @@
                 android:gravity="center_vertical"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="我的积分 :"
-                    android:textColor="@color/normal_yellow3"
-                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tv_my_credit"
@@ -206,7 +200,7 @@
                                 android:textSize="12sp" />
 
                             <TextView
-                                android:id="@+id/tv_title"
+                                android:id="@+id/tv_title_famous"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="7dp"
@@ -226,7 +220,7 @@
                             android:orientation="horizontal">
 
 
-                            <com.youyi.YWL.view.RoundImageView
+                            <com.youyi.ywl.view.RoundImageView
                                 android:id="@+id/roundImageView"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
@@ -277,7 +271,7 @@
                     android:background="@drawable/bg_orange_all_circle_line"
                     android:gravity="center">
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/circleImageView"
                         android:layout_width="75dp"
                         android:layout_height="75dp" />
@@ -292,13 +286,14 @@
                 android:scaleType="fitXY"
                 android:src="@mipmap/icon_sign_ranking_list" />
 
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="6dp"
+                android:descendantFocusability="blocksDescendants"
                 android:background="@drawable/bg_black_line"
                 android:orientation="vertical">
 
@@ -306,7 +301,7 @@
                     android:id="@+id/xRecyclerView"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
-            </LinearLayout>
+            </RelativeLayout>
 
         </LinearLayout>
     </ScrollView>

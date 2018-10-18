@@ -35,7 +35,6 @@
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:drawableLeft="@mipmap/img_number"
-                android:hint="@string/input_code"
                 android:inputType="number"
                 android:maxLength="6" />
 
@@ -83,7 +82,7 @@
                 android:layout_width="250dp"
                 android:layout_height="35dp"
                 android:layout_marginBottom="250dp"
-                android:background="@drawable/bg_login_light_btn"
+                android:background="@drawable/bg_blue_light_btn"
                 android:gravity="center"
                 android:text="@string/submit"
                 android:textColor="@android:color/white"

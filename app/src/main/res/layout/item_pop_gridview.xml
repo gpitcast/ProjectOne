@@ -5,7 +5,7 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-    <com.youyi.YWL.view.ShaixuanTextView
+    <com.youyi.ywl.view.ShaixuanTextView
         android:id="@+id/tv_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

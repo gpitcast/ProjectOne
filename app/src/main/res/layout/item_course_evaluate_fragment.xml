@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <com.youyi.YWL.view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginLeft="15dp"
@@ -19,7 +19,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="12dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginTop="27dp"
@@ -80,18 +80,18 @@
                 android:lineSpacingMultiplier="1.4"
                 android:maxLines="2"
                 android:text="网民还没有一定规模的时候网民还没有一定规模的时候, 在线教育其实只是一些技术性的文字资料发布在相应的大学网站和技术性的门户网站"
-                android:textColor="@color/grayone"
-                android:textSize="11sp" />
+                android:textColor="@color/normal_black"
+                android:textSize="14sp" />
 
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="11dp"
                 android:gravity="right"
                 android:text="2018.12.30 23:23"
-                android:textColor="@color/light_gray11"
-                android:textSize="10dp" />
+                android:textColor="@color/light_gray16"
+                android:textSize="11sp" />
         </LinearLayout>
 
     </LinearLayout>

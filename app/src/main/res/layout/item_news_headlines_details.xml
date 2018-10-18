@@ -14,7 +14,7 @@
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <com.youyi.YWL.view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circleImageView"
             android:layout_width="30dp"
             android:layout_height="30dp" />
@@ -41,34 +41,47 @@
         android:textColor="@color/normal_black"
         android:textSize="13sp" />
 
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="15dp"-->
+    <!--android:layout_marginRight="15dp"-->
+    <!--android:background="@drawable/bg_reply"-->
+    <!--android:orientation="vertical"-->
+    <!--android:visibility="gone">-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="原评论：你是我的ZX"-->
+    <!--android:textColor="@color/grayone"-->
+    <!--android:textSize="10sp" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:text="10年以后，中国将诞生2亿中产阶级，对物质，文化的需求品质越来越高。"-->
+    <!--android:textColor="@color/grayone"-->
+    <!--android:textSize="12sp" />-->
+    <!--</LinearLayout>-->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:background="@drawable/bg_reply"
-        android:orientation="vertical"
-        android:visibility="gone">
+        android:layout_marginLeft="8dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
         <TextView
+            android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="原评论：你是我的ZX"
+            android:layout_marginRight="12dp"
+            android:layout_toLeftOf="@+id/ll_reply"
+            android:text="？分钟前"
             android:textColor="@color/grayone"
             android:textSize="10sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:text="10年以后，中国将诞生2亿中产阶级，对物质，文化的需求品质越来越高。"
-            android:textColor="@color/grayone"
-            android:textSize="12sp" />
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
 
 
         <LinearLayout
@@ -76,6 +89,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
+            android:layout_marginTop="2dp"
             android:orientation="horizontal">
 
             <ImageView
@@ -95,15 +109,6 @@
 
         </LinearLayout>
 
-        <TextView
-            android:id="@+id/tv_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="12dp"
-            android:layout_toLeftOf="@+id/ll_reply"
-            android:text="？分钟前"
-            android:textColor="@color/grayone"
-            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/tv_reply"
@@ -114,7 +119,24 @@
             android:textColor="@color/orangeone"
             android:textSize="12sp"
             android:visibility="gone" />
-    </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_delete_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:text="删除"
+            android:textColor="@color/light_gray16"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"

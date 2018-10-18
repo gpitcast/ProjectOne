@@ -42,7 +42,7 @@
                         android:textColor="@color/normal_black"
                         android:textSize="14sp" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"
@@ -76,7 +76,7 @@
                         android:textColor="@color/normal_black"
                         android:textSize="14sp" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"
@@ -102,7 +102,7 @@
                         android:textColor="@color/normal_black"
                         android:textSize="14sp" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"
@@ -123,7 +123,7 @@
                     android:layout_height="65dp"
                     android:background="@drawable/bg_blue_cirlce_line">
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"
@@ -165,7 +165,7 @@
                         android:textColor="@color/normal_black"
                         android:textSize="14sp" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"
@@ -191,7 +191,7 @@
                         android:textColor="@color/normal_black"
                         android:textSize="14sp" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"
@@ -224,7 +224,7 @@
                         android:textColor="@color/normal_black"
                         android:textSize="14sp" />
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:layout_centerInParent="true"

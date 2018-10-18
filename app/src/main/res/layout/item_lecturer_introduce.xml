@@ -13,16 +13,17 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <com.youyi.YWL.view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/circleImageView"
             android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@mipmap/meinv_teacher" />
+            android:layout_height="50dp" />
 
         <TextView
+            android:id="@+id/tv_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="7dp"
-            android:text="雪健老师"
+            android:text="？？"
             android:textColor="@color/normal_black1"
             android:textSize="12sp" />
 

@@ -10,10 +10,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="20dp"
         android:orientation="horizontal">
 
-        <com.youyi.YWL.view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circleImageView"
             android:layout_width="40dp"
             android:layout_height="40dp" />
@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="6dp"
             android:orientation="vertical">
 
             <TextView
@@ -37,9 +37,11 @@
                 android:id="@+id/tv_content"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="14dp"
                 android:ellipsize="end"
                 android:maxLines="2"
+                android:textColor="@color/normal_black"
+                android:textSize="14sp"
                 android:text="？" />
 
             <TextView
@@ -50,8 +52,8 @@
                 android:layout_marginTop="11dp"
                 android:gravity="right"
                 android:text="？"
-                android:textColor="@color/light_gray11"
-                android:textSize="10sp" />
+                android:textColor="@color/light_gray16"
+                android:textSize="11sp" />
         </LinearLayout>
     </LinearLayout>
 

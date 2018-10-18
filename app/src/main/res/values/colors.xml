@@ -115,5 +115,18 @@
     <color name="normal_orange3">#ffa63c</color>
     <color name="normal_red2">#fa6e7b</color>
     <color name="normal_yellow4">#fff5e8</color>
+    <color name="light_gray28">#d5d5d5</color>
+    <color name="light_blue19">#def0ff</color>
+    <color name="light_blue20">#c1f3ff</color>
+    <color name="normal_blue4">#9ecff6</color>
+    <color name="normal_blue5">#6dbaf7</color>
+    <color name="light_gray29">#dadada</color>
+    <color name="dark_black3">#272d4e</color>
+    <color name="normal_black8">#686c83</color>
+    <color name="normal_black9">#496475</color>
+    <color name="normal_black10">#36454c</color>
+    <color name="normal_yellow5">#f4c332</color>
+    <color name="normal_yellow6">#e4b600</color>
+    <color name="normal_gray7">#d8d8d8</color>
 
 </resources>

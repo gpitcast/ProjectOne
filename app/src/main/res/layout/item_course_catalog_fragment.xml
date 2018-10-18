@@ -16,7 +16,7 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_marginTop="12.5dp"
-            android:background="@drawable/bg_blue_all_circle"
+            android:background="@drawable/bg_blue_circle_line"
             android:gravity="center"
             android:text="1"
             android:textColor="@color/white"

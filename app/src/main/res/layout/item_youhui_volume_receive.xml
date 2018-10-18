@@ -36,43 +36,55 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="35dp"
                 android:layout_toRightOf="@+id/tv_discount"
-                android:orientation="vertical">
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="立即减 ¥ 400.00"
+                        android:textColor="@color/normal_brown"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="12dp"
+                        android:ellipsize="end"
+                        android:maxLines="2"
+                        android:text="有效期 : 2018-07-17至2018-09-19"
+                        android:textColor="@color/normal_brown"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
 
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="立即减 ¥ 400.00"
-                    android:textColor="@color/normal_brown"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:id="@+id/tv_receive_stage"
+                    android:layout_width="70dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="8dp"
+                    android:background="@drawable/bg_dark_brown_half_circle"
+                    android:gravity="center"
+                    android:text="立即领取"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="12dp"
-                    android:text="有效期 : 2018-07-17至2018-09-19"
-                    android:textColor="@color/normal_brown"
-                    android:textSize="10sp" />
             </LinearLayout>
-
-
-            <TextView
-                android:id="@+id/tv_receive_stage"
-                android:layout_width="70dp"
-                android:layout_height="25dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="22dp"
-                android:background="@drawable/bg_dark_brown_half_circle"
-                android:gravity="center"
-                android:text="立即领取"
-                android:textColor="@color/white"
-                android:textSize="12sp" />
 
         </RelativeLayout>
     </LinearLayout>

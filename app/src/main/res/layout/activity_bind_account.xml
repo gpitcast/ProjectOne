@@ -9,7 +9,6 @@
 
     <include layout="@layout/layout_big_line" />
 
-
     <LinearLayout
         android:id="@+id/ll_phone_bind"
         android:layout_width="match_parent"

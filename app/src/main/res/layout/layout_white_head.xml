@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_title"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@android:color/white"
@@ -13,23 +14,18 @@
         <LinearLayout
             android:id="@+id/ll_back"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="16dp"
+                android:layout_height="18dp"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/back_black" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="@string/back"
-                android:textColor="@color/light_gray10"
-                android:textSize="14sp" />
         </LinearLayout>
 
         <TextView
@@ -42,7 +38,7 @@
             android:ellipsize="end"
             android:singleLine="true"
             android:textColor="@color/dark_black2"
-            android:textSize="19sp" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_right"
@@ -52,16 +48,18 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10dp"
             android:textColor="@color/light_gray10"
-            android:textSize="14sp"
+            android:textSize="13sp"
             android:visibility="gone" />
 
         <ImageView
-            android:id="@+id/img_right"
+            android:id="@+id/iv_right"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginRight="15dp"
-            android:layout_width="23dp"
-            android:layout_height="23dp"
-            android:layout_alignParentRight="true"/>
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
+            android:visibility="gone" />
     </RelativeLayout>
 
     <include layout="@layout/layout_small_line" />

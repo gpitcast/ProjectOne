@@ -39,7 +39,7 @@
             android:layout_height="40dp"
             android:layout_gravity="center"
             android:layout_marginTop="23dp"
-            android:background="@drawable/bg_login_light_btn"
+            android:background="@drawable/bg_blue_light_btn"
             android:orientation="vertical">
 
             <TextView

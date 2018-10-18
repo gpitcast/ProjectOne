@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <include layout="@layout/rong_im_head" />
+    <include layout="@layout/layout_blue_head" />
 
     <net.lucode.hackware.magicindicator.MagicIndicator
         android:id="@+id/magicIndicator"

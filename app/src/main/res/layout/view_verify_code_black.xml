@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <TextView
+            android:id="@+id/tv_0"
+            style="@style/textview_style_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_1"
+            style="@style/textview_style_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_2"
+            style="@style/textview_style_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_3"
+            style="@style/textview_style_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_4"
+            style="@style/textview_style_black" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_5"
+            style="@style/textview_style_black" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+
+        <View
+            android:layout_width="41dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray13" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="41dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray13" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="41dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray13" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="41dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray13" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="41dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray13" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <View
+            android:layout_width="41dp"
+            android:layout_height="2dp"
+            android:layout_gravity="bottom"
+            android:background="@color/light_gray13" />
+
+
+    </LinearLayout>
+
+    <com.youyi.ywl.view.MyEditText
+        android:id="@+id/edit_text_view"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@android:color/transparent"
+        android:inputType="number"
+        android:longClickable="false"
+        android:maxLength="6"
+        android:textColor="@color/transparent" />
+</RelativeLayout>

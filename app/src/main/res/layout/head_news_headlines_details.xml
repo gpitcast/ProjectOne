@@ -20,8 +20,7 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="8dp"
                 android:textColor="@android:color/black"
-                android:textSize="19sp"
-                android:textStyle="bold" />
+                android:textSize="19sp" />
 
             <RelativeLayout
                 android:layout_width="match_parent"

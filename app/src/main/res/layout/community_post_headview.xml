@@ -14,8 +14,8 @@
         android:layout_marginTop="22dp"
         android:ellipsize="end"
         android:singleLine="true"
-        android:textColor="@color/normal_black"
-        android:textSize="14sp" />
+        android:textColor="@android:color/black"
+        android:textSize="19sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,15 +25,16 @@
         android:layout_marginTop="15dp"
         android:orientation="horizontal">
 
-        <com.youyi.YWL.view.CircleImageView
+        <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/circleImageView"
             android:layout_width="40dp"
-            android:layout_height="40dp" />
+            android:layout_height="40dp"
+            />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_marginLeft="9dp"
+            android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
             android:orientation="vertical">
 
@@ -49,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:textColor="@color/light_gray11"
+                android:textColor="@color/light_gray16"
                 android:textSize="12sp" />
 
         </LinearLayout>
@@ -63,12 +64,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-        android:layout_marginTop="18dp" />
+        android:layout_marginTop="15dp" />
 
     <GridView
         android:id="@+id/gridView"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="115dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="15dp"
@@ -82,12 +83,18 @@
         android:layout_marginTop="15dp"
         android:background="@color/light_gray5"
         android:gravity="center_vertical"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/icon_comments" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="10dp"
             android:text="网友回帖"
             android:textColor="@color/normal_black"
             android:textSize="16sp" />

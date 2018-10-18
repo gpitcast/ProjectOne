@@ -68,13 +68,13 @@
                 android:layout_width="83dp"
                 android:layout_height="83dp">
 
-                <com.youyi.YWL.view.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:src="@mipmap/img_white_picture" />
 
-                <com.youyi.YWL.view.CircleImageView
+                <de.hdodenhof.circleimageview.CircleImageView
                     android:id="@+id/circleImageView"
                     android:layout_width="80dp"
                     android:layout_height="80dp"

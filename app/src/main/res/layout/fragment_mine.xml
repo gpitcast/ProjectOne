@@ -57,7 +57,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <com.youyi.YWL.view.CircleImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/circleImageView"
                         android:layout_width="70dp"
                         android:layout_height="70dp"
@@ -254,7 +254,7 @@
 
             <include layout="@layout/layout_big_line"/>
 
-            <com.youyi.YWL.view.MyGridView
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView_two"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

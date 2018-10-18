@@ -28,7 +28,7 @@
             android:layout_marginLeft="14dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_search_history"
+            android:background="@drawable/bg_search_history_gray"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -64,85 +64,183 @@
             android:textColor="@color/white" />
     </LinearLayout>
 
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:background="@color/white"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<LinearLayout-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:paddingBottom="10dp"-->
+            <!--android:paddingTop="15dp">-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_all"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="216"-->
+                <!--android:gravity="center"-->
+                <!--android:text="全部"-->
+                <!--android:textColor="@color/orangeone"-->
+                <!--android:textSize="14sp" />-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_hot"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="294"-->
+                <!--android:gravity="center"-->
+                <!--android:text="热点资源"-->
+                <!--android:textColor="@color/normal_black"-->
+                <!--android:textSize="14sp" />-->
+
+            <!--<LinearLayout-->
+                <!--android:id="@+id/ll_time_sort"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="231"-->
+                <!--android:gravity="center"-->
+                <!--android:orientation="horizontal">-->
+
+                <!--<TextView-->
+                    <!--android:id="@+id/tv_time_sort"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="时间"-->
+                    <!--android:textColor="@color/normal_black"-->
+                    <!--android:textSize="14sp" />-->
+
+                <!--<ImageView-->
+                    <!--android:id="@+id/iv_time_sort"-->
+                    <!--android:layout_width="4dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:layout_marginLeft="4dp"-->
+                    <!--android:src="@mipmap/icon_arrow_up_half_black" />-->
+            <!--</LinearLayout>-->
+
+            <!--<TextView-->
+                <!--android:id="@+id/tv_shaixuan_short"-->
+                <!--android:layout_width="0dp"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_weight="252"-->
+                <!--android:ellipsize="end"-->
+                <!--android:gravity="center"-->
+                <!--android:singleLine="true"-->
+                <!--android:text="筛选 ()"-->
+                <!--android:textColor="@color/dark_red2"-->
+                <!--android:textSize="14sp" />-->
+        <!--</LinearLayout>-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/iv_shaixuan"-->
+            <!--android:layout_width="25dp"-->
+            <!--android:layout_height="25dp"-->
+            <!--android:layout_marginRight="10dp"-->
+            <!--android:layout_marginTop="10dp"-->
+            <!--android:padding="5dp"-->
+            <!--android:src="@mipmap/img_blue_shaixuan" />-->
+    <!--</LinearLayout>-->
+
     <LinearLayout
+        android:id="@+id/ll_first_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="38dp"
         android:background="@color/white"
+        android:gravity="center_vertical"
         android:orientation="horizontal">
 
-        <LinearLayout
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_first"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1" />
+
+        <!--<LinearLayout-->
+        <!--android:id="@+id/ll_shaixuan_first"-->
+        <!--android:layout_width="55dp"-->
+        <!--android:layout_height="33.5dp"-->
+        <!--android:layout_marginRight="15dp"-->
+        <!--android:gravity="center_vertical"-->
+        <!--android:orientation="horizontal">-->
+
+        <!--<LinearLayout-->
+        <!--android:layout_width="0dp"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_weight="1"-->
+        <!--android:gravity="center"-->
+        <!--android:orientation="vertical">-->
+
+        <!--<ImageView-->
+        <!--android:layout_width="18dp"-->
+        <!--android:layout_height="20dp"-->
+        <!--android:src="@mipmap/img_blue_shaixuan" />-->
+        <!--</LinearLayout>-->
+
+        <!--<TextView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:text="筛选"-->
+        <!--android:textColor="@color/normal_black"-->
+        <!--android:textSize="12sp" />-->
+        <!--</LinearLayout>-->
+
+    </LinearLayout>
+
+    <include layout="@layout/layout_small_line" />
+
+    <LinearLayout
+        android:id="@+id/ll_second_layout"
+        android:layout_width="match_parent"
+        android:layout_height="38dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_second"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
             android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingBottom="10dp"
-            android:paddingTop="15dp">
+            android:numColumns="6"
+            android:scrollbars="none" />
 
-            <TextView
-                android:id="@+id/tv_all"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="216"
-                android:gravity="center"
-                android:text="全部"
-                android:textColor="@color/orangeone"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/tv_hot"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="294"
-                android:gravity="center"
-                android:text="热点资源"
-                android:textColor="@color/normal_black"
-                android:textSize="14sp" />
+        <LinearLayout
+            android:id="@+id/ll_shaixuan_second"
+            android:layout_width="55dp"
+            android:layout_height="33.5dp"
+            android:layout_marginRight="15dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:id="@+id/ll_time_sort"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="231"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/tv_time_sort"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="时间"
-                    android:textColor="@color/normal_black"
-                    android:textSize="14sp" />
+                android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/iv_time_sort"
-                    android:layout_width="4dp"
-                    android:layout_height="12dp"
-                    android:layout_marginLeft="4dp"
-                    android:src="@mipmap/icon_arrow_up_half_black" />
+                    android:layout_width="18dp"
+                    android:layout_height="20dp"
+                    android:src="@mipmap/img_blue_shaixuan" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_shaixuan_short"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="252"
-                android:ellipsize="end"
-                android:gravity="center"
-                android:singleLine="true"
-                android:text="筛选 ()"
-                android:textColor="@color/dark_red2"
-                android:textSize="14sp" />
+                android:text="筛选"
+                android:textColor="@color/normal_black"
+                android:textSize="12sp" />
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/iv_shaixuan"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="10dp"
-            android:padding="5dp"
-            android:src="@mipmap/img_blue_shaixuan" />
     </LinearLayout>
 
     <include layout="@layout/layout_normal_line" />

@@ -29,7 +29,7 @@
             android:layout_marginLeft="14dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
-            android:background="@drawable/bg_search_history"
+            android:background="@drawable/bg_search_history_gray"
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
@@ -87,7 +87,7 @@
                 android:textColor="@color/normal_black"
                 android:textSize="16sp" />
 
-            <com.youyi.YWL.view.MyGridView
+            <com.youyi.ywl.view.MyGridView
                 android:id="@+id/gridView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -95,6 +95,7 @@
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
+                android:background="@null"
                 android:numColumns="4"
                 android:scrollbars="none" />
 
@@ -144,9 +145,9 @@
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:descendantFocusability="blocksDescendants"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="match_parent"
+                    android:descendantFocusability="blocksDescendants">
 
                     <android.support.v7.widget.RecyclerView
                         android:id="@+id/recyclerView"

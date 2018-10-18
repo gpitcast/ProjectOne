@@ -106,7 +106,7 @@
                         android:layout_width="250dp"
                         android:layout_height="35dp"
                         android:layout_marginBottom="190dp"
-                        android:background="@drawable/bg_login_light_btn"
+                        android:background="@drawable/bg_blue_light_btn"
                         android:enabled="false"
                         android:gravity="center"
                         android:text="@string/submit"

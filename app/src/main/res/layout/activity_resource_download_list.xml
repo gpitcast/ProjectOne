@@ -6,49 +6,41 @@
     android:fitsSystemWindows="true"
     android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:gravity="center_vertical"
         android:orientation="horizontal">
 
         <LinearLayout
+            android:layout_centerVertical="true"
             android:id="@+id/ll_back"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
             android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:padding="5dp">
 
             <ImageView
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="16dp"
+                android:layout_height="18dp"
                 android:layout_centerVertical="true"
                 android:src="@mipmap/back_black" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:text="@string/back"
-                android:textColor="@color/light_gray10"
-                android:textSize="14sp" />
         </LinearLayout>
 
         <TextView
-            android:id="@+id/tv_reply_count"
-            android:layout_width="0dp"
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:ellipsize="end"
-            android:gravity="center"
             android:singleLine="true"
-            android:text="我的资源列表"
             android:textColor="@color/dark_black2"
-            android:textSize="19sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
 
         <TextView
             android:id="@+id/tv_editOrCancel"
@@ -56,12 +48,12 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:paddingRight="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="5dp"
             android:text="@string/editOrCancel"
             android:textColor="@color/orangeone"
-            android:textSize="14sp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:textSize="13sp" />
+    </RelativeLayout>
 
     <include layout="@layout/layout_small_line" />
 

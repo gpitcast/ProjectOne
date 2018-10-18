@@ -16,16 +16,17 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
-            <com.youyi.YWL.view.CircleImageView
-                android:id="@+id/circleImageView"
-                android:layout_width="60dp"
-                android:layout_height="60dp" />
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/tv_hot"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="45dp"
+                android:layout_marginLeft="38dp"
                 android:background="@drawable/comments_count_bg"
                 android:paddingLeft="3dp"
                 android:paddingRight="3dp"
@@ -71,13 +72,13 @@
             android:orientation="vertical">
 
             <TextView
-                android:textSize="12sp"
                 android:id="@+id/tv_join"
                 android:layout_width="60dp"
                 android:layout_height="25dp"
                 android:gravity="center"
                 android:padding="3dp"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="12sp" />
         </LinearLayout>
     </LinearLayout>
 

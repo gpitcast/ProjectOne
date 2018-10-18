@@ -7,8 +7,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="240dp"
-        android:background="@mipmap/aaa_test2">
+        android:layout_height="240dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY" />
 
         <ImageView
             android:id="@+id/iv_back"

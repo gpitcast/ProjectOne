@@ -6,68 +6,69 @@
     android:background="@color/orangeone"
     android:orientation="horizontal">
 
-    <TextView
-        android:id="@+id/tvBack"
+    <LinearLayout
+        android:id="@+id/ll_back"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:drawableLeft="@mipmap/back_white"
-        android:drawablePadding="7.5dp"
-        android:gravity="center"
-        android:paddingLeft="7.5dp"
-        android:text="返回"
-        android:textColor="@color/white"
-        android:textSize="14sp" />
+        android:layout_marginLeft="10dp"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <ImageView
+            android:layout_width="16dp"
+            android:layout_height="18dp"
+            android:src="@mipmap/back_white" />
+
+    </LinearLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
         <TextView
-            android:id="@+id/tvTitle"
+            android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
             android:ellipsize="end"
-            android:gravity="center"
             android:maxWidth="200dp"
             android:singleLine="true"
             android:textColor="@android:color/white"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/tvTileNum"
+            android:id="@+id/tv_title_num"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/tvTitle"
+            android:layout_alignBottom="@+id/tv_title"
             android:layout_marginBottom="3dp"
-            android:layout_toRightOf="@+id/tvTitle"
+            android:layout_toRightOf="@+id/tv_title"
             android:textColor="@android:color/white"
             android:textSize="13sp"
             android:visibility="gone" />
     </RelativeLayout>
 
     <ImageView
-        android:id="@+id/imgTitleRight"
-        android:layout_width="23dp"
-        android:layout_height="23dp"
+        android:id="@+id/iv_right"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="7.5dp"
-        android:layout_marginTop="17.5dp"
-        android:src="@mipmap/search"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
         android:visibility="gone" />
 
     <TextView
-        android:id="@+id/tvTitleRight"
+        android:id="@+id/tv_right"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:layout_marginRight="7.5dp"
+        android:layout_marginRight="10dp"
+        android:padding="5dp"
         android:textColor="@android:color/white"
-        android:textSize="13sp" />
+        android:textSize="13sp"
+        android:visibility="gone" />
 
 </RelativeLayout>

@@ -5,7 +5,7 @@
     android:id="@+id/ll_base"
     android:orientation="vertical">
 
-    <include layout="@layout/rong_im_head" />
+    <include layout="@layout/layout_blue_head" />
 
 
     <com.jcodecraeer.xrecyclerview.XRecyclerView

@@ -43,7 +43,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1" />
 
-                <com.youyi.YWL.view.YuanJiaoImageView
+                <com.youyi.ywl.view.YuanJiaoImageView
                     android:id="@+id/iv_head"
                     android:layout_width="33dp"
                     android:layout_height="33dp"
